@@ -1,0 +1,34 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "JIYU Green & Pink",
+    "theme_version": "1.0.0",
+    "theme_author": "mohannadabuhdeib-art",
+    "theme_documentation_url": "https://github.com/mohannadabuhdeib-art/shopify1",
+    "theme_support_url": "https://github.com/mohannadabuhdeib-art/shopify1/issues"
+  },
+  {
+    "name": "Catalogue",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Choose the Shopify products for the green toner, pink cream and their bundle. Each product should have 1, 2 and 3 Jar pack variants. Configure store shipping, payments and policies before launch."
+      },
+      {
+        "type": "product",
+        "id": "toner_product",
+        "label": "Green toner pads"
+      },
+      {
+        "type": "product",
+        "id": "cream_product",
+        "label": "Pink moisturizing cream"
+      },
+      {
+        "type": "product",
+        "id": "bundle_product",
+        "label": "Green and pink bundle"
+      }
+    ]
+  }
+]

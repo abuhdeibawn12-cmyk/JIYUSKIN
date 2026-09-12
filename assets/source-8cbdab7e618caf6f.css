@@ -1,0 +1,1401 @@
+/* ONBRAND Chat widget styles. Namespaced under .onbrand-* so nothing leaks into the
+   theme. Uses the theme's font variables when present, with safe fallbacks.
+   Accent color is injected as --onbrand-accent from the block settings. */
+
+.onbrand-chat-launcher {
+  position: fixed;
+  right: var(--onbrand-right, 20px);
+  left: var(--onbrand-left, auto);
+  bottom: var(--onbrand-edge-bottom, 20px);
+  z-index: var(--onbrand-z, 2147483000);
+  width: var(--onbrand-launcher-size, 58px);
+  height: var(--onbrand-launcher-size, 58px);
+  border-radius: var(--onbrand-launcher-radius, 50%);
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--onbrand-on-accent, #fff);
+  background: var(--onbrand-accent, #3d5a3d);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.onbrand-chat-launcher:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+}
+.onbrand-chat-launcher:focus-visible {
+  outline: 3px solid var(--onbrand-accent, #3d5a3d);
+  outline-offset: 3px;
+}
+/* Pill variant: launcher with a text label next to the icon (dashboard "Launcher
+   label"). Height still tracks the launcher-size setting. */
+.onbrand-chat-launcher--pill {
+  width: auto;
+  border-radius: var(--onbrand-launcher-radius, 999px);
+  padding: 0 18px 0 15px;
+  gap: 8px;
+  font-family: var(--onbrand-font, var(--font-body-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif));
+  font-size: 14px;
+  font-weight: 600;
+}
+.onbrand-launcher-text {
+  white-space: nowrap;
+}
+
+.onbrand-teaser {
+  position: fixed;
+  right: var(--onbrand-right, 20px);
+  left: var(--onbrand-left, auto);
+  bottom: var(--onbrand-panel-bottom, 88px);
+  z-index: var(--onbrand-z, 2147483000);
+  width: 260px;
+  max-width: calc(100vw - 40px);
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid #e6e6e2;
+  border-radius: 14px;
+  padding: 12px 30px 12px 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  font-family: var(--onbrand-font, var(--font-body-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif));
+  font-size: 13.5px;
+  line-height: 1.4;
+  animation: onbrand-teaser-in 0.3s ease;
+}
+.onbrand-teaser-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: 0;
+  font-size: 16px;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+}
+.onbrand-teaser-apply {
+  margin-top: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+@keyframes onbrand-teaser-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.onbrand-chat-panel {
+  position: fixed;
+  right: var(--onbrand-right, 20px);
+  left: var(--onbrand-left, auto);
+  bottom: var(--onbrand-panel-bottom, 88px);
+  z-index: var(--onbrand-z, 2147483000);
+  box-sizing: border-box;
+  width: var(--onbrand-width, 380px);
+  max-width: calc(100vw - 32px);
+  height: var(--onbrand-height, 600px);
+  max-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #1a1a1a;
+  overflow: hidden;
+  border: var(--onbrand-border-width, 0px) solid var(--onbrand-border-color, transparent);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+  border-radius: var(--onbrand-radius, 16px);
+  font-family: var(--onbrand-font, var(--font-body-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif));
+  font-size: var(--onbrand-font-size, 14px);
+  line-height: 1.45;
+}
+/* Must beat `.onbrand-chat-panel { display: flex }` so `panel.hidden = true`
+   actually hides the panel (author `display` overrides the UA [hidden] rule). */
+.onbrand-chat-panel[hidden] {
+  display: none;
+}
+
+.onbrand-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+}
+.onbrand-chat-headline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.onbrand-chat-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.25);
+}
+.onbrand-chat-title {
+  font-weight: 600;
+  font-size: 15px;
+  font-family: var(--font-heading-family, inherit);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.onbrand-chat-close {
+  background: transparent;
+  border: 0;
+  color: var(--onbrand-on-accent, #fff);
+  cursor: pointer;
+  padding: 4px;
+  line-height: 0;
+  border-radius: 6px;
+}
+.onbrand-chat-close:focus-visible {
+  outline: 2px solid var(--onbrand-on-accent, #fff);
+  outline-offset: 2px;
+}
+
+.onbrand-chat-messages {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: var(--onbrand-pad, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f7f7f5;
+}
+/* Host themes (Dawn and others) ship `div:empty { display: none }`, which collapses the
+   messages area to 0 height BEFORE the first message loads — shoving the footer up under the
+   header until content arrives (a visible "jump"). Keep it laid out while empty. !important
+   because this is a defensive reset against arbitrary host-theme specificity. */
+.onbrand-chat-messages:empty {
+  display: flex !important;
+}
+
+.onbrand-privacy-note {
+  font-size: 11px;
+  color: #6b7280;
+  text-align: center;
+  padding: 1px 8px;
+  line-height: 1.4;
+}
+.onbrand-dark .onbrand-privacy-note {
+  color: #9b9d98;
+}
+/* Pinned recording disclosure between messages and the input — stays visible
+   even when a long history scrolls the top of the chat away.
+
+   It is a DISCLOSURE, not decoration: if a shopper can't read it, it hasn't been
+   made. It is also the only panel text with no bubble of its own, so on a
+   translucent panel it composites straight onto whatever the storefront renders
+   behind. The glass rules further down give it a backing that makes contrast
+   deterministic; this colour clears 4.5:1 against the darkest surface that
+   backing can produce (5.0:1 worst case, 6.0:1 on white). */
+.onbrand-privacy-bar {
+  flex: 0 0 auto;
+  font-size: 11px;
+  color: #5d6470;
+  text-align: center;
+  padding: 5px 12px 4px;
+  line-height: 1.4;
+}
+.onbrand-privacy-bar[hidden] {
+  display: none;
+}
+.onbrand-dark .onbrand-privacy-bar {
+  color: #9b9d98;
+}
+.onbrand-msg {
+  display: flex;
+}
+.onbrand-msg--user {
+  justify-content: flex-end;
+}
+.onbrand-msg--bot {
+  justify-content: flex-start;
+}
+.onbrand-bubble {
+  max-width: 80%;
+  padding: 10px 13px;
+  border-radius: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.onbrand-msg--user .onbrand-bubble {
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  border-bottom-right-radius: 4px;
+}
+.onbrand-msg--bot .onbrand-bubble {
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid #e6e6e2;
+  border-bottom-left-radius: 4px;
+}
+.onbrand-bubble--error {
+  background: #fdecec;
+  border-color: #f3c2c2;
+  color: #8a1f1f;
+}
+
+/* rendered markdown inside assistant bubbles */
+.onbrand-md-p {
+  margin: 0 0 8px;
+}
+.onbrand-md-p:last-child {
+  margin-bottom: 0;
+}
+.onbrand-md-list {
+  margin: 4px 0 8px;
+  padding-left: 20px;
+}
+.onbrand-md-list li {
+  margin: 2px 0;
+}
+.onbrand-md-link {
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  font-weight: 600;
+  text-decoration: underline;
+}
+.onbrand-md-code {
+  background: #f0f0ee;
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+}
+
+.onbrand-safety {
+  font-size: 12.5px;
+  color: #555;
+  background: #fff7e6;
+  border: 1px solid #f0dca8;
+  border-radius: 10px;
+  padding: 8px 11px;
+}
+
+/* Horizontal carousel: full-width row that shows ~2.5 cards so the half-card peek
+   signals there's more to swipe. Scrolls horizontally; the message area still owns
+   vertical scroll. */
+.onbrand-cards {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 2px 0 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #cfcfca transparent;
+  /* This row lives inside the flex-column message area; giving it overflow drops its
+     min-height to 0, so without this the column shrinks it to just the cards' top edge.
+     flex-shrink:0 keeps its full height and lets the message area scroll instead. */
+  flex: 0 0 auto;
+}
+.onbrand-cards::-webkit-scrollbar {
+  height: 6px;
+}
+.onbrand-cards::-webkit-scrollbar-thumb {
+  background: #cfcfca;
+  border-radius: 3px;
+}
+.onbrand-card {
+  /* 2.5 cards + 2 gaps = 100% of the row width */
+  flex: 0 0 calc(40% - 8px);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e6e6e2;
+  border-radius: 12px;
+  padding: 8px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.onbrand-card:hover {
+  border-color: var(--onbrand-accent, #3d5a3d);
+  transform: translateY(-2px);
+}
+.onbrand-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.onbrand-card-link:focus-visible {
+  outline: 2px solid var(--onbrand-accent, #3d5a3d);
+  outline-offset: 2px;
+}
+.onbrand-card-add {
+  margin-top: 8px;
+  border: 1px solid var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  background: transparent;
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  border-radius: 8px;
+  padding: 6px 8px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.onbrand-card-add:hover {
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+}
+.onbrand-card-add:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+/* Subscribe & save — filled accent so it reads as distinct from the outline "Add to cart".
+   Two-line label ("Subscribe &" / "Save 15%") — tight line-height keeps it compact. */
+.onbrand-card-sub {
+  margin-top: 6px;
+  border: 1px solid var(--onbrand-accent, #3d5a3d);
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  border-radius: 8px;
+  padding: 5px 8px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.onbrand-card-sub:hover {
+  opacity: 0.9;
+}
+.onbrand-card-sub:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+.onbrand-toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  background: #eef5ea;
+  border: 1px solid #cfe3c4;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+.onbrand-toast-link {
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.onbrand-capture {
+  background: #fff;
+  border: 1px solid #e6e6e2;
+  border-radius: 12px;
+  padding: 12px;
+}
+.onbrand-capture-title {
+  font-weight: 600;
+  font-size: 13.5px;
+  margin-bottom: 8px;
+}
+.onbrand-capture-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.onbrand-capture-input {
+  border: 1px solid #d8d8d4;
+  border-radius: 8px;
+  padding: 9px 11px;
+  font: inherit;
+  color: #1a1a1a;
+}
+.onbrand-capture-input:focus-visible {
+  outline: 2px solid var(--onbrand-accent, #3d5a3d);
+  outline-offset: 1px;
+}
+.onbrand-capture-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+}
+.onbrand-capture-consent input {
+  margin-top: 2px;
+  flex: 0 0 auto;
+}
+.onbrand-capture-privacy {
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  font-weight: 600;
+}
+/* SMS disclosure: legally-required fine print — smaller, muted, set off from the
+   email opt-in with a top divider so the two consents read as distinct choices. */
+.onbrand-capture-sms {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.45;
+  margin-top: 2px;
+  padding-top: 8px;
+  border-top: 1px solid #ececec;
+}
+.onbrand-capture-submit {
+  border: 0;
+  border-radius: 8px;
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  padding: 9px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.onbrand-capture-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.onbrand-capture-msg {
+  font-size: 12px;
+  color: #8a1f1f;
+  margin-top: 6px;
+  min-height: 1em;
+}
+.onbrand-capture-done {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+}
+
+.onbrand-discount {
+  background: #eef5ea;
+  border: 1px solid #cfe3c4;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.onbrand-discount-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.onbrand-discount-label {
+  font-size: 12px;
+  color: #555;
+}
+.onbrand-discount-code {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  background: #fff;
+  border: 1px dashed var(--onbrand-accent, #3d5a3d);
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+.onbrand-discount-exp {
+  font-size: 12px;
+  color: #6b7280;
+}
+.onbrand-discount-apply {
+  align-self: flex-start;
+  border: 0;
+  border-radius: 8px;
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  padding: 8px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.onbrand-login {
+  background: #eef5ea;
+  border: 1px solid #cfe3c4;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.onbrand-login-text {
+  font-size: 13px;
+  color: #555;
+}
+.onbrand-login-btn {
+  margin-left: auto;
+  border: 0;
+  border-radius: 8px;
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  padding: 8px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.onbrand-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 2px 0 4px;
+}
+/* Quick-reply chips the assistant offers after a turn — same look as the greeting
+   prompts, with a little separation from the message/cards above. */
+.onbrand-followups {
+  margin-top: 4px;
+}
+.onbrand-prompt {
+  border: 1px solid var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  background: #fff;
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  border-radius: 16px;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.onbrand-prompt:hover {
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+}
+.onbrand-prompt:focus-visible {
+  outline: 2px solid var(--onbrand-accent, #3d5a3d);
+  outline-offset: 2px;
+}
+
+.onbrand-feedback {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: -4px 0 2px 2px;
+}
+.onbrand-fb {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 6px;
+  opacity: 0.55;
+}
+.onbrand-fb:hover {
+  opacity: 1;
+}
+.onbrand-fb:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+.onbrand-fb:focus-visible {
+  outline: 2px solid var(--onbrand-accent, #3d5a3d);
+  outline-offset: 1px;
+}
+.onbrand-fb-thanks {
+  font-size: 11.5px;
+  color: #777;
+  margin-left: 4px;
+}
+
+.onbrand-action {
+  background: #fff;
+  border: 1px solid #e6e6e2;
+  border-radius: 12px;
+  padding: 12px;
+}
+.onbrand-action-title {
+  font-weight: 600;
+  font-size: 13.5px;
+}
+.onbrand-action-summary {
+  font-size: 13px;
+  color: #444;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.onbrand-action-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.onbrand-action-confirm {
+  border: 0;
+  border-radius: 8px;
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  padding: 8px 16px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.onbrand-action-confirm:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.onbrand-action-cancel {
+  border: 1px solid #d8d8d4;
+  border-radius: 8px;
+  background: #fff;
+  color: #555;
+  padding: 8px 14px;
+  font: inherit;
+  cursor: pointer;
+}
+.onbrand-action-msg {
+  font-size: 12.5px;
+  color: #555;
+  margin-top: 8px;
+  min-height: 1em;
+}
+.onbrand-action-ok {
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  font-weight: 600;
+}
+.onbrand-card-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  background: #f0f0ee;
+}
+.onbrand-card-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  margin-top: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.onbrand-card-price {
+  font-size: 12.5px;
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  margin-top: 2px;
+  font-weight: 600;
+}
+/* Sale layout: struck MSRP then the price charged. Wraps rather than shrinking, since
+   the card is only ~40% of the panel and two long localized currency strings (e.g.
+   "1.234,56 kr") will not sit on one line. */
+.onbrand-card-price--sale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 5px;
+}
+/* Fixed grey, NOT accent-derived: this is a de-emphasised number, so it must not follow
+   the merchant's accent (which the accent-ink vars keep at full contrast by design).
+   #767676 on the card's #fff is 4.54:1 — AA for normal text. */
+.onbrand-card-was {
+  color: #767676;
+  font-weight: 500;
+}
+.onbrand-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.onbrand-card-stars {
+  font-size: 12px;
+  color: #e8a317;
+  margin-top: 3px;
+  letter-spacing: 0.5px;
+}
+.onbrand-card-review {
+  font-size: 11.5px;
+  color: #555;
+  font-style: italic;
+  margin-top: 6px;
+  line-height: 1.35;
+}
+.onbrand-compare {
+  display: flex;
+  gap: 10px;
+  padding: 2px 2px 6px;
+}
+.onbrand-compare-col {
+  flex: 1 1 0;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #e6e6e2;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.onbrand-compare-note {
+  font-size: 11.5px;
+  color: #444;
+  margin-top: 6px;
+  line-height: 1.35;
+}
+
+/* Shipment timeline (WISMO). Vertical rather than a five-across stepper: "Out for
+   delivery" has nowhere to go in a fifth of a 380px panel, and the rail reads the
+   same on a phone. Every value shown comes from the server — no date is derived here. */
+.onbrand-ship {
+  background: #fff;
+  border: 1px solid #e6e6e2;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+}
+/* stalled / exception — a warm border rather than an alarming red: the shipment is
+   late, not lost, and the reply already leads with the apology. */
+.onbrand-ship-alert {
+  border-color: #e0c48c;
+  background: #fdf9f0;
+}
+.onbrand-ship-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.onbrand-ship-state {
+  font-weight: 600;
+}
+.onbrand-ship-order {
+  color: #777;
+  font-size: 11.5px;
+  flex: none;
+}
+.onbrand-ship-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.onbrand-ship-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 20px;
+  min-height: 28px;
+  color: #8a8a86;
+}
+.onbrand-ship-step.is-done {
+  color: #1f2320;
+}
+.onbrand-ship-dot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #dcdcd8;
+}
+.onbrand-ship-step.is-done .onbrand-ship-dot {
+  background: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+}
+.onbrand-ship-step.is-current .onbrand-ship-dot {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+/* The rail, in two halves per row: ::before runs from the row top down to its dot,
+   ::after from the dot to the row bottom. Splitting it is what lets the filled part
+   stop exactly at the current dot instead of running on to the next one. */
+.onbrand-ship-step:not(:first-child)::before,
+.onbrand-ship-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  width: 2px;
+  background: #e6e6e2;
+}
+.onbrand-ship-step:not(:first-child)::before {
+  top: 0;
+  bottom: 50%;
+}
+.onbrand-ship-step:not(:last-child)::after {
+  top: 50%;
+  bottom: 0;
+}
+.onbrand-ship-step.is-done:not(:first-child)::before,
+.onbrand-ship-step.is-done:not(.is-current):not(:last-child)::after {
+  background: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+}
+.onbrand-ship-label {
+  flex: 1 1 auto;
+}
+.onbrand-ship-when {
+  font-size: 11.5px;
+  color: #777;
+  flex: none;
+}
+.onbrand-ship-eta,
+.onbrand-ship-carrier {
+  font-size: 11.5px;
+  color: #555;
+  margin-top: 8px;
+}
+.onbrand-ship-carrier {
+  margin-top: 2px;
+}
+.onbrand-ship-track {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+}
+
+.onbrand-handoff {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid #e6e6e2;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.onbrand-handoff-link,
+.onbrand-consent-link {
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  font-weight: 600;
+}
+
+/* Quiet system line for live-chat status ("Connecting you to the team…"). */
+.onbrand-notice {
+  align-self: center;
+  max-width: 90%;
+  margin: 6px auto;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f2f2ef;
+  color: #666;
+  font-size: 12.5px;
+  text-align: center;
+}
+
+.onbrand-notice-action {
+  margin-left: 8px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Inline "reply by email instead" form on the wait-state notice. The pill has a
+   fixed radius, so the form gets its own row rather than stretching it. */
+.onbrand-notice-form {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+.onbrand-notice-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 5px 9px;
+  border: 1px solid #d8d8d2;
+  border-radius: 999px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-size: 12.5px;
+}
+.onbrand-notice-submit {
+  flex: 0 0 auto;
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* A reply typed by a human agent, distinguished from the assistant's own. */
+.onbrand-agent-name {
+  margin: 0 0 3px 2px;
+  color: #777;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.onbrand-msg--agent .onbrand-bubble {
+  border-left: 2px solid var(--onbrand-accent, #3d5a3d);
+  white-space: pre-wrap;
+}
+
+.onbrand-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 2px;
+  color: #777;
+  font-size: 12.5px;
+}
+.onbrand-status-text {
+  margin-left: 6px;
+}
+.onbrand-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #bbb;
+  display: inline-block;
+  animation: onbrand-bounce 1.2s infinite ease-in-out;
+}
+.onbrand-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.onbrand-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes onbrand-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.5; }
+  40% { transform: translateY(-4px); opacity: 1; }
+}
+
+.onbrand-chat-footer {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #ececea;
+  background: #fff;
+}
+.onbrand-chat-input {
+  flex: 1 1 auto;
+  border: 1px solid #d8d8d4;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  color: #1a1a1a;
+}
+.onbrand-chat-input:focus-visible {
+  outline: 2px solid var(--onbrand-accent, #3d5a3d);
+  outline-offset: 1px;
+}
+.onbrand-chat-send {
+  flex: 0 0 auto;
+  width: 42px;
+  border: 0;
+  border-radius: var(--onbrand-btn-radius, 10px);
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.onbrand-chat-send:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.onbrand-mic {
+  flex: 0 0 auto;
+  width: 42px;
+  border: 1px solid #d8d8d4;
+  border-radius: var(--onbrand-btn-radius, 10px);
+  background: #fff;
+  color: var(--onbrand-accent-ink, var(--onbrand-accent, #3d5a3d));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.onbrand-mic:hover {
+  border-color: var(--onbrand-accent, #3d5a3d);
+}
+.onbrand-mic:focus-visible {
+  outline: 2px solid var(--onbrand-accent, #3d5a3d);
+  outline-offset: 1px;
+}
+.onbrand-mic:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.onbrand-mic--recording {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+  /* Live mic-input glow: the ring spread tracks --onbrand-level (0..1), which
+     the widget updates from the captured audio RMS. A small base ring is always
+     visible so it reads as "live" even in silence. */
+  box-shadow: 0 0 0 calc(2px + var(--onbrand-level, 0) * 11px) rgba(192, 57, 43, 0.35);
+  transition: box-shadow 90ms ease-out;
+}
+
+.onbrand-chat-consent {
+  padding: 12px 16px;
+  background: #f7f7f5;
+  border-top: 1px solid #ececea;
+  font-size: 13px;
+}
+.onbrand-chat-consent-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+.onbrand-chat-consent-accept {
+  border: 0;
+  border-radius: 8px;
+  background: var(--onbrand-accent, #3d5a3d);
+  color: var(--onbrand-on-accent, #fff);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+/* Custom uploaded icons (data: URIs from the dashboard) */
+.onbrand-launcher-imgicon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+.onbrand-btn-imgicon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---- dark panel theme ----
+   Set from the dashboard (Panel theme: dark, or auto + shopper prefers dark).
+   The widget JS adds .onbrand-dark to the panel and teaser roots, and swaps
+   --onbrand-accent-ink for a lightened accent so accent-as-text stays readable
+   on dark surfaces. Additive overrides only — light mode is untouched. */
+.onbrand-chat-panel.onbrand-dark {
+  background: #1d1f1e;
+  color: #eceeeb;
+}
+.onbrand-teaser.onbrand-dark {
+  background: #1d1f1e;
+  color: #eceeeb;
+  border-color: #3a3d3a;
+}
+.onbrand-dark .onbrand-teaser-close {
+  color: #9b9d98;
+}
+.onbrand-dark .onbrand-chat-messages {
+  background: #151716;
+}
+.onbrand-dark .onbrand-msg--bot .onbrand-bubble {
+  background: #242625;
+  color: #eceeeb;
+  border-color: #3a3d3a;
+}
+.onbrand-dark .onbrand-bubble--error {
+  background: #3a2222;
+  border-color: #5c3232;
+  color: #f0b6b6;
+}
+.onbrand-dark .onbrand-safety {
+  background: #2c2616;
+  border-color: #4a3f1e;
+  color: #cfc5ad;
+}
+.onbrand-dark .onbrand-md-code {
+  background: #2c2e2d;
+}
+.onbrand-dark .onbrand-card,
+.onbrand-dark .onbrand-compare-col {
+  background: #242625;
+  border-color: #3a3d3a;
+}
+.onbrand-dark .onbrand-card-img {
+  background: #2c2e2d;
+}
+.onbrand-dark .onbrand-card-review,
+.onbrand-dark .onbrand-compare-note {
+  color: #b5b7b2;
+}
+/* The light-mode #767676 is 3.35:1 on the dark card (#242625) — an AA failure. Reuse the
+   same de-emphasised grey the dark card already uses for review text: 7.5:1. */
+.onbrand-dark .onbrand-card-was {
+  color: #b5b7b2;
+}
+.onbrand-dark .onbrand-ship {
+  background: #242625;
+  border-color: #3a3d3a;
+}
+.onbrand-dark .onbrand-ship-alert {
+  background: #2c2616;
+  border-color: #4a3f1e;
+}
+.onbrand-dark .onbrand-ship-step {
+  color: #8d908b;
+}
+.onbrand-dark .onbrand-ship-step.is-done {
+  color: #e8eae7;
+}
+.onbrand-dark .onbrand-ship-dot,
+.onbrand-dark .onbrand-ship-step:not(:first-child)::before,
+.onbrand-dark .onbrand-ship-step:not(:last-child)::after {
+  background: #3a3d3a;
+}
+.onbrand-dark .onbrand-ship-step.is-done .onbrand-ship-dot,
+.onbrand-dark .onbrand-ship-step.is-done:not(:first-child)::before,
+.onbrand-dark .onbrand-ship-step.is-done:not(.is-current):not(:last-child)::after {
+  background: var(--onbrand-accent-ink, var(--onbrand-accent, #8fae8f));
+}
+.onbrand-dark .onbrand-ship-step.is-current .onbrand-ship-dot {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+.onbrand-dark .onbrand-ship-order,
+.onbrand-dark .onbrand-ship-when,
+.onbrand-dark .onbrand-ship-eta,
+.onbrand-dark .onbrand-ship-carrier {
+  color: #b5b7b2;
+}
+.onbrand-dark .onbrand-prompt {
+  background: #242625;
+}
+.onbrand-dark .onbrand-capture,
+.onbrand-dark .onbrand-action,
+.onbrand-dark .onbrand-handoff {
+  background: #242625;
+  border-color: #3a3d3a;
+}
+.onbrand-dark .onbrand-notice {
+  background: #242625;
+  color: #b5b7b2;
+}
+.onbrand-dark .onbrand-agent-name {
+  color: #b5b7b2;
+}
+.onbrand-dark .onbrand-notice-input {
+  background: #1d1f1e;
+  border-color: #474a46;
+  color: #eceeeb;
+}
+.onbrand-dark .onbrand-capture-input {
+  background: #1d1f1e;
+  border-color: #474a46;
+  color: #eceeeb;
+}
+.onbrand-dark .onbrand-capture-consent,
+.onbrand-dark .onbrand-login-text,
+.onbrand-dark .onbrand-discount-label,
+.onbrand-dark .onbrand-action-summary,
+.onbrand-dark .onbrand-action-msg {
+  color: #b5b7b2;
+}
+.onbrand-dark .onbrand-capture-sms {
+  color: #9b9d98;
+  border-top-color: #3a3d3a;
+}
+.onbrand-dark .onbrand-capture-msg {
+  color: #e89b9b;
+}
+.onbrand-dark .onbrand-discount,
+.onbrand-dark .onbrand-login,
+.onbrand-dark .onbrand-toast {
+  background: #1e2a1c;
+  border-color: #35492f;
+}
+.onbrand-dark .onbrand-discount-code {
+  background: #242625;
+  color: #eceeeb;
+}
+.onbrand-dark .onbrand-discount-exp {
+  color: #9b9d98;
+}
+.onbrand-dark .onbrand-chat-footer {
+  background: #1d1f1e;
+  border-top-color: #333633;
+}
+.onbrand-dark .onbrand-chat-input {
+  background: #242625;
+  border-color: #474a46;
+  color: #eceeeb;
+}
+.onbrand-dark .onbrand-mic {
+  background: #242625;
+  border-color: #474a46;
+}
+.onbrand-dark .onbrand-action-cancel {
+  background: #242625;
+  border-color: #474a46;
+  color: #b5b7b2;
+}
+.onbrand-dark .onbrand-status {
+  color: #9b9d98;
+}
+.onbrand-dark .onbrand-dot {
+  background: #6b6e6a;
+}
+.onbrand-dark .onbrand-fb-thanks {
+  color: #9b9d98;
+}
+.onbrand-dark .onbrand-chat-consent {
+  background: #151716;
+  border-top-color: #333633;
+}
+
+
+/* ---- frosted glass panel style (dashboard "Panel style") ----
+   Translucent surfaces + backdrop blur; falls back to solid where unsupported. */
+.onbrand-chat-panel.onbrand-glass {
+  background: rgba(255, 255, 255, var(--onbrand-glass-a, 0.72));
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+}
+.onbrand-glass .onbrand-chat-messages {
+  background: rgba(247, 247, 245, calc(var(--onbrand-glass-a, 0.72) * 0.62));
+}
+.onbrand-glass .onbrand-chat-footer {
+  background: rgba(255, 255, 255, calc(var(--onbrand-glass-a, 0.72) * 0.76));
+}
+/* Deliberately a FIXED alpha, not derived from --onbrand-glass-a like its
+   neighbours: every other surface here may fade with the merchant's glass setting
+   because the text on it sits in a bubble, but the disclosure has nothing behind
+   it. At the lowest opacity the dashboard slider offers (30%) it measured 1.75:1
+   over a mid-tone hero — invisible. 0.92 still reads as part of the panel next to
+   the footer while pinning the worst case over ANY backdrop at 5.0:1. */
+.onbrand-glass .onbrand-privacy-bar {
+  background: rgba(255, 255, 255, 0.92);
+}
+.onbrand-glass .onbrand-msg--bot .onbrand-bubble {
+  background: rgba(255, 255, 255, 0.82);
+}
+.onbrand-glass .onbrand-prompt {
+  background: rgba(255, 255, 255, 0.75);
+}
+.onbrand-teaser.onbrand-glass {
+  background: rgba(255, 255, 255, var(--onbrand-glass-a, 0.78));
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+}
+.onbrand-chat-panel.onbrand-glass.onbrand-dark {
+  background: rgba(24, 26, 25, var(--onbrand-glass-a, 0.74));
+}
+.onbrand-glass.onbrand-dark .onbrand-chat-messages,
+.onbrand-dark.onbrand-glass .onbrand-chat-messages {
+  background: rgba(18, 20, 19, calc(var(--onbrand-glass-a, 0.74) * 0.55));
+}
+.onbrand-glass.onbrand-dark .onbrand-chat-footer,
+.onbrand-dark.onbrand-glass .onbrand-chat-footer {
+  background: rgba(24, 26, 25, calc(var(--onbrand-glass-a, 0.74) * 0.76));
+}
+/* Dark mirror of the light rule above. The dark text colour (#9b9d98) needs no
+   change once this backing exists — it clears 5.1:1 against the lightest surface
+   0.92 can produce — but without it the same disclosure sat at 1.4:1. */
+.onbrand-glass.onbrand-dark .onbrand-privacy-bar,
+.onbrand-dark.onbrand-glass .onbrand-privacy-bar {
+  background: rgba(24, 26, 25, 0.92);
+}
+.onbrand-glass.onbrand-dark .onbrand-msg--bot .onbrand-bubble,
+.onbrand-dark.onbrand-glass .onbrand-msg--bot .onbrand-bubble {
+  background: rgba(36, 38, 37, 0.85);
+}
+.onbrand-teaser.onbrand-glass.onbrand-dark {
+  background: rgba(24, 26, 25, var(--onbrand-glass-a, 0.78));
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .onbrand-chat-panel.onbrand-glass { background: #fff; }
+  .onbrand-teaser.onbrand-glass { background: #fff; }
+  .onbrand-chat-panel.onbrand-glass.onbrand-dark { background: #1d1f1e; }
+  .onbrand-teaser.onbrand-glass.onbrand-dark { background: #1d1f1e; }
+}
+
+/* ---- animation preferences (dashboard "Animations") ----
+   Default keeps today's behavior; "smooth"/"lively" add open/message motion;
+   "off" removes even the defaults. Reduced-motion always wins (see below). */
+@keyframes onbrand-panel-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes onbrand-msg-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes onbrand-launcher-pulse {
+  0%, 84%, 100% { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22); transform: none; }
+  90% { box-shadow: 0 6px 26px rgba(0, 0, 0, 0.3); transform: scale(1.05); }
+}
+.onbrand-chat-panel.onbrand-anim-smooth {
+  animation: onbrand-panel-in 0.24s ease-out;
+}
+.onbrand-chat-panel.onbrand-anim-lively {
+  animation: onbrand-panel-in 0.34s cubic-bezier(0.33, 1.35, 0.45, 1);
+}
+.onbrand-anim-smooth .onbrand-msg,
+.onbrand-anim-lively .onbrand-msg {
+  animation: onbrand-msg-in 0.18s ease-out;
+}
+.onbrand-chat-launcher.onbrand-anim-lively {
+  animation: onbrand-launcher-pulse 6s ease-in-out 3s infinite;
+}
+.onbrand-anim-off,
+.onbrand-anim-off * {
+  animation: none !important;
+  transition: none !important;
+}
+
+@media (max-width: 480px) {
+  .onbrand-chat-panel {
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 85vh;
+    max-height: 85vh;
+    border-radius: 16px 16px 0 0;
+  }
+  .onbrand-chat-launcher {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onbrand-chat-launcher,
+  .onbrand-card,
+  .onbrand-card-add,
+  .onbrand-card-sub,
+  .onbrand-prompt {
+    transition: none;
+  }
+  .onbrand-dot,
+  .onbrand-mic--recording,
+  .onbrand-chat-panel.onbrand-anim-smooth,
+  .onbrand-chat-panel.onbrand-anim-lively,
+  .onbrand-anim-smooth .onbrand-msg,
+  .onbrand-anim-lively .onbrand-msg,
+  .onbrand-chat-launcher.onbrand-anim-lively {
+    animation: none;
+  }
+  /* Freeze the mic glow at a static ring — no level-reactive motion. */
+  .onbrand-mic--recording {
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.35);
+    transition: none;
+  }
+  .onbrand-teaser {
+    animation: none;
+  }
+}
