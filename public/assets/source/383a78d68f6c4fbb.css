@@ -1,0 +1,107 @@
+#kc-discount-banner {
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 360px;
+  width: auto;
+  padding: 1rem 1.15rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--kc-banner-font, Helvetica, Arial, sans-serif);
+  font-size: var(--kc-banner-font-size, 0.9375rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--kc-banner-color, #ebebeb);
+  background: var(--kc-banner-bg, #242424);
+  border: none;
+}
+#kc-discount-banner[data-position="top"] {
+  top: 1.25rem;
+  bottom: auto;
+}
+#kc-discount-banner[data-position="bottom"] {
+  bottom: 1.5rem;
+  top: auto;
+}
+#kc-discount-banner[data-visible="true"] {
+  display: flex;
+}
+#kc-discount-banner[data-visible="true"][data-animate="true"][data-position="bottom"] {
+  animation: kc-slide-from-bottom 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#kc-discount-banner[data-visible="true"][data-animate="true"][data-position="top"] {
+  animation: kc-slide-from-top 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#kc-discount-banner .kc-banner-text {
+  flex: 1;
+}
+#kc-discount-banner .kc-banner-text strong {
+  font-weight: 600;
+  color: #fff;
+}
+#kc-discount-banner .kc-banner-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  color: inherit;
+  opacity: 0.4;
+  flex-shrink: 0;
+  line-height: 1;
+  transition: opacity 0.15s;
+}
+#kc-discount-banner .kc-banner-close:hover {
+  opacity: 0.8;
+}
+#kc-discount-banner[data-hiding="true"][data-animate="true"][data-position="bottom"] {
+  animation: kc-slide-out-bottom 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+#kc-discount-banner[data-hiding="true"][data-animate="true"][data-position="top"] {
+  animation: kc-slide-out-top 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+#kc-discount-banner[data-hiding="true"][data-animate="false"] {
+  animation: kc-fade-out 0.15s ease-out forwards;
+}
+@keyframes kc-slide-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+@keyframes kc-slide-from-top {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+@keyframes kc-slide-out-bottom {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+}
+@keyframes kc-slide-out-top {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px);
+  }
+}
+@keyframes kc-fade-out {
+  to {
+    opacity: 0;
+  }
+}

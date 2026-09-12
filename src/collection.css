@@ -1,0 +1,603 @@
+.j-page-collection .jc-card{position:relative;display:flex;flex-direction:column;height:100%;overflow:hidden;background:var(--jc-card-bg, rgb(var(--color-background)));border:var(--jc-card-border-width, 1px) solid var(--jc-card-border-color, rgba(var(--color-foreground), .08));border-radius:var(--jc-card-radius, 16px);transition:transform var(--duration-default) var(--ease-out-slow)}@media(hover:hover){.j-page-collection .jc-card:hover{transform:translate3d(0,-4px,0)}}@media(prefers-reduced-motion:reduce){.j-page-collection .jc-card{transition:none}.j-page-collection .jc-card:hover{transform:none}}.j-page-collection .jc-card__media{position:relative;aspect-ratio:var(--jc-card-ratio, 1);padding:var(--jc-card-media-padding, 0px);background:var(--jc-card-media-bg, transparent)}.j-page-collection .jc-card__img{display:block;width:100%;height:100%;object-fit:contain}.j-page-collection .jc-card__img--secondary{position:absolute;inset:var(--jc-card-media-padding, 0px);width:auto;height:auto;opacity:0;transition:opacity var(--duration-default) var(--ease-out-slow)}@media(hover:hover){.j-page-collection .jc-card--has-hover-media:hover .jc-card__img--secondary{opacity:1}}.j-page-collection .jc-card__badge{position:absolute;bottom:1.2rem;left:1.2rem;z-index:2;padding:.4rem 1rem;border-radius:var(--badge-corner-radius, 4rem);background:rgb(var(--color-badge-background));color:rgb(var(--color-badge-foreground));font-family:var(--font-body-family);font-size:1.2rem;line-height:1.4;letter-spacing:.04em;text-transform:uppercase}.j-page-collection .jc-card__body{display:flex;flex:1 1 auto;flex-direction:column;gap:8px;padding:var(--jc-card-padding, 24px)}.j-page-collection .jc-card__vendor{color:var(--jc-card-text-color, rgb(var(--color-foreground)));margin:0}.j-page-collection .jc-card__rating{display:flex;align-items:center;gap:6px}.j-page-collection .jc-card__rating .rating,.j-page-collection .jc-card__rating .rating-count{margin:0}.j-page-collection .jc-card .loox-rating:empty{display:none}.j-page-collection .jc-card__price{margin:0}.j-page-collection .jc-card__price .price-item{font-family:var(--font-body-family);font-weight:400;line-height:1.3;letter-spacing:0}.j-page-collection .jc-card .jc-card__price.price .price-item--sale,.j-page-collection .jc-card .jc-card__price.price .price__regular .price-item--regular{color:var(--jc-card-price-color, rgb(var(--color-foreground)));font-size:var(--jc-card-price-size, 20px)}.j-page-collection .jc-card .jc-card__price.price s.price-item--regular{color:var(--jc-card-compare-price-color, rgb(var(--color-foreground)));font-size:var(--jc-card-compare-price-size, 20px);opacity:1}.j-page-collection .jc-card__title{margin:0;padding:8px 0 0;font-family:var(--font-heading-family);font-weight:400;font-size:var(--jc-card-title-size, 32px);line-height:1.2;letter-spacing:0;color:var(--jc-card-title-color, rgb(var(--color-foreground)))}.j-page-collection .jc-card__link{color:inherit;text-decoration:none}.j-page-collection .jc-card__link:after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;z-index:1}.j-page-collection .jc-card__link:focus-visible{outline:.2rem solid rgba(var(--color-foreground),.5);outline-offset:.3rem}@supports selector(:has(*)){.j-page-collection .jc-card__link:focus-visible{outline:none}.j-page-collection .jc-card:has(.jc-card__link:focus-visible){outline:.2rem solid rgba(var(--color-foreground),.5);outline-offset:.3rem}}.j-page-collection .jc-card__description,.j-page-collection .jc-card__description .metafield-rich_text_field p{margin:0;font-family:var(--font-body-family);font-weight:400;font-size:15px;line-height:21px;letter-spacing:0;color:var(--jc-card-text-color, rgb(var(--color-foreground)))}.j-page-collection .jc-card--sold-out .jc-card__img--primary{opacity:.6}.j-page-collection .jc-group+.jc-group{margin-top:var(--jc-group-spacing, 56px)}.j-page-collection .jc-group__header{margin:0 0 var(--jc-group-header-spacing, 28px)}.j-page-collection .jc-group__heading{margin:0;font-family:var(--font-heading-family);font-weight:400;font-size:var(--jc-group-heading-size-mobile, 28px);line-height:1.2;letter-spacing:0;color:var(--jc-group-heading-color, rgb(var(--color-foreground)))}.j-page-collection .jc-group__subheading{margin:8px 0 0;font-family:var(--font-body-family);font-weight:400;font-size:var(--jc-group-subheading-size-mobile, 15px);line-height:1.4;letter-spacing:0;color:var(--jc-group-subheading-color, rgb(var(--color-foreground)))}@media screen and (min-width:750px){.j-page-collection .jc-group__heading{font-size:var(--jc-group-heading-size, 40px)}.j-page-collection .jc-group__subheading{font-size:var(--jc-group-subheading-size, 18px)}}@media screen and (max-width:749px){.j-page-collection .jc-card__title{font-size:var(--jc-card-title-size-mobile, 24px)}.j-page-collection .jc-card .jc-card__price.price .price-item--sale,.j-page-collection .jc-card .jc-card__price.price .price__regular .price-item--regular{font-size:var(--jc-card-price-size-mobile, 18px)}.j-page-collection .jc-card .jc-card__price.price s.price-item--regular{font-size:var(--jc-card-compare-price-size-mobile, 18px)}.j-page-collection .jc-card__body{padding:var(--jc-card-padding-mobile, 16px)}}
+/*# sourceMappingURL=/cdn/shop/t/41/assets/component-card-collection.css.map?v=8364252295230439351785344243 */
+
+@media screen and (max-width:749px){.j-page-collection .collection .grid__item:only-child{flex:0 0 100%;max-width:100%}}@media screen and (max-width:989px){.j-page-collection .collection .slider.slider--tablet{margin-bottom:1.5rem}}.j-page-collection .collection .loading-overlay{position:absolute;z-index:1;width:1.8rem}@media screen and (max-width:749px){.j-page-collection .collection .loading-overlay{top:0;right:0}}@media screen and (min-width:750px){.j-page-collection .collection .loading-overlay{left:0}}.j-page-collection .collection .loading-overlay{top:0;right:0;bottom:0;left:0;display:none;width:100%;padding:0 1.5rem;opacity:.7}@media screen and (min-width:750px){.j-page-collection .collection .loading-overlay{padding-left:5rem;padding-right:5rem}}.j-page-collection .collection.loading .loading-overlay{display:block}.j-page-collection .collection--empty .title-wrapper{margin-top:10rem;margin-bottom:15rem}@media screen and (max-width:989px){.j-page-collection .collection .slider--tablet.product-grid{scroll-padding-left:1.5rem}}.j-page-collection .collection__description>*{margin:0}.j-page-collection .collection__title.title-wrapper{margin-bottom:2.5rem}.j-page-collection .collection__title .title:not(:only-child){margin-bottom:1rem}@media screen and (min-width:990px){.j-page-collection .collection__title--desktop-slider .title{margin-bottom:2.5rem}.j-page-collection .collection__title.title-wrapper--self-padded-tablet-down{padding:0 5rem}.j-page-collection .collection slider-component:not(.page-width-desktop){padding:0}.j-page-collection .collection--full-width slider-component:not(.slider-component-desktop){padding:0 1.5rem;max-width:none}}.j-page-collection .collection__view-all a:not(.link){margin-top:1rem}
+/*# sourceMappingURL=/cdn/shop/t/41/assets/template-collection.css.map?v=58558206033505836701778795186 */
+
+.j-page-collection .faq-wrapper{text-align:center}.j-page-collection .faq-columns{display:flex;flex-direction:column;gap:12px;margin:0 auto 30px}@media(min-width:900px){.j-page-collection .faq-columns{flex-direction:row;gap:60px}.j-page-collection .faq-column{width:50%}}.j-page-collection .faq-item{border-bottom:1px solid #d2d2d2}.j-page-collection .faq-question{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;font-size:18px;color:#006e37;gap:40px;cursor:pointer;text-align:left}.j-page-collection .faq-icon svg{width:9px;height:14px;transition:transform .3s ease}.j-page-collection .faq-item.active .faq-icon svg{transform:rotate(180deg)}.j-page-collection .faq-answer{max-height:0;text-align:left;overflow:hidden;font-size:16px;color:#006e37;opacity:0;transition:max-height .35s ease,opacity .3s ease}.j-page-collection .faq-answer p a{color:#006e37}.j-page-collection .faq-item.active .faq-answer{opacity:1}.j-page-collection .faq-show-more{background:none;border:none;color:#006e37;font-size:16px;font-weight:500;text-decoration:none;cursor:pointer;text-transform:uppercase;padding-bottom:2px;border-bottom:1.2px solid #006e37;letter-spacing:0px}.j-page-collection .bg-creme.about-us-faq .section_header{text-align:center}@media(max-width:900px){.j-page-collection .faq-question{font-size:16px;color:#006e37;letter-spacing:0;padding:0;cursor:pointer;text-align:left}.j-page-collection .faq-answer{max-height:0;overflow:hidden;letter-spacing:0;line-height:22px;font-size:14px;color:#006e37;opacity:0;transition:max-height .35s ease,opacity .3s ease}}.j-page-collection .faq-answer p{margin-top:0}.j-page-collection .about-us-faq--tabbed .faq-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 auto 32px;padding:6px;background:#006e370f;border-radius:999px;width:fit-content;max-width:100%}.j-page-collection .about-us-faq--tabbed .faq-tab{-webkit-appearance:none;appearance:none;background:transparent;border:none;padding:10px 20px;border-radius:999px;font-family:var(--font-body-family);font-size:14px;font-weight:500;color:#006e37;cursor:pointer;transition:background-color .2s ease,color .2s ease;white-space:nowrap}.j-page-collection .about-us-faq--tabbed .faq-tab:hover{background:#006e371a}.j-page-collection .about-us-faq--tabbed .faq-tab.is-active{background:#006e37;color:#fdfaf0}.j-page-collection .about-us-faq--tabbed .faq-tab-panel{display:none}.j-page-collection .about-us-faq--tabbed .faq-tab-panel.is-active{display:block}@media(min-width:750px){.j-page-collection .about-us-faq--tabbed .faq-tab{padding:12px 28px;font-size:15px}}
+/*# sourceMappingURL=/cdn/shop/t/41/assets/about-us-faq.css.map?v=116298970982335832541778795036 */
+
+.j-page-collection #section-template--19982205124687__hero_v2_whcwTE .hero-v2__heading--hero_slide_3CtrHf {
+                font-size: 30px;
+              }
+              .j-page-collection #section-template--19982205124687__hero_v2_whcwTE .hero-v2__desc--hero_slide_3CtrHf {
+                font-size: 15px;
+              }
+              .j-page-collection #section-template--19982205124687__hero_v2_whcwTE .hero-v2__cta--hero_slide_3CtrHf {
+                font-size: 16px;
+              }
+              @media screen and (min-width: 1000px) {
+                .j-page-collection #section-template--19982205124687__hero_v2_whcwTE .hero-v2__heading--hero_slide_3CtrHf {
+                  font-size: 56px;
+                }
+                .j-page-collection #section-template--19982205124687__hero_v2_whcwTE .hero-v2__desc--hero_slide_3CtrHf {
+                  font-size: 18px;
+                }
+                .j-page-collection #section-template--19982205124687__hero_v2_whcwTE .hero-v2__cta--hero_slide_3CtrHf {
+                  font-size: 16px;
+                }
+              }
+.j-page-collection #section-template--19982205124687__hero_v2_whcwTE {
+    background-color: var(--hero-v2-bg);
+  }
+
+  .j-page-collection #section-template--19982205124687__hero_v2_whcwTE.hero-v2--radial {
+    background-image: radial-gradient(
+      circle at var(--hero-v2-rx-mobile) var(--hero-v2-ry-mobile),
+      var(--hero-v2-radial-inner) 0%,
+      var(--hero-v2-radial-outer) var(--hero-v2-radial-size)
+    );
+  }
+
+  .j-page-collection .section-template--19982205124687__hero_v2_whcwTE-padding {
+    padding-top: 32px;
+    padding-bottom: 0px;
+  }/* Standard heroes only. The background-image variant deliberately runs its
+       slide flush (.hero-v2--bg-image .hero-v2__slide { padding-bottom: 0 }) so
+       the artwork stays full-bleed, and an id-scoped rule here would outrank
+       that and reintroduce a gap under the image. */
+    .j-page-collection #section-template--19982205124687__hero_v2_whcwTE .hero-v2__slide {
+      padding-bottom: 48px;
+    }@media screen and (min-width: 1000px) {
+    .j-page-collection #section-template--19982205124687__hero_v2_whcwTE.hero-v2--radial {
+      background-image: radial-gradient(
+        circle at var(--hero-v2-rx-desktop) var(--hero-v2-ry-desktop),
+        var(--hero-v2-radial-inner) 0%,
+        var(--hero-v2-radial-outer) var(--hero-v2-radial-size)
+      );
+    }
+
+    .j-page-collection .section-template--19982205124687__hero_v2_whcwTE-padding {
+      padding-top: 48px;
+      padding-bottom: 0px;
+    }.j-page-collection #section-template--19982205124687__hero_v2_whcwTE .hero-v2__slide {
+        padding-bottom: 48px;
+      }}
+/* "Hide hero (for testing)" toggle (section.settings.hidden) adds
+     .hero-v2--hidden. The class is inert without this rule. To reveal it
+     from a testing tool (e.g. a Shoplift variant), apply:
+     .hero-v2--hidden { display: block !important; } */
+  .j-page-collection .hero-v2--hidden {
+    display: none;
+  }
+
+  .j-page-collection .hero-v2 {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .j-page-collection .hero-v2 .page-width {
+    position: relative;
+  }
+
+  .j-page-collection .hero-v2__swiper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .j-page-collection .hero-v2__swiper > .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .j-page-collection .hero-v2__slide {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 48px;
+  }
+
+  .j-page-collection .hero-v2__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .j-page-collection .hero-v2__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    min-width: 0;
+  }
+
+  .j-page-collection .hero-v2__eyebrow {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1;
+    color: rgb(var(--color-foreground));
+    padding-bottom: 6px;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .j-page-collection .hero-v2__eyebrow-text {
+    margin-left: 4px;
+  }
+
+  .j-page-collection .hero-v2__heading {
+    margin: 0;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .j-page-collection .hero-v2__desc {
+    margin: 0;
+    max-width: 540px;
+    line-height: 1.5;
+    opacity: 0.92;
+  }
+
+  .j-page-collection .hero-v2__desc > p {
+    margin: 0;
+  }
+
+  .j-page-collection .hero-v2__desc > p + p {
+    margin-top: 0.6em;
+  }
+
+  .j-page-collection .hero-v2__product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .j-page-collection .hero-v2__product-img {
+    max-width: 240px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .j-page-collection .hero-v2__cta.kbeauty-btn--hero {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    white-space: nowrap;
+    /* 2px margin gives the .btn--outline:before stacked-shadow ring
+       (cream inset + green outer) room to render correctly. Without
+       this, the inset shadow fails to paint visibly even though the
+       computed style says it's there. */
+    margin: 2px;
+  }
+
+  .j-page-collection .hero-v2__media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .j-page-collection .hero-v2__media-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+  }
+
+  .j-page-collection .hero-v2 .hero-v2__pagination {
+    position: relative;
+    margin-top: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 6px;
+    border-radius: 60px;
+    background: #FDFAF0;
+    box-shadow: 0 0 0 1px rgba(0, 110, 55, 0.08);
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .j-page-collection .hero-v2 .hero-v2__pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid #006E37;
+    margin: 0 4px !important;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .j-page-collection .hero-v2 .hero-v2__pagination .swiper-pagination-bullet-active {
+    width: 48px;
+    height: 10px;
+    border-radius: 60px;
+    background: #006E37;
+    border-color: #006E37;
+  }
+
+  /* Below 1000px .hero-v2__main becomes display:contents (see the mobile-order
+     block), so this badge stops being a flex child of a centred column and
+     becomes a direct grid item of .hero-v2__layout's single 1fr track. A grid
+     item stretches by default, which defeats the inline-flex shrink-to-fit and
+     leaves the pill full-width with its text jammed left. justify-self keeps it
+     content-width and centred in that grid context (it is ignored for flex
+     items, so desktop is unaffected); justify-content centres the label if the
+     box is ever stretched anyway.
+
+     Do NOT add align-self here. In .hero-v2__main's flex column, align-self is
+     the HORIZONTAL axis, so any value pins the badge independently of the
+     column's align-items and breaks the bg-image text-left/right variants (the
+     pill centres itself while the heading and CTA stay left). Every container
+     the badge lives in sets align-items explicitly, so letting it inherit is
+     correct in all three bg-image alignments and on mobile. */
+  .j-page-collection .hero-v2__sale-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    max-width: 100%;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .j-page-collection .hero-v2__sale-badge-l1 {
+    font-weight: 700;
+  }
+
+  .j-page-collection .hero-v2__sale-badge-sep {
+    opacity: 0.5;
+    font-weight: 400;
+  }
+
+  .j-page-collection .hero-v2__sale-badge-l2 {
+    font-weight: 500;
+  }
+
+  /* Mobile order: eyebrow, heading, main image, desc, product image, CTA */
+  @media screen and (max-width: 999px) {
+    .j-page-collection .hero-v2__main {
+      display: contents;
+    }
+    .j-page-collection .hero-v2__sale-badge   { order: 0; }
+    .j-page-collection .hero-v2__eyebrow-wrap { order: 1; }
+    .j-page-collection .hero-v2__heading      { order: 2; }
+    .j-page-collection .hero-v2__media        { order: 3; }
+    .j-page-collection .hero-v2__desc         { order: 4; }
+    .j-page-collection .hero-v2__product      { order: 5; }
+    .j-page-collection .hero-v2__cta          { order: 6; }
+  }
+
+  /* Desktop: 2-column, main image on right */
+  @media screen and (min-width: 1000px) {
+    .j-page-collection .hero-v2__layout {
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+    }
+    .j-page-collection .hero-v2__product-img {
+      max-width: 320px;
+    }
+    .j-page-collection .hero-v2__media-img {
+      max-width: 560px;
+    }
+  }
+
+  /* === Full-width background image variant === */
+  .j-page-collection .hero-v2--bg-image {
+    position: relative;
+    overflow: hidden;
+    min-height: min(70vh, 600px);
+    /* Flex column so the content chain can fill the full hero height (see the
+       "fill the hero height" block below) — needed so the CTA position nudge
+       has room and isn't clipped by the Swiper's overflow: hidden. */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* The <picture> element is effectively a source-selector wrapper — apply positioning to the actual <img> so the layout is independent of any UA quirks around picture. */
+  .j-page-collection .hero-v2--bg-image .hero-v2__bg-image {
+    display: contents;
+  }
+
+  .j-page-collection .hero-v2--bg-image .hero-v2__bg-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
+  }
+
+  .j-page-collection .hero-v2--bg-image > .page-width {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* Fill the hero's content box even on mobile, where height:100% alone
+       doesn't resolve against the auto/min-height hero. */
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  /* "Full-width content" toggle: the background image is full-bleed, but content
+     normally lives inside Dawn's page-width (capped + centered), so on screens
+     wider than the page-width the column/alignment controls stop tracking the
+     image. This makes the content box span the full image width so overlay
+     position controls (columns, button alignment) align with the artwork.
+     Side padding is kept so content doesn't touch the screen edges. */
+  .j-page-collection .hero-v2--bg-image.hero-v2--bg-fullwidth > .page-width {
+    max-width: 100%;
+  }
+
+  /* Fill the hero height down the content chain so the CTA nudge has room and
+     isn't clipped by the Swiper's overflow: hidden. Verified pixel-identical
+     to the previous layout at offset 0 (default heroes don't move) — this only
+     adds headroom below the content for the button to nudge into. */
+  .j-page-collection .hero-v2--bg-image .hero-v2__swiper {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .j-page-collection .hero-v2--bg-image .swiper-wrapper {
+    height: 100%;
+  }
+
+  .j-page-collection .hero-v2--bg-image .hero-v2__main {
+    height: 100%;
+  }
+
+  .j-page-collection .hero-v2--bg-image .hero-v2__slide {
+    padding-bottom: 0;
+  }
+
+  .j-page-collection .hero-v2--bg-image .hero-v2__layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    height: 100%;
+  }
+
+  .j-page-collection .hero-v2--bg-image .hero-v2__media,
+  .j-page-collection .hero-v2--bg-image .hero-v2__product {
+    display: none;
+  }
+
+  /* Pagination sits over the image on bg-image variant */
+  .j-page-collection .hero-v2--bg-image .hero-v2__pagination {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    z-index: 2;
+  }
+
+  /* Mobile: undo display:contents so .hero-v2__main becomes a centered column over the image */
+  @media screen and (max-width: 999px) {
+    .j-page-collection .hero-v2--bg-image .hero-v2__main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 18px;
+      max-width: var(--hero-v2-bg-text-max, 540px);
+      margin: 0 auto;
+    }
+    .j-page-collection .hero-v2--bg-image .hero-v2__heading,
+    .j-page-collection .hero-v2--bg-image .hero-v2__desc {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .j-page-collection .hero-v2--bg-image-16x9 {
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+    }
+    .j-page-collection .hero-v2--bg-image-21x9 {
+      aspect-ratio: 21 / 9;
+      min-height: 0;
+    }
+
+    /* Top-anchored content with custom offset (overrides the default vertical centering) */
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-vtop > .page-width {
+      align-items: flex-start;
+      padding-top: var(--hero-v2-bg-top-offset, 0px);
+    }
+
+    .j-page-collection .hero-v2--bg-image .hero-v2__main {
+      max-width: var(--hero-v2-bg-text-max, 540px);
+      /* main now fills the hero height (see fill block above); re-center its
+         content vertically so the default look matches the old centered layout. */
+      justify-content: center;
+    }
+
+    /* "Top with custom offset" keeps content top-anchored; the offset comes from
+       the page-width padding-top rule above. */
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-vtop .hero-v2__main {
+      justify-content: flex-start;
+    }
+
+    /* Desktop: text content lives in the LEFT half so it never sits over right-side product photography */
+    .j-page-collection .hero-v2--bg-image .hero-v2__layout {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-left .hero-v2__main {
+      grid-column: 1 / 2;
+      align-items: flex-start;
+      text-align: left;
+      margin: 0;
+    }
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-left .hero-v2__heading,
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-left .hero-v2__desc {
+      text-align: left;
+    }
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-left .hero-v2__eyebrow {
+      align-self: flex-start;
+    }
+
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-center .hero-v2__layout {
+      grid-template-columns: 1fr;
+    }
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-center .hero-v2__main {
+      align-items: center;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-center .hero-v2__heading,
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-center .hero-v2__desc {
+      text-align: center;
+    }
+
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-right .hero-v2__main {
+      /* last column, for any column count */
+      grid-column: -2 / -1;
+      align-items: flex-end;
+      text-align: right;
+      margin-left: auto;
+    }
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-right .hero-v2__heading,
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-right .hero-v2__desc {
+      text-align: right;
+    }
+    .j-page-collection .hero-v2--bg-image.hero-v2--bg-text-right .hero-v2__eyebrow {
+      align-self: flex-end;
+    }
+  }
+
+  /* === CTA button positioning (background image variant) ===
+     Transform-only nudges: CLS-safe, and independent of the Swiper height
+     chain (the content column sits at the top of the hero, so a downward
+     nudge slides the button into the empty zone at the bottom). A static
+     transform declared here is the button's initial computed value, so it
+     renders in place with no transition animation on the storefront. */
+
+  /* Mobile (and base): vertical nudge only — the button stays centered.
+     Increase to push it down toward the bottom of the hero. */
+  .j-page-collection .hero-v2--bg-image .hero-v2__cta.kbeauty-btn--hero {
+    transform: translateY(var(--hero-v2-btn-y-mobile, 0px));
+  }
+
+  /* Desktop: horizontal + vertical nudge. Positive X moves the button right,
+     toward the product image; positive Y moves it down. */
+  @media screen and (min-width: 1000px) {
+    .j-page-collection .hero-v2--bg-image .hero-v2__cta.kbeauty-btn--hero {
+      transform: translate(var(--hero-v2-btn-x, 0px), var(--hero-v2-btn-y, 0px));
+    }
+  }
+.j-page-collection .section-template--19982205124687__product-grid-padding {
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .j-page-collection .section-template--19982205124687__product-grid-padding {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+  }
+
+  .j-page-collection #shopify-section-template--19982205124687__product-grid {
+    --jc-card-bg: #ffffff;
+    --jc-card-border-color: #efe7d2;
+    --jc-card-border-width: 1px;
+    --jc-card-radius: 16px;
+    --jc-card-padding: 24px;
+    --jc-card-padding-mobile: 16px;
+    --jc-card-media-padding: 0px;
+    --jc-card-title-color: #006e37;
+    --jc-card-title-size: 20px;
+    --jc-card-title-size-mobile: 16px;
+    --jc-card-price-color: #006e37;
+    --jc-card-price-size: 20px;
+    --jc-card-price-size-mobile: 18px;
+    --jc-card-compare-price-color: #006e37;
+    --jc-card-compare-price-size: 20px;
+    --jc-card-compare-price-size-mobile: 18px;
+    --jc-card-text-color: #006e37;
+    --jc-group-spacing: 56px;
+    --jc-group-heading-color: #006e37;
+    --jc-group-heading-size: 40px;
+    --jc-group-heading-size-mobile: 28px;
+    --jc-group-subheading-color: #006e37;
+    --jc-group-subheading-size: 18px;
+    --jc-group-subheading-size-mobile: 15px;
+  }
+ .j-page-collection #shopify-section-template--19982205124687__product-grid .price-item--regular, .j-page-collection #shopify-section-template--19982205124687__product-grid .price-item--last {font-size: 15px;} .j-page-collection #shopify-section-template--19982205124687__product-grid .price-item--regular {margin-right: 5px;} 
+.j-page-collection .faq-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 auto 30px;
+  }
+  @media (min-width: 900px) {
+    .j-page-collection .faq-columns {
+      flex-direction: row;
+      gap: 60px;
+    }
+    .j-page-collection .faq-column {
+      width: 50%;
+    }
+  }
+  .j-page-collection .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+  .j-page-collection .faq-item.active .faq-answer {
+    opacity: 1;
+  }
+  .j-page-collection .about-us-faq--tabbed .faq-tab-panel {
+    display: none;
+  }
+  .j-page-collection .about-us-faq--tabbed .faq-tab-panel.is-active {
+    display: block;
+  }
+
+    .j-page-collection #section-template--19982205124687__about_us_faq_qGN6mM {
+      background: #fdfaf0;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    .j-page-collection #section-template--19982205124687__about_us_faq_qGN6mM .section_header h2 {
+      font-size: 26px;
+    }
+
+    @media (min-width: 750px) {
+      .j-page-collection #section-template--19982205124687__about_us_faq_qGN6mM {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      .j-page-collection #section-template--19982205124687__about_us_faq_qGN6mM .section_header h2 {
+        font-size: 36px;
+      }
+    }
+
+    .j-page-collection .faq-item.is-hidden {
+      display: none;
+    }
+  

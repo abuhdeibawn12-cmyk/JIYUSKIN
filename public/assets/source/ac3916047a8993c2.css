@@ -1,0 +1,4801 @@
+.embeddedIntegrationBlocks-sectionContent-mgbTR {
+  position: relative;
+}
+
+.embeddedIntegrationBlocks-loadingContent-CUvp7 {
+  width: 300px;
+  padding-left: var(--atlas-space-16);
+  box-sizing: border-box;
+}
+
+.embeddedIntegrationBlocks-loadingOverlay-rF71O {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.profile-form-R565z {
+  height: 100%;
+}
+
+.profile-form-tLFXs {
+  height: 100%;
+}
+
+.PhoneNumberInput-wrapper-Xu2nw {
+  display: flex;
+  gap: var(--atlas-space-12);
+}
+
+  .PhoneNumberInput-wrapper-Xu2nw .kl-hub-select {
+    width: unset;
+    max-width: 200px;
+  }
+
+.PhoneNumberInput-nationalNumberInput-pMsnC {
+  flex: 1;
+}
+
+.PhoneNumberInput-countryCodeWrapper-i1e6X {
+  width: 90px;
+}
+
+.InlineToast-wrapper-qKsig {
+  display: flex;
+  align-items: center;
+  gap: var(--atlas-space-8);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: var(--atlas-space-8);
+}
+
+.InlineToast-iconWrapper-ividM {
+  height: 32px;
+  width: 32px;
+  padding: 6px;
+  color: var(--atlas-background-error);
+}
+
+.InlineToast-iconWrapper-ividM * {
+    width: 100%;
+    height: 100%;
+  }
+
+.kl-hub-button,.kl-hub-launcher,.kl-hub-text,.kl-hub-img,.kl-hub-action-card,.kl-hub-card,.kl-hub-checkbox,.kl-hub-checkbox__input,.kl-hub-icon,.kl-hub-icon svg,.kl-hub-icon svg:first-child,.kl-hub-icon svg:last-child,.kl-hub-input,.kl-hub-input-range,.kl-hub-select,.kl-hub-toast,.kl-hub-tab,.kl-hub-drawer,.kl-hub-accordion__button,.kl-hub-list,.kl-hub-list-item,.kl-hub-list-item-button,.kl-hub-unstyled-button{animation:none;animation-delay:0;animation-direction:normal;animation-duration:0;animation-fill-mode:none;animation-iteration-count:1;animation-name:none;animation-play-state:running;animation-timing-function:ease;backface-visibility:visible;background:0;background-attachment:scroll;background-clip:border-box;background-color:rgba(0,0,0,0);background-image:none;background-origin:padding-box;background-position:0 0;background-position-x:0;background-position-y:0;background-repeat:repeat;background-size:auto auto;border:0;border-style:none;border-width:medium;border-color:inherit;border-bottom:0;border-bottom-color:inherit;border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom-style:none;border-bottom-width:medium;border-collapse:separate;border-image:none;border-left:0;border-left-color:inherit;border-left-style:none;border-left-width:medium;border-radius:0;border-right:0;border-right-color:inherit;border-right-style:none;border-right-width:medium;border-spacing:0;border-top:0;border-top-color:inherit;border-top-left-radius:0;border-top-right-radius:0;border-top-style:none;border-top-width:medium;bottom:auto;box-shadow:none;box-sizing:content-box;caption-side:top;clear:none;clip:auto;columns:auto;column-count:auto;column-fill:balance;column-gap:normal;column-rule:medium none currentColor;column-rule-color:currentColor;column-rule-style:none;column-rule-width:none;column-span:1;column-width:auto;content:normal;counter-increment:none;counter-reset:none;direction:ltr;display:block;empty-cells:show;float:none;font:normal;font-family:inherit;font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;height:auto;hyphens:none;left:auto;letter-spacing:normal;line-height:normal;list-style:none;list-style-image:none;list-style-position:outside;list-style-type:disc;margin:0;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0;max-height:none;max-width:none;min-height:0;min-width:0;opacity:1;orphans:0;outline:0;outline-color:invert;outline-style:none;outline-width:medium;padding:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;page-break-after:auto;page-break-before:auto;page-break-inside:auto;perspective:none;perspective-origin:50% 50%;pointer-events:initial;position:static;right:auto;tab-size:8;table-layout:auto;text-align:inherit;text-align-last:auto;text-decoration:none;text-decoration-color:inherit;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-shadow:none;text-transform:none;top:auto;transform:none;transform-style:flat;transition:none;transition-delay:0s;transition-duration:0s;transition-property:none;transition-timing-function:ease;unicode-bidi:normal;vertical-align:baseline;visibility:visible;white-space:normal;widows:0;width:auto;word-spacing:normal;z-index:auto;-webkit-font-smoothing:antialiased}.kl-hub-drawer a:empty,.kl-hub-drawer ul:empty,.kl-hub-drawer dl:empty,.kl-hub-drawer div:empty,.kl-hub-drawer section:empty,.kl-hub-drawer article:empty,.kl-hub-drawer p:empty,.kl-hub-drawer h1:empty,.kl-hub-drawer h2:empty,.kl-hub-drawer h3:empty,.kl-hub-drawer h4:empty,.kl-hub-drawer h5:empty,.kl-hub-drawer h6:empty{display:revert}.kl-hub-drawer :where(section){padding:revert}.kl-hub-drawer :where(img){width:auto;height:auto}
+.routing-routeTransitionContainer-VSPME {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: clip;
+}
+
+.routing-routeTransitionItem-JNAGQ {
+  width: 100%;
+  height: 100%;
+  will-change: transform, opacity;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  background-color: var(--atlas-background-main);
+  /* Use transitions instead of animations - they don't restart on re-render */
+  transition:
+    transform var(--transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1),
+    opacity var(--transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--transition-delay, 0ms);
+}
+
+/* Closed state - component is not visible but stays in DOM for animation */
+.routing-routeTransitionItem-JNAGQ.routing-closed-tcUaE {
+  /* Don't use display: none - it prevents the browser from painting the initial animation state */
+  /* Direction-specific classes will position the element off-screen */
+  pointer-events: none; /* Prevent interaction with closed elements */
+  opacity: 0; /* Hide closed components to prevent blank content showing */
+  /* Remove from tab order and hide from assistive tech so keyboard/screen reader users cannot focus previous page content */
+  visibility: hidden;
+}
+
+/* Opening state - component is entering */
+.routing-routeTransitionItem-JNAGQ.routing-opening-dVvBc {
+  z-index: 1;
+  /* Ensure we start at the animation's initial position */
+  opacity: 1;
+  /* Prevent base transitions from applying during opening */
+  /* Direction-specific classes will add animations only when needed */
+  transition: none !important;
+}
+
+/* Closing state - component is exiting */
+.routing-routeTransitionItem-JNAGQ.routing-closing-E9hmI {
+  opacity: 1;
+  /* Note: z-index and transform are set by direction-specific rules */
+}
+
+/* Opened state - component is fully visible and idle */
+.routing-routeTransitionItem-JNAGQ.routing-opened-_JOlO {
+  z-index: 2;
+  opacity: 1;
+  transform: translateX(
+    0%
+  ); /* Ensure explicit starting position for closing transitions */
+}
+
+/* Slide Left Transitions (tab navigation - moving to the right tab) */
+/* Both pages at same z-index, moving together */
+.routing-routeTransitionSlideLeft-Ysj4Z.routing-opening-dVvBc {
+  z-index: 1; /* Same level as closing page */
+  animation: routing-slideInFromRight-tVyLe var(--transition-duration, 300ms)
+    cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--transition-delay, 0ms);
+}
+
+.routing-routeTransitionSlideLeft-Ysj4Z.routing-closed-tcUaE {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.routing-routeTransitionSlideLeft-Ysj4Z.routing-opened-_JOlO {
+  z-index: 1;
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.routing-routeTransitionSlideLeft-Ysj4Z.routing-closing-E9hmI {
+  z-index: 1; /* Same level as opening page */
+  animation: routing-slideOutToLeft-SvKrC var(--transition-duration, 300ms)
+    cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--transition-delay, 0ms);
+}
+
+/* Slide Right Transitions (tab navigation - moving to the left tab) */
+/* Both pages at same z-index, moving together */
+.routing-routeTransitionSlideRight-SB3CM.routing-opening-dVvBc {
+  z-index: 1; /* Same level as closing page */
+  animation: routing-slideInFromLeft-XeDnc var(--transition-duration, 300ms)
+    cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--transition-delay, 0ms);
+}
+
+.routing-routeTransitionSlideRight-SB3CM.routing-closed-tcUaE {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.routing-routeTransitionSlideRight-SB3CM.routing-opened-_JOlO {
+  z-index: 1;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.routing-routeTransitionSlideRight-SB3CM.routing-closing-E9hmI {
+  z-index: 1; /* Same level as opening page */
+  animation: routing-slideOutToRight-HF0Dk var(--transition-duration, 300ms)
+    cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--transition-delay, 0ms);
+}
+
+/* Slide Over Left Transitions (hierarchical - going deeper) */
+/* Child slides over parent from right, parent stays still */
+.routing-routeTransitionSlideOverLeft-XVisp.routing-opening-dVvBc {
+  z-index: 2 !important; /* Child on top */
+  animation: routing-slideOverFromRight-Z0xU3 var(--transition-duration, 300ms)
+    cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--transition-delay, 0ms);
+}
+
+.routing-routeTransitionSlideOverLeft-XVisp.routing-closed-tcUaE {
+  transform: translateX(0); /* Keep in place when covered by child */
+  opacity: 0;
+  z-index: 0 !important; /* Explicitly underneath */
+  pointer-events: none;
+  transition: none !important; /* No transitions during state change */
+  animation: none !important;
+}
+
+.routing-routeTransitionSlideOverLeft-XVisp.routing-opened-_JOlO {
+  z-index: 2 !important;
+  transform: translateX(0);
+  opacity: 1;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  transition: none !important; /* No transition when child is fully opened */
+  animation: none !important;
+}
+
+.routing-routeTransitionSlideOverLeft-XVisp.routing-closing-E9hmI {
+  z-index: 1 !important; /* Parent underneath, stays still */
+  transform: translateX(0);
+  opacity: 1; /* Parent stays fully visible */
+  transition: none !important; /* Don't animate - parent stays still while child slides over */
+  animation: none !important;
+}
+
+/* Slide Over Right Transitions (hierarchical - going back) */
+/* Child slides out to right, revealing parent underneath */
+.routing-routeTransitionSlideOverRight-KBpDG.routing-opening-dVvBc {
+  z-index: 1 !important; /* Parent underneath, stays still */
+  transform: translateX(0);
+  opacity: 1;
+  transition: none !important; /* Don't animate - parent revealed underneath as child slides out */
+  animation: none !important;
+}
+
+.routing-routeTransitionSlideOverRight-KBpDG.routing-closed-tcUaE {
+  transform: translateX(0); /* Keep in place when child slides out */
+  opacity: 0;
+  z-index: 0 !important; /* Explicitly underneath */
+  pointer-events: none;
+  transition: none !important; /* No transitions during state change */
+  animation: none !important;
+}
+
+.routing-routeTransitionSlideOverRight-KBpDG.routing-opened-_JOlO {
+  z-index: 1 !important;
+  transform: translateX(0);
+  opacity: 1;
+  transition: none !important; /* No transition when parent is fully opened */
+  animation: none !important;
+}
+
+.routing-routeTransitionSlideOverRight-KBpDG.routing-closing-E9hmI {
+  z-index: 2 !important; /* Child on top, slides out */
+  animation: routing-slideOutOverRight-niC6j var(--transition-duration, 300ms)
+    cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--transition-delay, 0ms);
+}
+
+/* Keyframe Animations */
+@keyframes routing-slideInFromRight-tVyLe {
+  from {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes routing-slideOutToLeft-SvKrC {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+
+@keyframes routing-slideInFromLeft-XeDnc {
+  from {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes routing-slideOutToRight-HF0Dk {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+}
+
+/* Hierarchical navigation animations (child slides over/out, parent stays still) */
+@keyframes routing-slideOverFromRight-Z0xU3 {
+  from {
+    transform: translateX(100%);
+    opacity: 1;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0);
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes routing-slideOutOverRight-niC6j {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 1;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .routing-routeTransitionItem-JNAGQ {
+    transition-duration: 1ms;
+    transition-delay: 0ms;
+  }
+
+  .routing-routeTransitionSlideLeft-Ysj4Z.routing-opening-dVvBc,
+  .routing-routeTransitionSlideLeft-Ysj4Z.routing-closing-E9hmI,
+  .routing-routeTransitionSlideRight-SB3CM.routing-opening-dVvBc,
+  .routing-routeTransitionSlideRight-SB3CM.routing-closing-E9hmI,
+  .routing-routeTransitionSlideOverLeft-XVisp.routing-opening-dVvBc,
+  .routing-routeTransitionSlideOverLeft-XVisp.routing-closing-E9hmI,
+  .routing-routeTransitionSlideOverRight-KBpDG.routing-opening-dVvBc,
+  .routing-routeTransitionSlideOverRight-KBpDG.routing-closing-E9hmI {
+    animation: none;
+  }
+
+  .routing-routeTransitionSlideLeft-Ysj4Z.routing-closed-tcUaE,
+  .routing-routeTransitionSlideRight-SB3CM.routing-closed-tcUaE,
+  .routing-routeTransitionSlideOverLeft-XVisp.routing-closed-tcUaE,
+  .routing-routeTransitionSlideOverRight-KBpDG.routing-closed-tcUaE {
+    transform: translateX(0);
+  }
+
+  .routing-routeTransitionSlideLeft-Ysj4Z.routing-closing-E9hmI,
+  .routing-routeTransitionSlideRight-SB3CM.routing-closing-E9hmI,
+  .routing-routeTransitionSlideOverLeft-XVisp.routing-closing-E9hmI,
+  .routing-routeTransitionSlideOverRight-KBpDG.routing-closing-E9hmI {
+    transform: translateX(0);
+  }
+}
+
+.Layout-page-DviSI {
+  width: 100%;
+  height: 1px; /* min-height: 100% overrides this, but it's needed for any children of this element that use percentage height. */
+  min-height: 100%;
+  overflow-y: auto;
+  padding: var(--atlas-space-24) var(--atlas-space-16);
+  position: relative;
+}
+
+.Layout-noPadding-rA2PD {
+  padding: 0;
+}
+
+.Layout-noTopPadding-LiE85 {
+  padding-top: 0;
+}
+
+.Layout-box-B0piX {
+  /* reset variables to default so they don't inherit */
+  --kl-local-box-width: auto;
+  --kl-local-box-height: auto;
+  --kl-local-box-overflow-x: visible;
+  --kl-local-box-overflow-y: visible;
+  --kl-local-box-text-align: inherit;
+  --kl-local-box-display: block;
+  --kl-local-box-position: static;
+  --kl-local-box-flex: initial;
+  --kl-local-box-flex-direction: row;
+  --kl-local-box-flex-wrap: nowrap;
+  --kl-local-box-align-items: normal;
+  --kl-local-box-justify-content: normal;
+  --kl-local-box-gap: 0;
+  --kl-local-box-margin-top: 0;
+  --kl-local-box-margin-left: 0;
+  --kl-local-box-margin-bottom: 0;
+  --kl-local-box-margin-right: 0;
+  --kl-local-box-padding-top: 0;
+  --kl-local-box-padding-left: 0;
+  --kl-local-box-padding-bottom: 0;
+  --kl-local-box-padding-right: 0;
+
+  width: var(--kl-local-box-width);
+  height: var(--kl-local-box-height);
+  overflow-x: var(--kl-local-box-overflow-x);
+  overflow-y: var(--kl-local-box-overflow-y);
+  text-align: var(--kl-local-box-text-align);
+  display: var(--kl-local-box-display);
+  position: var(--kl-local-box-position);
+  flex: var(--kl-local-box-flex);
+  flex-direction: var(--kl-local-box-flex-direction);
+  flex-wrap: var(--kl-local-box-flex-wrap);
+  align-items: var(--kl-local-box-align-items);
+  justify-content: var(--kl-local-box-justify-content);
+  gap: var(--kl-local-box-gap);
+  margin-top: var(--kl-local-box-margin-top);
+  margin-left: var(--kl-local-box-margin-left);
+  margin-bottom: var(--kl-local-box-margin-bottom);
+  margin-right: var(--kl-local-box-margin-right);
+  padding-top: var(--kl-local-box-padding-top);
+  padding-left: var(--kl-local-box-padding-left);
+  padding-bottom: var(--kl-local-box-padding-bottom);
+  padding-right: var(--kl-local-box-padding-right);
+}
+
+.Layout-glass-_gcCl {
+  background: var(--atlas-background-content);
+}
+
+@supports (backdrop-filter: none) and
+  (color: color-mix(in srgb, black, transparent)) {
+  .Layout-glass-_gcCl {
+    background: color-mix(
+      in srgb,
+      var(--atlas-background-content) 90%,
+      transparent
+    );
+    backdrop-filter: blur(4px);
+  }
+}
+
+.Typography-text-zqkXb {
+  font-weight: var(--atlas-font-weight-normal);
+  font-family: var(--atlas-font-family);
+  color: var(--atlas-text-primary);
+}
+
+.Typography-p1-XdHLr {
+  font-size: var(--atlas-font-size-normal);
+  line-height: var(--atlas-line-height-normal);
+  margin-bottom: var(--atlas-margin-normal);
+}
+
+.Typography-p2-GhPtZ {
+  font-size: var(--atlas-font-size-small);
+  line-height: var(--atlas-line-height-small);
+  margin-bottom: var(--atlas-margin-small);
+}
+
+.Typography-p3-b74Ms {
+  font-size: var(--atlas-font-size-tiny);
+  line-height: var(--atlas-line-height-tiny);
+  margin-bottom: var(--atlas-margin-tiny);
+}
+
+.Typography-pLarge-aIV36 {
+  font-size: var(--atlas-font-size-large);
+  line-height: var(--atlas-line-height-large);
+  margin-bottom: var(--atlas-margin-large);
+}
+
+.Typography-heading-un7V6 {
+  font-weight: var(--atlas-font-weight-heading);
+  font-family: var(--atlas-heading-font-family);
+  color: var(--atlas-heading-text-primary);
+}
+
+.Typography-heading-un7V6.Typography-bold-oySic {
+  font-weight: var(--atlas-font-weight-heading-bold);
+}
+
+.Typography-heading-un7V6.Typography-secondary-ZJqF8 {
+  color: var(--atlas-heading-text-secondary);
+}
+
+.Typography-heading-un7V6.Typography-negative-pV24h {
+  color: var(--atlas-heading-text-negative);
+}
+
+.Typography-h1-ISGYa {
+  font-size: var(--atlas-font-size-h1);
+  line-height: var(--atlas-line-height-h1);
+  margin-bottom: var(--atlas-margin-h1);
+}
+
+.Typography-h2-ygTzn {
+  font-size: var(--atlas-font-size-h2);
+  line-height: var(--atlas-line-height-h2);
+  margin-bottom: var(--atlas-margin-h2);
+}
+
+.Typography-h3-r3XVK {
+  font-size: var(--atlas-font-size-h3);
+  line-height: var(--atlas-line-height-h3);
+  margin-bottom: var(--atlas-margin-h3);
+}
+
+.Typography-h4-TmoZ3 {
+  font-size: var(--atlas-font-size-h4);
+  line-height: var(--atlas-line-height-h4);
+  margin-bottom: var(--atlas-margin-h4);
+}
+
+.Typography-h5-K9nOV {
+  font-size: var(--atlas-font-size-h5);
+  line-height: var(--atlas-line-height-h5);
+  margin-bottom: var(--atlas-margin-h5);
+}
+
+.Typography-typography-tDGQt.Typography-bold-oySic {
+  font-weight: var(--atlas-font-weight-bold);
+}
+
+.Typography-typography-tDGQt.Typography-mono-DG01q {
+  font-family: var(--atlas-font-family-mono);
+}
+
+.Typography-typography-tDGQt.Typography-secondary-ZJqF8 {
+  color: var(--atlas-text-secondary);
+}
+
+.Typography-typography-tDGQt.Typography-negative-pV24h {
+  color: var(--atlas-text-negative);
+}
+
+.Typography-typography-tDGQt.Typography-positive-H37Ee {
+  color: var(--atlas-text-positive);
+}
+
+.Typography-heading-un7V6.Typography-noSpacing-nPRl1,
+.Typography-text-zqkXb.Typography-noSpacing-nPRl1 {
+  margin-bottom: 0;
+}
+
+.Typography-lineClamp-EPo7u {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--kl-hub-local-line-clamp);
+  line-clamp: var(--kl-hub-local-line-clamp);
+  overflow: hidden;
+}
+
+.Typography-link-dMiFk {
+  color: var(--atlas-text-primary);
+  text-decoration: underline;
+}
+
+.Typography-link-dMiFk.Typography-underlineHoverOnly-jJ8WU {
+  text-decoration: none;
+}
+
+.Typography-link-dMiFk.Typography-underlineHoverOnly-jJ8WU:hover {
+  text-decoration: underline;
+}
+
+.auth-loginContainer-RvBQg {
+  padding-top: var(--kl-local-login-padding-top, var(--atlas-space-16));
+  font-family: var(--atlas-font-family);
+  cursor: auto;
+}
+
+.auth-rewardsAvailable-m2wxR {
+  color: var(--atlas-button-primary);
+}
+
+.Icon-icon-s7xZm {
+  /* --kl-local-icon-size can be passed implicitly from above (e.g. from an icon button) */
+  width: var(--kl-local-icon-size, var(--atlas-icon-size-medium));
+  height: var(--kl-local-icon-size, var(--atlas-icon-size-medium));
+  display: inline-flex;
+  pointer-events: unset; /* No text selection */
+  color: var(--kl-local-icon-primary-color, inherit);
+}
+
+/* attribute selector needed because SVGO is prepending the className with the icon name */
+.Icon-icon-s7xZm [class*='kl-hub-icon__secondary'] {
+  fill: var(--kl-local-icon-secondary-color, currentColor);
+}
+
+/**
+ * Shared styles for the text-based inputs (TextInput, TextArea). Both render a
+ * field with the same look; keep the visual rules here so the two stay in sync.
+ */
+.Input-input-gfuDB {
+  background: var(--atlas-background-content);
+  border: 1px solid var(--atlas-border-dark);
+  border-radius: var(--atlas-input-border-radius-normal);
+  padding: var(--atlas-input-padding);
+  margin: 0;
+  font-size: var(--atlas-font-size-normal);
+  line-height: var(--atlas-line-height-normal);
+  font-weight: var(--atlas-font-weight-normal);
+  font-family: var(--atlas-font-family);
+  color: var(--atlas-text-primary);
+}
+
+.Input-small-WA0Rd {
+  border-radius: var(--atlas-input-border-radius-small);
+  font-size: var(--atlas-font-size-small);
+  line-height: var(--atlas-line-height-small);
+}
+
+.Input-full-j7T8F {
+  width: 100%;
+}
+
+.Input-input-gfuDB:focus {
+  border-color: var(--atlas-border-focus);
+  outline: none;
+  box-shadow: none;
+}
+
+.Input-input-gfuDB::-moz-placeholder {
+  color: var(--atlas-text-placeholder);
+}
+
+.Input-input-gfuDB::placeholder {
+  color: var(--atlas-text-placeholder);
+}
+
+.Input-invalid-paWnO {
+  animation: Input-horizontalShaking-jH2gy 300ms ease-in-out;
+  border-color: var(--atlas-input-error);
+}
+
+.Input-input-gfuDB[disabled] {
+  background-color: var(--atlas-input-background-disabled);
+  border-width: 0;
+}
+
+@keyframes Input-horizontalShaking-jH2gy {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.Checkbox-wrapper-eH0NE {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--atlas-space-8);
+  padding: var(--atlas-space-4) 0;
+}
+
+.Checkbox-checkboxContainer-yPdJJ {
+  display: flex;
+  align-items: center;
+  height: var(--atlas-line-height-small);
+}
+
+.Checkbox-input-k0O2g {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  display: block !important;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+.Checkbox-input-k0O2g:disabled {
+  cursor: unset;
+}
+
+.Checkbox-wrapper-dex_V {
+  display: flex;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid var(--atlas-border-dark);
+  border-radius: 4px;
+  position: relative;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, border-color, outline;
+  transition-duration: 100ms;
+}
+
+.Checkbox-wrapper-dex_V:focus-within {
+  outline: 2px solid var(--atlas-primary-color);
+  outline-offset: 2px;
+}
+
+@supports (color: color-mix(in srgb, black, transparent)) {
+  .Checkbox-wrapper-dex_V:focus-within {
+    outline: 4px solid
+      color-mix(in srgb, var(--atlas-primary-color) 50%, transparent);
+    outline-offset: 0px;
+  }
+}
+
+.Checkbox-checked-jXIQ4 {
+  border-color: var(--atlas-primary-color);
+  background-color: var(--atlas-primary-color);
+}
+
+.Checkbox-disabled-WCAmT {
+  background-color: var(--atlas-border-light);
+  border-color: var(--atlas-border-dark);
+  color: black;
+}
+
+.Button-button-yVRGS {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: var(--atlas-font-size-normal);
+  font-family: var(--atlas-font-family);
+  line-height: var(--atlas-line-height-normal);
+  font-weight: var(--atlas-button-font-weight);
+  padding: var(--atlas-button-padding-normal);
+  --kl-local-border-radius: var(--atlas-button-border-radius-normal);
+  border-radius: var(--kl-local-border-radius);
+  position: relative;
+  transition: all 150ms linear;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: none;
+  text-transform: var(--atlas-button-text-transform);
+  outline-color: var(--atlas-focus-outline-color);
+  color: var(--kl-local-button-color);
+  background: var(--kl-local-button-background);
+  overflow: hidden;
+  border: 1px solid var(--kl-local-border-color);
+  --kl-local-button-color: var(--atlas-text-primary-inverse);
+  --kl-local-button-background: var(--atlas-button-primary);
+  --kl-local-icon-size: var(--atlas-icon-size-medium);
+  --kl-local-border-color: var(--atlas-button-primary);
+}
+
+.Button-buttonSmall-LMNnE {
+  font-size: var(--atlas-font-size-small);
+  line-height: var(--atlas-line-height-small);
+  --kl-local-border-radius: var(--atlas-button-border-radius-small);
+  padding: var(--atlas-button-padding-small);
+  --kl-local-icon-size: var(--atlas-icon-size-small);
+}
+
+.Button-buttonTiny-rCIM7 {
+  font-size: var(--atlas-font-size-tiny);
+  line-height: var(--atlas-line-height-tiny);
+  --kl-local-border-radius: var(--atlas-button-border-radius-tiny);
+  padding: var(--atlas-button-padding-tiny);
+  --kl-local-icon-size: var(--atlas-icon-size-tiny);
+}
+
+.Button-full-S_wB4 {
+  width: 100%;
+}
+
+.Button-secondary-J7eeP {
+  --kl-local-button-color: var(--atlas-button-primary);
+  --kl-local-button-background: transparent;
+}
+
+.Button-tertiary-_TBf2 {
+  --kl-local-button-color: var(--atlas-button-primary);
+  --kl-local-button-background: transparent;
+  border-width: 0;
+}
+
+.Button-flat-bZj2m {
+  --kl-local-button-background: transparent;
+  --kl-local-button-color: var(--atlas-text-primary);
+  --kl-local-border-color: var(--atlas-overlay-medium);
+}
+
+.Button-hideBorder-htG9L {
+  /* setting border-width to 0 changes the height of the button, so just make it "invisible" */
+  --kl-local-border-color: var(--kl-local-button-background);
+}
+
+.Button-alwaysCircle-C_Hf8.Button-icon-vtHIq {
+  border-radius: 50%;
+}
+
+.Button-unstyled-pdifu {
+  cursor: pointer;
+  color: var(
+    --atlas-text-primary
+  ); /* user-agent stylesheet can override the color of a <button>, which is a problem for icons */
+}
+
+.Button-icon-vtHIq,
+.Button-iconLegacy-l9Joj {
+  padding: 0px;
+  width: var(--atlas-button-icon-size-normal);
+  height: var(--atlas-button-icon-size-normal);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Button-iconLegacy-l9Joj {
+  border-width: 0;
+  --kl-local-button-color: var(--atlas-text-primary);
+  --kl-local-button-background: transparent;
+}
+
+.Button-iconLegacy-l9Joj.Button-buttonSmall-LMNnE,
+.Button-icon-vtHIq.Button-buttonSmall-LMNnE {
+  width: var(--atlas-button-icon-size-small);
+  height: var(--atlas-button-icon-size-small);
+}
+
+.Button-iconLegacy-l9Joj.Button-buttonTiny-rCIM7,
+.Button-icon-vtHIq.Button-buttonTiny-rCIM7 {
+  width: var(--atlas-button-icon-size-tiny);
+  height: var(--atlas-button-icon-size-tiny);
+}
+
+.Button-selected-M6pXc {
+  --kl-local-button-color: var(--atlas-text-primary-inverse);
+  --kl-local-button-background: var(--atlas-button-primary);
+}
+
+.Button-button-yVRGS:disabled:not(.Button-primary-DGbJP) {
+  background-color: transparent;
+}
+
+.Button-button-yVRGS::after {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 150ms linear;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  content: ' ';
+  pointer-events: none;
+  background-color: var(--atlas-overlay-medium);
+  border-radius: var(--kl-local-border-radius);
+}
+
+.Button-button-yVRGS:not(.Button-primary-DGbJP)::after {
+  background-color: var(--atlas-overlay-light);
+}
+
+.Button-button-yVRGS:hover,
+.Button-button-yVRGS:focus,
+.Button-button-yVRGS:focus-visible,
+.Button-button-yVRGS:active {
+  color: var(--kl-local-button-color);
+  background: var(--kl-local-button-background);
+  border-color: var(--kl-local-border-color);
+}
+
+.Button-button-yVRGS:disabled {
+  cursor: unset;
+  pointer-events: none;
+  border-color: var(--atlas-overlay-medium);
+  background-color: var(--atlas-overlay-medium);
+  color: var(--atlas-overlay-heavy);
+}
+
+.Button-button-yVRGS:not(:disabled):hover::after,
+.Button-button-yVRGS.Button-active-vkIp_::after {
+  opacity: 1;
+}
+
+.Button-tertiary-_TBf2:hover,
+.Button-tertiary-_TBf2:focus,
+.Button-tertiary-_TBf2:focus-visible,
+.Button-tertiary-_TBf2:active {
+  color: var(--atlas-button-primary);
+  background: transparent;
+  border-width: 0;
+}
+
+.Button-tertiary-_TBf2:hover::after,
+.Button-tertiary-_TBf2.Button-active-vkIp_::after {
+  opacity: 0;
+}
+
+.Button-button-yVRGS:focus-visible,
+.Button-unstyled-pdifu:focus-visible {
+  outline: 3px solid var(--atlas-focus-outline-color);
+  outline-offset: 0;
+}
+
+.Loading-spinner-xaWbs {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* See forceShowEmptyMixin: some themes hide empty elements (div:empty { display: none }). */
+.Loading-spinner-xaWbs:empty {
+  display: inline-flex !important;
+}
+
+.Loading-spinner-xaWbs::after {
+  content: ' ';
+  display: inline-block;
+  height: var(--kl-local-spinner-size);
+  width: var(--kl-local-spinner-size);
+  border: 3px solid transparent;
+  border-radius: 50%;
+  border-top-color: var(--atlas-text-primary);
+  border-left-color: var(--atlas-text-primary);
+  animation: Loading-spinner-xaWbs 1s linear infinite;
+}
+
+@keyframes Loading-spinner-xaWbs {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Loading-cover-XVfWo {
+  position: absolute;
+  inset: 0px;
+}
+
+.Loading-overlay-m34bI {
+  background: var(--atlas-overlay-heavy);
+}
+
+.Loading-overlay-m34bI::after {
+  border-top-color: var(--atlas-text-primary-inverse);
+  border-left-color: var(--atlas-text-primary-inverse);
+}
+
+.LocaleSelector-localeSelector-m7Fr3 {
+  margin-top: var(--atlas-space-mini);
+}
+
+.Select-select-SDhgy {
+  border: 1px solid var(--atlas-overlay-heavy);
+  width: 100%;
+  background-color: var(--atlas-background-content);
+  border-radius: var(--atlas-input-border-radius-normal);
+  padding: var(--atlas-input-padding);
+  line-height: var(--atlas-line-height-normal);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.Select-select-SDhgy:focus-visible,
+.Select-selectOpen-dmwYH {
+  outline: 3px solid var(--atlas-focus-outline-color);
+  outline-offset: 0;
+  border-color: var(--atlas-border-focus);
+  box-shadow: none; /* remove default Shopify focus */
+}
+
+.Select-select-SDhgy[aria-disabled='true'] {
+  background-color: var(--atlas-input-background-disabled);
+  pointer-events: none;
+}
+
+.Select-displayedValue-vmT7D {
+  flex: 1;
+  min-width: 0;
+}
+
+.Select-selectOption-HU4Ro {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+}
+
+.FloatingBoundary-boundary-krf1z {
+  position: relative;
+}
+
+/* In order to use scale transforms for the in/out transitions, we need to us two layers - the
+   positioned wrapper and the transitioned content.
+*/
+.Popover-popoverWrapper-W2FxG {
+  z-index: 10;
+}
+
+.Popover-popoverContent-zaKVi {
+  box-shadow: var(--atlas-popover-shadow);
+  padding: var(--atlas-space-12);
+  border-radius: var(--atlas-button-border-radius-normal);
+}
+
+.Popover-noPadding-Q5U9G {
+  padding: 0px;
+}
+
+.Popover-maxHeight-LhdQV {
+  overflow-y: auto;
+}
+
+.Menu-optionRow-zVwJm {
+  padding: var(--atlas-space-mini) var(--atlas-space-medium);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.Menu-optionRow-zVwJm:hover,
+.Menu-optionRow-zVwJm:focus-visible {
+  background-color: var(--atlas-overlay-light);
+  /* remove default Shopify focus */
+  box-shadow: none;
+  outline: none;
+}
+
+.Menu-disabled-qa90U {
+  background-color: var(--atlas-border-light);
+  cursor: unset;
+}
+
+.Menu-disabled-qa90U span {
+  color: var(--atlas-overlay-heavy);
+}
+
+.Menu-selected-l5dUZ {
+  padding-left: calc(var(--atlas-space-medium) - 4px);
+  border-left: 4px solid var(--atlas-primary-color);
+}
+
+.embeddedFaqs-faqButton-GreDn {
+  color: var(--atlas-faq-font-color);
+  background-color: var(--atlas-faq-fill-color);
+  font-family: var(--atlas-faq-font-family);
+  font-weight: var(--atlas-faq-font-weight);
+  border: none;
+  text-align: start;
+  display: flex;
+  gap: var(--atlas-space-mini);
+  padding: var(--atlas-space-small);
+}
+  .embeddedFaqs-faqButton-GreDn:hover:not(:disabled),
+  .embeddedFaqs-faqButton-GreDn:focus:not(:disabled),
+  .embeddedFaqs-faqButton-GreDn:focus-visible:not(:disabled),
+  .embeddedFaqs-faqButton-GreDn:active:not(:disabled) {
+    color: var(--atlas-faq-font-color);
+    background-color: var(--atlas-faq-fill-color);
+    border: none;
+  }
+
+.embeddedFaqs-faqButtonCentered-t5S0C {
+  width: 100%;
+  justify-content: center;
+}
+
+.Loading-animated-flTha {
+  background: linear-gradient(
+    -60deg,
+    var(--atlas-loading-skeleton-color) 40%,
+    var(--atlas-loading-skeleton-highlight-color) 50%,
+    var(--atlas-loading-skeleton-color) 60%
+  );
+  background-size: 300%;
+  background-position-x: 100%;
+  animation: Loading-shimmer-zWMos 1.5s infinite linear;
+}
+
+@keyframes Loading-shimmer-zWMos {
+  to {
+    background-position-x: 0%;
+  }
+}
+
+.Loading-textWrapper-NhZG4 {
+  height: var(--kl-local-line-height);
+  align-items: center;
+  display: flex;
+}
+
+/* See forceShowEmptyMixin: some themes hide empty elements (div:empty { display: none }). */
+.Loading-textWrapper-NhZG4:empty {
+  display: flex !important;
+}
+
+.Loading-textWrapperInline-aAYql {
+  display: inline-flex;
+}
+
+.Loading-textWrapperInline-aAYql:empty {
+  display: inline-flex !important;
+}
+
+.Loading-fakeText-If_36 {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(var(--kl-local-skeleton-height) / 2);
+  background-color: var(--atlas-loading-skeleton-color);
+  height: var(--kl-local-skeleton-height);
+}
+
+.Loading-thumbnail-CTEKx {
+  border-radius: var(--atlas-thumbnail-border-radius);
+  background-color: var(--atlas-loading-skeleton-color);
+  height: var(--kl-local-height);
+  width: var(--kl-local-width);
+}
+
+.Loading-thumbnail-CTEKx:empty {
+  display: block !important;
+}
+
+.Loading-button-VV7Ui {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 40px;
+  border-radius: var(--atlas-button-border-radius-normal);
+  background-color: var(--atlas-loading-skeleton-color);
+}
+
+.Loading-button-VV7Ui:empty {
+  display: block !important;
+}
+
+.Loading-buttonSmall-ykvxC {
+  height: 32px;
+}
+
+.Loading-buttonWidth-IH4kh {
+  width: var(--kl-local-button-width);
+}
+
+.Loading-icon-pxTH3 {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: var(--atlas-loading-skeleton-color);
+  width: var(--kl-local-icon-size);
+  height: var(--kl-local-icon-size);
+}
+
+.Loading-icon-pxTH3:empty {
+  display: block !important;
+}
+
+.Layout-list-sxlWg {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/**
+ * Give horizontal padding to the list so the item dividers don't go to the
+ * edge of the container.
+ */
+.Layout-listGutters-GFc1R {
+  padding: 0 var(--atlas-space-16);
+}
+
+.Layout-listItem-ib8__ {
+  display: flex;
+  align-items: center;
+  padding: var(--atlas-space-16);
+}
+
+.Layout-separator-YUGIm:not(:last-child) {
+  border-bottom: 1px solid var(--atlas-border-light);
+}
+
+.Layout-noGutters-Zc1UX {
+  padding: var(--atlas-space-16) 0;
+}
+
+.Layout-noPadding-gbXkj {
+  padding: 0;
+}
+
+.Layout-margin-qB4Cq:not(:last-child) {
+  margin-bottom: var(--atlas-space-16);
+}
+
+.Layout-listHeader-uTyWG {
+  padding: var(--atlas-space-24) var(--atlas-space-16);
+}
+
+.Layout-listHeaderDivider-mP2Z2 {
+  border-bottom: 1px solid var(--atlas-border-light);
+}
+
+.Layout-buttonBase-f2r2K {
+  background: transparent;
+  border: none;
+  display: flex;
+  text-align: start;
+  align-items: center;
+  width: 100%;
+  padding: var(--atlas-space-16);
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--atlas-text-primary);
+}
+
+.Layout-buttonBase-f2r2K:focus-visible,
+.Layout-buttonBase-f2r2K:hover {
+  background: var(--atlas-overlay-light);
+}
+
+.Layout-linkButton-DUFiA {
+  text-decoration: none;
+}
+
+.Layout-itemContent-qVPp3 {
+  flex: 1;
+}
+
+.Layout-itemPrefix-lZP9_ {
+  margin-right: var(--atlas-space-12);
+  /* line height gives elements an implicit height of at least 20px, which is an issue when the icon is only 16px tall */
+  line-height: 0px;
+}
+
+.Layout-itemSuffix-F3BfS {
+  margin-left: var(--atlas-space-16);
+  /* line height gives elements an implicit height of at least 20px, which is an issue when the icon is only 16px tall */
+  line-height: 0px;
+}
+
+.CustomerSummary-welcomeHeading-mOqSV {
+  white-space: pre-line;
+}
+
+.CustomerSummary-paddedBlock-u_L19 {
+  padding: 0px 16px;
+}
+
+.CustomerSummary-paddedBlock-u_L19:empty {
+  display: none !important;
+}
+
+.ActionCard-image-B3eph {
+  height: 184px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  /* The below line fixes an issue with image scaling in Chrome when object-fit is set.
+     Don't ask me why it works; it's probably some weird rendering bug in Chrome.
+     Solution found on Stack Overflow: https://stackoverflow.com/a/77059936
+     Slack thread for reference: https://klaviyo.slack.com/archives/C08GYDDH256/p1756316984024799 */
+  overflow-clip-margin: unset;
+}
+
+.ActionCard-mainContainer-SURE3 {
+  display: flex;
+  align-items: center;
+  gap: var(--atlas-space-12);
+}
+
+.ActionCard-elevated-e0IRz {
+  box-shadow: 0 6px 10px rgba(55, 63, 71, 0.12);
+  border: none;
+}
+
+.Card-card-UpFYH {
+  border: 1px solid var(--atlas-overlay-medium);
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--atlas-background-content);
+  color: var(--atlas-text-primary);
+  border-radius: var(--atlas-card-border-radius-small);
+  box-shadow: none;
+  outline-offset: 0px;
+  text-align: initial;
+  padding: 0px;
+  overflow: clip;
+  --kl-hub-card-padding: var(--atlas-space-12);
+}
+
+.Card-cardSmall-SMFwN {
+  --kl-hub-card-padding: var(--atlas-space-12);
+}
+
+.Card-cardContent-QaGRy,
+.Card-cardHeader-Uj_bB,
+.Card-cardFooter-k7615 {
+  padding: var(--kl-hub-card-padding);
+}
+
+/* Don't add padding if the other element already adds it */
+.Card-cardHeader-Uj_bB + .Card-cardContent-QaGRy,
+.Card-cardContent-QaGRy + .Card-cardFooter-k7615 {
+  padding-top: 0px;
+}
+
+.Carousel-carousel-7pFx8 {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  gap: var(--kl-carousel-gap);
+  scrollbar-width: none;
+  padding-left: var(--kl-carousel-padding);
+  padding-right: var(--kl-carousel-padding);
+  scroll-behavior: var(--kl-carousel-scroll-behavior);
+}
+
+/* Scrolling to the first or last child should scroll all the way to the edge of the container, including the padding */
+.Carousel-carousel-7pFx8 > :first-child {
+  scroll-margin-left: var(--kl-carousel-padding);
+}
+
+.Carousel-carousel-7pFx8 > :last-child {
+  scroll-margin-right: var(--kl-carousel-padding);
+}
+
+.Carousel-carousel-7pFx8::-webkit-scrollbar {
+  display: none;
+}
+
+.Carousel-carouselItem-G3j0g {
+  flex: none;
+  max-width: calc(
+    100% - var(--kl-carousel-padding) - var(--kl-carousel-gap) / 2
+  ); /* Scrolling behavior doesn't support items bigger than the scrolling container. Looks bad anyway */
+  scroll-margin-right: calc(var(--kl-carousel-gap) / 2);
+  scroll-margin-left: calc(var(--kl-carousel-gap) / 2);
+}
+
+.Carousel-carouselItem-G3j0g > * {
+  max-width: 100%;
+}
+
+.Card-cardButton-qqxSu {
+  cursor: pointer;
+}
+
+.Card-cardButton-qqxSu:hover {
+  border-color: var(--atlas-primary-color);
+}
+
+.Card-cardButton-qqxSu:focus-visible {
+  outline: 3px solid var(--atlas-focus-outline-color);
+}
+
+a.Card-cardButton-qqxSu {
+  text-decoration: none;
+}
+
+a.Card-cardButton-qqxSu:visited {
+  color: inherit;
+}
+
+.product-container-xJhoz {
+  display: flex;
+  flex-direction: row;
+  gap: var(--atlas-space-12);
+}
+
+.product-verticalContainer-wwF_W {
+  flex-direction: column;
+  gap: var(--atlas-space-8);
+}
+
+.product-imageContainer-k4Up4 {
+  position: relative;
+}
+
+.product-mainContainer-QzOa4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.product-detailsContainer-ZeF3e {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.product-favoriteButton-_YmVU {
+  position: absolute;
+  top: var(--atlas-space-4);
+  right: var(--atlas-space-4);
+}
+
+.product-priceOnSale-Zwi77 {
+  color: var(--atlas-primary-color);
+}
+
+.product-compareAtPrice-VdFWT {
+  text-decoration: line-through;
+}
+
+.product-priceContainer-cXLyC {
+  row-gap: 0;
+}
+
+.Sections-button-mZdAR {
+  display: flex;
+  align-items: center;
+  gap: var(--atlas-space-4);
+}
+
+.Sections-carousel-TeCQF {
+  padding-left: var(--atlas-space-16);
+  padding-right: var(--atlas-space-16);
+}
+
+.Image-thumbnail-zf4oK {
+  border-radius: var(--atlas-thumbnail-border-radius);
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--atlas-border-light);
+  max-width: unset; /* Prevent merchant's theme from overriding this */
+  overflow: hidden;
+  /* The below line fixes an issue with image scaling in Chrome when object-fit is set.
+     Don't ask me why it works; it's probably some weird rendering bug in Chrome.
+     Solution found on Stack Overflow: https://stackoverflow.com/a/77059936
+     Slack thread for reference: https://klaviyo.slack.com/archives/C08GYDDH256/p1756316984024799 */
+  overflow-clip-margin: unset;
+}
+
+.actions-favoritesButton-UCX5x {
+  --kl-local-button-color: var(--atlas-favorites-hub-icon-color);
+}
+
+.FavoritesIcon-container-TMDlP {
+  position: relative;
+  overflow: visible;
+  width: calc(var(--kl-local-size) * 1.5);
+  height: calc(var(--kl-local-size) * 1.5);
+}
+
+/* Inline icons should not have extra space around them so they can be properly left aligned */
+.FavoritesIcon-containerInline-RvRuN {
+  width: var(--kl-local-size);
+  height: calc(var(--kl-local-size) * 1.5);
+}
+
+.FavoritesIcon-relativeCenter-Jw7mU {
+  position: absolute;
+  top: calc(50% - var(--kl-local-size) / 2);
+  left: calc(50% - var(--kl-local-size) / 2);
+}
+
+.FavoritesIcon-circle-nLwzp {
+  background-color: currentColor;
+  border-radius: 50%;
+  height: var(--kl-local-size);
+  width: var(--kl-local-size);
+  animation: FavoritesIcon-grow-Bolb_ 0.3s linear;
+  transform-origin: center;
+  opacity: 0;
+}
+
+/* See forceShowEmptyMixin: some themes hide empty elements (div:empty { display: none }). */
+.FavoritesIcon-circle-nLwzp:empty {
+  display: block !important;
+}
+
+@keyframes FavoritesIcon-grow-Bolb_ {
+  0% {
+    transform: scale(0.2);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.FavoritesIcon-activeIconAnimation-mBn_Y {
+  animation: FavoritesIcon-heart-grow-H9CXC 0.15s linear;
+  animation-delay: 0.2s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes FavoritesIcon-heart-grow-H9CXC {
+  0% {
+    transform: scale(0.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.FavoritesIcon-particle-kwOJR {
+  pointer-events: none;
+  background: currentColor;
+  height: calc(var(--kl-local-size) * 0.1);
+  width: calc(var(--kl-local-size) * 0.1);
+  border-radius: 100%;
+  position: absolute;
+  top: calc(50% - var(--kl-local-size) * 0.1 / 2);
+  left: calc(50% - var(--kl-local-size) * 0.1 / 2);
+  animation-fill-mode: backwards;
+  opacity: 0;
+}
+
+/* See forceShowEmptyMixin: some themes hide empty elements (div:empty { display: none }). */
+.FavoritesIcon-particle-kwOJR:empty {
+  display: block !important;
+}
+
+.FavoritesIcon-big-EMc8e {
+  animation: FavoritesIcon-big-burst-LTFmP 0.4s;
+  animation-delay: 0.1s;
+}
+
+@keyframes FavoritesIcon-big-burst-LTFmP {
+  from {
+    opacity: 0;
+    transform: rotate(var(--kl-local-burst-angle)) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(var(--kl-local-burst-angle))
+      translateX(calc(var(--kl-local-size) / 1.5));
+  }
+}
+
+.FavoritesIcon-small-_woq6 {
+  animation: FavoritesIcon-small-burst-D1NJs 0.4s;
+  animation-delay: 0.1s;
+}
+
+@keyframes FavoritesIcon-small-burst-D1NJs {
+  from {
+    opacity: 0;
+    transform: rotate(var(--kl-local-burst-angle))
+      translateX(calc(var(--kl-local-size) / 6));
+  }
+  to {
+    opacity: 1;
+    transform: rotate(var(--kl-local-burst-angle))
+      translateX(calc(var(--kl-local-size) / 1.7)) scale(0.5);
+  }
+}
+
+.actions-section-TECqq {
+  padding-bottom: var(--atlas-space-8);
+  margin-bottom: var(--atlas-space-8);
+  border-bottom: 1px solid var(--atlas-overlay-medium);
+}
+
+.RadioGroup-group-_5VST {
+  display: flex;
+  gap: var(--atlas-space-4);
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex-wrap: wrap;
+}
+
+.RadioGroup-legend-b0d58 {
+  padding: 0;
+  margin-bottom: var(--atlas-space-4);
+}
+
+/* Visually hides the legend while keeping it available to assistive technology. */
+.RadioGroup-visuallyHidden-8COow {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.RadioGroup-input-TbkgT {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  display: block !important;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+.RadioGroup-input-TbkgT:disabled {
+  cursor: unset;
+}
+
+.RadioGroup-button-yae3m {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--atlas-font-size-normal);
+  line-height: var(--atlas-line-height-normal);
+  padding: var(--atlas-button-padding-normal);
+  --kl-local-border-radius: var(--atlas-button-border-radius-normal);
+  border-radius: var(--kl-local-border-radius);
+  background-color: var(--atlas-overlay-light);
+  color: var(--atlas-text-primary);
+  cursor: pointer;
+  transition: background-color 100ms;
+}
+
+.RadioGroup-button-yae3m.RadioGroup-buttonSmall-r4nQF {
+  font-size: var(--atlas-font-size-small);
+  line-height: var(--atlas-line-height-small);
+  padding: var(--atlas-button-padding-small);
+  --kl-local-border-radius: var(--atlas-button-border-radius-small);
+}
+
+.RadioGroup-button-yae3m.RadioGroup-buttonTiny-BZdjL {
+  font-size: var(--atlas-font-size-tiny);
+  line-height: var(--atlas-line-height-tiny);
+  padding: var(--atlas-button-padding-tiny);
+  --kl-local-border-radius: var(--atlas-button-border-radius-tiny);
+}
+
+.RadioGroup-button-yae3m.RadioGroup-checked-KaA0N {
+  background-color: var(--atlas-overlay-heavy);
+  color: var(--atlas-text-primary-inverse);
+}
+
+.RadioGroup-button-yae3m.RadioGroup-disabled-vGvGW {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.RadioGroup-button-yae3m.RadioGroup-unavailable-UrxN0 {
+  text-decoration: line-through;
+}
+
+.RadioGroup-button-yae3m:focus-within {
+  outline: 3px solid var(--atlas-focus-outline-color);
+  outline-offset: 0;
+}
+
+.RadioGroup-button-yae3m.RadioGroup-swatch-rbpZK {
+  box-sizing: border-box; /* border grows inward so the footprint stays constant */
+  padding: 0;
+  overflow: hidden; /* clips the fill/image to the circle */
+  border-radius: 50%;
+  --kl-local-swatch-size: var(--atlas-button-icon-size-normal);
+  width: var(--kl-local-swatch-size);
+  height: var(--kl-local-swatch-size);
+  border: 1px solid var(--atlas-overlay-medium); /* resting border */
+  transition: border 100ms;
+}
+
+.RadioGroup-button-yae3m.RadioGroup-swatch-rbpZK.RadioGroup-buttonSmall-r4nQF {
+  --kl-local-swatch-size: var(--atlas-button-icon-size-small);
+}
+
+.RadioGroup-button-yae3m.RadioGroup-swatch-rbpZK.RadioGroup-buttonTiny-BZdjL {
+  --kl-local-swatch-size: var(--atlas-button-icon-size-tiny);
+}
+
+.RadioGroup-button-yae3m.RadioGroup-swatch-rbpZK.RadioGroup-checked-KaA0N {
+  border-width: 2px; /* thicker, primary */
+  border-color: var(--atlas-button-primary);
+}
+
+.RadioGroup-swatchFill-Hlg0y,
+.RadioGroup-swatchImage-_ix_q {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.RadioGroup-swatchFill-Hlg0y {
+  background-color: var(--kl-local-swatch-color);
+}
+
+.RadioGroup-swatchImage-_ix_q {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Unavailable swatch: dim the fill/image and draw a diagonal line across it. */
+.RadioGroup-button-yae3m.RadioGroup-swatch-rbpZK.RadioGroup-unavailable-UrxN0 .RadioGroup-swatchFill-Hlg0y,
+.RadioGroup-button-yae3m.RadioGroup-swatch-rbpZK.RadioGroup-unavailable-UrxN0 .RadioGroup-swatchImage-_ix_q {
+  opacity: 0.5;
+}
+
+.RadioGroup-button-yae3m.RadioGroup-swatch-rbpZK.RadioGroup-unavailable-UrxN0::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom right,
+    transparent calc(50% - 1px),
+    var(--atlas-border-dark) calc(50% - 1px),
+    var(--atlas-border-dark) calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+.product-starsContainer-Dhif4 {
+  position: relative;
+  color: var(--atlas-border-light);
+  height: var(--atlas-line-height-small);
+  margin-right: var(--atlas-space-mini);
+}
+
+.product-filledStars-GL9LD {
+  position: absolute;
+  top: 0;
+  color: var(--atlas-primary-color);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.Section-section-brySf:not(:last-child) {
+  border-bottom: 1px solid var(--atlas-border-light);
+}
+
+.Section-headerContainer-rWo9e {
+  padding: var(--atlas-space-16);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Section-content-r0wdo {
+  padding: var(--atlas-space-16);
+  padding-top: 0;
+}
+
+.Section-noSidePadding-DYzUs {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.Carousel-container-c2pWw {
+  display: flex;
+  gap: var(--atlas-space-8);
+}
+
+.Carousel-button-FLcVr {
+  box-sizing: border-box;
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--atlas-overlay-medium);
+  background-color: var(--atlas-background-content);
+  color: var(--atlas-heading-text-primary);
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.Carousel-button-FLcVr:hover:not(:disabled),
+.Carousel-button-FLcVr:active:not(:disabled) {
+  background-color: var(--atlas-overlay-light);
+}
+
+.Carousel-button-FLcVr:disabled {
+  color: var(--atlas-overlay-medium);
+  cursor: unset;
+}
+
+.Carousel-hidden-IAHgH {
+  visibility: hidden;
+}
+
+.Carousel-button-FLcVr:focus {
+  outline: none;
+}
+
+.Carousel-button-FLcVr:focus-visible {
+  outline: none;
+  border-color: var(--atlas-heading-text-primary);
+}
+
+.EmptyState-box-snPpg {
+  padding: var(--atlas-space-24) var(--atlas-space-16);
+  border-radius: var(--atlas-card-border-radius-small);
+  text-align: center;
+  border: 1px dashed var(--atlas-overlay-medium);
+}
+
+.EmptyState-imageContainer-Rzi9r {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  background: var(--atlas-overlay-light);
+  padding: var(--atlas-space-16);
+  margin: 0 auto var(--atlas-space-12);
+}
+
+.EmptyState-text-bpRG_ {
+  opacity: 0.5;
+}
+
+.coupons-dashedCard-kOLDj {
+  border-style: dashed;
+}
+
+.SegmentedProgressBar-container-gQMIp {
+  display: flex;
+  gap: var(--atlas-space-8);
+  width: 100%;
+}
+
+.SegmentedProgressBar-segment-sBAdl {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--atlas-overlay-medium);
+}
+
+.SegmentedProgressBar-active-N84fa {
+  background-color: var(--atlas-text-primary);
+}
+
+.order-carouselContainer-Pj5jv {
+  margin: 0 calc(-1 * var(--atlas-space-16)); /* negative margins because the parent container adds padding but this should be full bleed */
+}
+
+.order-carouselOrderCard-ei4xZ {
+  width: 300px;
+}
+
+.reviews-carouselContainer-KstW8 {
+  margin: 0 calc(-1 * var(--atlas-space-16)); /* negative margins because the parent container adds padding but this should be full bleed */
+}
+
+.reviews-carouselReviewRequestCard-fXdsc {
+  width: 300px;
+  display: flex;
+  height: 100%;
+}
+
+.loyalty-loyaltyButton-Kez6n {
+  display: block;
+  width: 100%;
+}
+
+.Chip-chip-qC_ym {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--atlas-space-tiny);
+  border-radius: var(--atlas-chip-border-radius);
+  padding: var(--atlas-chip-padding);
+  background-color: var(--atlas-overlay-light);
+  /* Sizes any `startIcon` to small, consumed by the icon's IconWrapper. */
+  --kl-local-icon-size: var(--atlas-icon-size-small);
+}
+
+.loyalty-vipImage-ELwbs {
+  width: 16px;
+  height: 16px;
+}
+
+.loyalty-bigVipImage-SJHts {
+  width: 48px;
+  height: 48px;
+}
+
+.ProgressBar-progressBarContainer-WhCJL {
+  height: var(--atlas-progress-bar-height);
+  border-radius: var(--atlas-progress-bar-border-radius);
+  background-color: var(--atlas-overlay-light);
+  width: 100%;
+}
+
+.ProgressBar-progressBar-Qtxyc {
+  height: var(--atlas-progress-bar-height);
+  border-radius: var(--atlas-progress-bar-border-radius);
+  background-color: var(--atlas-text-primary);
+  --kl-local-progress-min: 0px;
+  width: clamp(
+    var(--kl-local-progress-min),
+    var(--kl-local-progress-bar-progress),
+    100%
+  );
+}
+
+.ProgressBar-noEmpty-GWxpA {
+  --kl-local-progress-min: var(--atlas-progress-bar-height);
+}
+
+@keyframes ProgressBar-animateEmpty-busgb {
+  from {
+    width: var(--kl-local-progress-min);
+  }
+
+  to {
+    width: clamp(
+      var(--kl-local-progress-min),
+      var(--kl-local-progress-bar-progress),
+      100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ProgressBar-animateFromEmpty-nEkXV {
+    animation: ProgressBar-animateEmpty-busgb 300ms ease-out;
+  }
+
+  .ProgressBar-progressBar-Qtxyc {
+    transition-property: width;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+  }
+}
+
+.subscription-statusBadge-oe6sT {
+  border: 1px solid var(--atlas-text-primary);
+  color: var(--atlas-text-primary);
+  border-radius: 12px;
+  padding: 2px 8px;
+  margin-bottom: auto;
+}
+
+.subscription-cardHeader-oZ51O {
+  font-size: var(--atlas-font-size-large);
+}
+
+.subscription-carouselContainer-IbOQ9 {
+  margin: 0 calc(-1 * var(--atlas-space-16)); /* negative margins because the parent container adds padding but this should be full bleed */
+}
+
+.subscription-carouselOrderCard-tSG27 {
+  width: 300px;
+}
+
+.Layout-contentBox-ytSH1 {
+  background-color: var(--atlas-background-content);
+}
+
+.Layout-fillLayout-uvpH4 {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Layout-fillLayout-uvpH4 > :last-child {
+    flex: 1;
+  }
+
+.EmptyState-container-cI9NM {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 0px var(--atlas-space-24);
+}
+
+.EmptyState-spacer-JB_sd,
+.EmptyState-spacer-JB_sd:empty {
+  /**
+    Without container queries, you can't set a dynamic top padding or margin because
+    padding and margin use the inline (i.e. horizontal) width for all percentage values.
+    This empty space takes care of that for us.
+    We want some general spacing from the top, but not exactly in the middle.
+  **/
+  height: 15%;
+  display: block;
+}
+
+.EmptyState-imageContainer-KfuKH {
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  background: var(--atlas-overlay-light);
+  padding: var(--atlas-space-16);
+  margin: 0 auto var(--atlas-space-24);
+}
+
+.EmptyState-text-nHesC {
+  opacity: 0.5;
+}
+
+.EmptyState-textContainer-r1am8 {
+  margin-bottom: var(--atlas-space-16);
+}
+
+.Thumbnail-imagesContainer-c9ElB {
+  display: grid;
+  border-radius: var(--atlas-thumbnail-border-radius);
+  gap: 2px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  height: var(--kl-local-size);
+  width: var(--kl-local-size);
+}
+
+.Thumbnail-imageContainer-dV7K8 {
+  height: 100%;
+  width: 100%;
+}
+
+.Thumbnail-thumbnailImage-l362I {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: unset;
+}
+
+.Chat-chatWindow-mDlJ6 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Mobile viewport fix: use dynamic viewport height that excludes browser UI */
+@supports (height: 100dvh) {
+  .Chat-chatWindow-mDlJ6 {
+    height: min(100%, 100dvh);
+  }
+}
+
+.Chat-chatFooter-aW511 {
+  display: flex;
+  flex-direction: column;
+  padding: var(--atlas-space-medium);
+  border-top: 1px solid var(--atlas-overlay-light);
+  background: var(--atlas-background-content);
+}
+
+.Chat-messagesContainer-H6k_o {
+  flex: 1;
+  overflow-y: hidden; /* child controls scrolling */
+}
+
+/*
+ * Some Shopify themes, including many of the default free themes, hide empty
+ * elements by default (i.e. div:empty { display: none; }). Force the scroll
+ * container to stay visible even when it has no children yet. !important is
+ * needed because some themes increase the specificity of that rule with
+ * arbitrary exceptions.
+ */
+.Chat-messagesContainer-H6k_o:empty {
+  display: block !important;
+}
+
+.Conversation-container-dplsV {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  gap: var(--atlas-space-8);
+  scrollbar-width: none;
+  padding: var(--atlas-space-24) var(--atlas-space-16);
+}
+
+  .Conversation-container-dplsV::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* See forceShowEmptyMixin: some themes hide empty elements (div:empty { display: none }). */
+
+  .Conversation-container-dplsV:empty {
+    display: flex !important;
+  }
+
+.auth-welcomeCard-yDmd3 {
+  /* Match message bubble width constraint from TextMessage.module.css */
+  width: calc(100% - 48px);
+}
+
+.auth-content-NIYe5 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atlas-space-12);
+  padding: var(--atlas-space-16);
+  text-align: center;
+}
+
+.auth-loginBlock-syDxP {
+  --kl-local-login-padding-top: 0;
+}
+
+.auth-container-xK2Zb {
+  padding: var(--atlas-space-16);
+}
+
+.Message-messageCard-bLT5M {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  background: var(--atlas-background-content);
+  color: var(--atlas-button-primary);
+  padding: var(--atlas-space-16);
+  margin-bottom: var(--atlas-space-16);
+  border-radius: var(--atlas-message-border-radius);
+  word-wrap: break-word;
+  word-break: break-word;
+  border: 1px solid var(--atlas-border-light);
+  max-width: 100%;
+  width: 100%;
+}
+
+.Message-title-u1zeB {
+  font-size: var(--atlas-font-size-small);
+  font-weight: var(--atlas-font-weight-bold);
+  margin-bottom: var(--atlas-space-8);
+  color: var(--atlas-heading-text-primary);
+  font-family: var(--atlas-heading-font-family);
+}
+
+.Message-label-Gv51W {
+  font-size: var(--atlas-font-size-small);
+  margin-bottom: var(--atlas-space-8);
+  font-family: var(--atlas-font-family);
+}
+
+.Message-formRow-D3AGZ {
+  display: flex;
+  align-items: center;
+  gap: var(--atlas-space-small);
+  margin-top: var(--atlas-space-8);
+}
+
+.Message-input-uPCYE {
+  flex: 1;
+  border: 1px solid var(--atlas-border-light);
+  transition: border-color 0.2s ease;
+}
+
+.Message-input-uPCYE:focus,
+.Message-input-uPCYE:focus-visible {
+  border-color: var(--atlas-border-focus);
+}
+
+/* Higher specificity so the invalid border color wins over TextInput's own
+   border styles regardless of stylesheet order. */
+.Message-input-uPCYE.Message-inputInvalid-jLK8Q {
+  border-color: var(--atlas-input-error);
+}
+
+.Message-input-uPCYE.Message-inputInvalid-jLK8Q:focus,
+.Message-input-uPCYE.Message-inputInvalid-jLK8Q:focus-visible {
+  border-color: var(--atlas-input-error);
+}
+
+.Message-submitButton-Cv2PQ {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.Message-submitButton-Cv2PQ:hover {
+  opacity: 0.9;
+}
+
+.Message-errorMessage-GEEsA {
+  color: var(--atlas-text-negative);
+  font-size: var(--atlas-font-size-small);
+  font-family: var(--atlas-font-family);
+  margin-top: var(--atlas-space-12);
+  padding: 0 var(--atlas-space-8);
+  line-height: 1.4;
+}
+
+.Message-linkContainer-Nq5kD {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.Message-promptButton-ACj7K {
+  text-align: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: unset;
+}
+
+.Message-displayName-I90Fm {
+  padding-bottom: 4px;
+  color: var(--atlas-chat-bubble-display-name);
+}
+
+/* Scopes dir="auto" to the body, so a Latin display name above it does not
+   decide the direction. */
+.Message-autoTextDirection-wK_4E {
+  display: contents;
+}
+
+.Message-textMessageContainer-me0Yf {
+  display: block;
+  /* The drawer reset takes text-align from the merchant's page, and an absolute
+     value there would survive dir and half-mirror RTL messages. */
+  text-align: start;
+  padding: var(--atlas-space-mini) var(--atlas-space-small);
+  border-radius: var(--atlas-message-border-radius);
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  font-size: var(--atlas-font-size-small);
+  font-family: var(--atlas-font-family);
+}
+
+.Message-textMessageContainer-me0Yf.Message-outgoing-HSl_1 {
+    align-self: flex-end;
+    background: var(--atlas-button-primary);
+    color: var(--atlas-text-primary-inverse);
+    margin-left: 48px;
+  }
+
+.Message-textMessageContainer-me0Yf.Message-incoming-Gv8q9 {
+    align-self: flex-start;
+    color: var(--atlas-chat-bubble-text-primary);
+    background: var(--atlas-chat-bubble-background);
+    margin-right: 48px;
+    border: 1px solid var(--atlas-overlay-medium);
+  }
+
+.Message-textMessageContainer-me0Yf h1,
+  .Message-textMessageContainer-me0Yf h2,
+  .Message-textMessageContainer-me0Yf h3,
+  .Message-textMessageContainer-me0Yf h4,
+  .Message-textMessageContainer-me0Yf h5,
+  .Message-textMessageContainer-me0Yf h6 {
+    padding-block-end: var(--atlas-space-mini);
+    color: inherit;
+    font-family: var(--atlas-heading-font-family);
+    font-size: var(--atlas-font-size-small);
+    font-weight: var(--atlas-font-weight-heading);
+    line-height: var(--atlas-line-height-small);
+  }
+
+.Message-textMessageContainer-me0Yf * {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+/*
+   * This widget is embedded on merchant sites, so we can't rely on the browser
+   * default list indentation: many themes reset `ul`/`ol` margin/padding to 0.
+   * With the default `list-style-position: outside`, that pushes the markers
+   * (and text) out past the left edge of the message bubble â€” most visible on
+   * mobile. Pin the inline spacing ourselves so list content always stays
+   * inside the bubble regardless of the surrounding site's styles.
+   */
+
+.Message-textMessageContainer-me0Yf ul,
+  .Message-textMessageContainer-me0Yf ol {
+    margin-inline: 0;
+    padding-inline-start: var(--atlas-space-24);
+    list-style-position: outside;
+  }
+
+.Message-textMessageContainer-me0Yf li {
+    white-space: normal;
+  }
+
+.Message-textMessageContainer-me0Yf a {
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--atlas-button-primary);
+  }
+
+.Message-textMessageContainer-me0Yf a.Message-outgoing-HSl_1 {
+      color: var(--atlas-text-primary-inverse);
+    }
+
+.Chat-carouselContainer-JqeV4 {
+  margin: 0 calc(-1 * var(--atlas-space-16));
+}
+
+.Chat-orderCard-f_f5L {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.Chat-carouselContainer-RsAmj {
+  margin: 8px calc(-1 * var(--atlas-space-16)) 0;
+}
+
+.Icon-iconImg-e3cjy {
+  height: 24px;
+  width: 24px;
+}
+
+.Chat-subscriptionCard-Jnvsm {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.Chat-carouselContainer-FXnln {
+  margin: 8px calc(-1 * var(--atlas-space-16)) 0;
+}
+
+.Chat-loyaltyCard-Oki2Y {
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.Chat-loyaltyCardLink-St80S {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.Message-imageContainer-ru09_ {
+  max-width: 75px;
+  max-height: 75px;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--atlas-thumbnail-border-radius);
+}
+
+.Message-cardBody-Ei5xz {
+  padding: var(--atlas-space-medium);
+}
+
+.Carousel-container-r6G4a {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  gap: var(--atlas-space-12);
+  scrollbar-width: none;
+}
+
+  .Carousel-container-r6G4a::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* See forceShowEmptyMixin: some themes hide empty elements (div:empty { display: none }). */
+
+  .Carousel-container-r6G4a:empty {
+    display: flex !important;
+  }
+
+  .Carousel-container-r6G4a:last-child {
+    margin-right: var(--atlas-space-12);
+  }
+
+.Chat-carouselContainer-g9qb1 {
+  margin: 0 calc(-1 * var(--atlas-space-16));
+}
+
+  .Chat-carouselContainer-g9qb1.Chat-outgoing-FaFIr {
+    align-self: flex-end;
+    margin: 0;
+  }
+
+  .Chat-carouselContainer-g9qb1.Chat-incoming-g8Xaz {
+    align-self: flex-start;
+    margin: 0;
+  }
+
+.Chat-croppedImage-M4TQY {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: var(--atlas-card-border-radius-small);
+  cursor: pointer;
+}
+
+.TypingIndicator-container-ldOOy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+}
+
+/**
+ * An individual indication "bubble", needs !important styling on the size so we guarantee that
+ * the bubbles will display (overriding any span:empty styles).
+ */
+.TypingIndicator-bubble-YO7AM {
+  width: 6px !important;
+  height: 6px !important;
+  background-color: var(--kl-local-bubble-color);
+  border-radius: 50%;
+  animation: TypingIndicator-bounce-y8S81 1.5s infinite ease-in-out;
+}
+
+.TypingIndicator-bubble-YO7AM:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.TypingIndicator-bubble-YO7AM:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes TypingIndicator-bounce-y8S81 {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.TypingIndicator-indicatorContainer-rc5td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 4px;
+}
+
+.TypingIndicator-shimmerText-ULHmR {
+  /* Create the shimmer effect with a moving gradient background.
+  Largely borrowed from the corresponding CSS file in marketing-agent. */
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    currentColor 30%,
+    rgba(255, 255, 255) 50%,
+    currentColor 70%,
+    currentColor 100%
+  );
+
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  filter: brightness(0.75);
+  background-position: -300% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation-name: TypingIndicator-shimmer-move-XsfPl;
+  animation-duration: var(--shimmer-duration, 1.5s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.TypingIndicator-shimmerOnce-_cmTs {
+  animation-iteration-count: 1;
+}
+
+@keyframes TypingIndicator-shimmer-move-XsfPl {
+  0% {
+    background-position: top right;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background-position: top left;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .TypingIndicator-shimmerText-ULHmR {
+    animation: none;
+    background: currentColor;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.Message-container-obwnC {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--atlas-overlay-heavy);
+  padding: 24px 0px;
+  font-family: var(--atlas-font-family);
+}
+
+.Message-line-ESOJk {
+  flex-grow: 1;
+  height: 1px;
+  border-bottom: 1px solid var(--atlas-overlay-medium);
+}
+
+.Message-message-pQM75 {
+  flex-grow: 0;
+}
+
+.Chat-csatContainer-zPMkF {
+  margin: var(--atlas-space-medium) 0;
+}
+
+.Chat-thankYouContainer-M1BSE {
+  margin: var(--atlas-space-medium) 0;
+}
+
+.Chat-thankYouMessage-Je2pb {
+  padding: var(--atlas-space-small) var(--atlas-space-medium);
+  text-align: center;
+}
+
+.Chat-iconsContainer-XnUcZ {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--atlas-space-8);
+  padding: var(--atlas-space-small) 0;
+}
+
+.Chat-iconButton-h52Ec {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 84px;
+  padding: var(--atlas-space-medium) var(--atlas-space-xsmall);
+  border-color: var(--atlas-border-light);
+}
+
+.Chat-iconButton-h52Ec:active {
+  transform: scale(0.95);
+}
+
+.Chat-iconText-uFmA3 {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.Chat-iconSelected-BEpOs {
+  border-color: var(--atlas-button-primary);
+}
+
+.Chat-textInputContainer-BHq77 {
+  margin-bottom: var(--atlas-space-medium);
+}
+
+.Chat-starIconsContainer-NFoD5:has(.Chat-icon-0-Wb6Vh:hover) .Chat-icon-0-Wb6Vh svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-0-Wb6Vh.Chat-iconSelected-BEpOs) .Chat-icon-0-Wb6Vh svg {
+        color: var(--atlas-caution-base);
+      }
+
+.Chat-starIconsContainer-NFoD5:has(.Chat-icon-1-CXfz2:hover) .Chat-icon-0-Wb6Vh svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-1-CXfz2:hover) .Chat-icon-1-CXfz2 svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-1-CXfz2.Chat-iconSelected-BEpOs) .Chat-icon-0-Wb6Vh svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-1-CXfz2.Chat-iconSelected-BEpOs) .Chat-icon-1-CXfz2 svg {
+        color: var(--atlas-caution-base);
+      }
+
+.Chat-starIconsContainer-NFoD5:has(.Chat-icon-2-elxbr:hover) .Chat-icon-0-Wb6Vh svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-2-elxbr:hover) .Chat-icon-1-CXfz2 svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-2-elxbr:hover) .Chat-icon-2-elxbr svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-2-elxbr.Chat-iconSelected-BEpOs) .Chat-icon-0-Wb6Vh svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-2-elxbr.Chat-iconSelected-BEpOs) .Chat-icon-1-CXfz2 svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-2-elxbr.Chat-iconSelected-BEpOs) .Chat-icon-2-elxbr svg {
+        color: var(--atlas-caution-base);
+      }
+
+.Chat-starIconsContainer-NFoD5:has(.Chat-icon-3-d3zRI:hover) .Chat-icon-0-Wb6Vh svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-3-d3zRI:hover) .Chat-icon-1-CXfz2 svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-3-d3zRI:hover) .Chat-icon-2-elxbr svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-3-d3zRI:hover) .Chat-icon-3-d3zRI svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-3-d3zRI.Chat-iconSelected-BEpOs) .Chat-icon-0-Wb6Vh svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-3-d3zRI.Chat-iconSelected-BEpOs) .Chat-icon-1-CXfz2 svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-3-d3zRI.Chat-iconSelected-BEpOs) .Chat-icon-2-elxbr svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-3-d3zRI.Chat-iconSelected-BEpOs) .Chat-icon-3-d3zRI svg {
+        color: var(--atlas-caution-base);
+      }
+
+.Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8:hover) .Chat-icon-0-Wb6Vh svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8:hover) .Chat-icon-1-CXfz2 svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8:hover) .Chat-icon-2-elxbr svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8:hover) .Chat-icon-3-d3zRI svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8:hover) .Chat-icon-4-Wjzj8 svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8.Chat-iconSelected-BEpOs) .Chat-icon-0-Wb6Vh svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8.Chat-iconSelected-BEpOs) .Chat-icon-1-CXfz2 svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8.Chat-iconSelected-BEpOs) .Chat-icon-2-elxbr svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8.Chat-iconSelected-BEpOs) .Chat-icon-3-d3zRI svg, .Chat-starIconsContainer-NFoD5:has(.Chat-icon-4-Wjzj8.Chat-iconSelected-BEpOs) .Chat-icon-4-Wjzj8 svg {
+        color: var(--atlas-caution-base);
+      }
+
+.Chat-starIcon-NeRAo {
+  color: var(--atlas-button-disabled-color);
+}
+
+.Chat-linkContainer-wfiuo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.Chat-button-Sxq05 {
+  --kl-local-border-radius: 999px;
+  --kl-local-button-background: var(--atlas-background-content);
+  position: absolute;
+  left: 50%;
+  bottom: var(--atlas-space-medium);
+  transform: translateX(-50%);
+  box-shadow: 0 2px 8px var(--atlas-overlay-medium);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--atlas-space-tiny);
+}
+
+.Chat-icon-izeqp {
+  display: inline-flex;
+}
+
+.Chat-tosContainer-xaRaM {
+  text-align: center;
+}
+
+.Chat-tosLink-mWaSw {
+  font-size: var(--atlas-font-size-tiny);
+  color: var(--atlas-text-secondary);
+}
+
+.Chat-chatToS-r0Anj {
+  margin-bottom: var(--atlas-space-medium);
+}
+
+.MessageInput-previewContainer-Vrh2s {
+  display: flex;
+  align-items: center;
+  gap: var(--atlas-space-small);
+}
+
+.MessageInput-previewWrapper-bpoSw {
+  position: relative;
+  display: inline-block;
+}
+
+.MessageInput-previewImage-wmy97 {
+  width: 64px;
+  height: 64px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: var(--atlas-card-border-radius-small);
+  border: 1px solid var(--atlas-overlay-light);
+}
+
+.MessageInput-previewSpinner-AsbTR {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: var(--atlas-card-border-radius-small);
+}
+
+.MessageInput-removeButton-tIXpB {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+
+.MessageInput-pill-RfHRh {
+  display: flex;
+  align-items: center;
+  gap: var(--atlas-space-mini);
+  flex: 1;
+  min-width: 0;
+  border-radius: var(--atlas-button-border-radius-normal);
+  border: 1px solid var(--atlas-overlay-heavy);
+  background: var(--atlas-background-content);
+  padding: var(--atlas-space-mini) var(--atlas-space-small);
+}
+
+.MessageInput-pill-RfHRh[data-disabled='true'] {
+  background-color: var(--atlas-input-background-disabled);
+}
+
+input[type='file'].MessageInput-hiddenInput-YVP8P {
+  display: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+textarea.MessageInput-inputField-UpDAu {
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-size: var(--atlas-font-size-normal);
+  line-height: var(--atlas-line-height-normal);
+  flex: 1;
+  min-width: 0;
+  padding: 4px 2px;
+  resize: none;
+  overflow-y: hidden;
+  overflow-x: visible;
+}
+
+textarea.MessageInput-inputField-UpDAu:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+textarea.MessageInput-inputField-UpDAu[disabled] {
+  background: transparent;
+}
+
+.MessageInput-submitButton-W6qPq {
+  align-self: flex-end;
+}
+
+.MessageInput-attachmentButton-kQBhR {
+  margin-bottom: var(--atlas-space-mini);
+}
+
+.MessageInput-submitButton-W6qPq:disabled:hover {
+  border: 1px solid var(--atlas-button-disabled-color);
+  cursor: not-allowed;
+}
+
+.FAQ-messageIconContainer-i8iEj {
+  position: relative;
+  padding: var(--atlas-space-8);
+  border-radius: 50%;
+  background: var(--atlas-overlay-light);
+  line-height: 0px; /* containers containing no text content still inherit the line height. Set it to 0 so the height is drive by the icon. */
+}
+
+.FAQ-unreadDot-G0TXt {
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--atlas-button-primary);
+  outline: 2px solid var(--atlas-background-content);
+}
+
+.FAQ-listContainer-Ox9hw {
+  border-top: 1px solid var(--atlas-overlay-light);
+}
+
+.Accordion-wrapper-YfLYz {
+  width: 100%;
+}
+
+.Accordion-wrapperExpanded-x8aql {
+  background-color: var(--atlas-overlay-light);
+}
+
+.Accordion-accordionButton-XhYWs {
+  justify-content: space-between;
+}
+
+.Accordion-accordionButton-XhYWs:hover:not(:disabled) {
+  /* no hover for this button */
+  background: none;
+}
+
+.Accordion-icon-XEgdT {
+  transition: transform 150ms ease-in-out;
+}
+
+.Accordion-collapsibleContainer-eMBKc {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 150ms ease-in-out;
+}
+
+.Accordion-collapsibleContainerExpanded-rCIQK {
+  grid-template-rows: 1fr;
+}
+
+.Accordion-collapsibleContent-bFvVd {
+  overflow: hidden;
+}
+
+.Accordion-collapsibleContentInner-c7JWH {
+  padding: var(--atlas-space-16);
+  padding-top: 0;
+}
+
+.FAQ-answer-fd9pF {
+  white-space: pre-wrap;
+}
+
+.profile-storeCreditBalance-eWAxi {
+  color: var(--atlas-button-primary);
+}
+
+.EmptyResult-container-cnCOd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.reviews-iframe-Q3U3J {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.loyalty-rewardImage-mjNWf {
+  width: 28px;
+  height: 28px;
+}
+
+.loyalty-rewardImage-p50Pa {
+  width: 30px;
+  height: 30px;
+}
+
+.Input-range-NWwbb {
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 10px;
+  border-radius: var(--atlas-loyalty-border-radius);
+  background: var(--atlas-overlay-light);
+  outline: none;
+  transition: background 0.2s;
+  cursor: pointer;
+
+  /*
+   * Shared filled-track gradient. The vendor pseudo-elements below can't be
+   * combined into one rule (browsers drop the whole selector list if any
+   * selector is unrecognized), so the gradient lives in one custom property
+   * that each pseudo-element references.
+   */
+  --kl-local-track-gradient: linear-gradient(
+    to right,
+    var(--atlas-button-primary) 0%,
+    var(--atlas-button-primary) var(--kl-local-progress),
+    var(--atlas-range-input-background) var(--kl-local-progress),
+    var(--atlas-range-input-background) 100%
+  );
+}
+
+.Input-range-NWwbb:hover {
+  opacity: 1;
+  background: var(--atlas-overlay-medium);
+}
+
+.Input-range-NWwbb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--atlas-range-input-thumb-size);
+  height: var(--atlas-range-input-thumb-size);
+  border-radius: 50%;
+  background: var(--atlas-range-input-thumb-background);
+  border: var(--atlas-range-input-thumb-border);
+  margin-top: -8px;
+}
+
+.Input-range-NWwbb::-moz-range-thumb {
+  width: var(--atlas-range-input-thumb-size);
+  height: var(--atlas-range-input-thumb-size);
+  border-radius: 50%;
+  background: var(--atlas-range-input-thumb-background);
+  border: var(--atlas-range-input-thumb-border);
+  margin-top: -8px;
+}
+
+.Input-range-NWwbb::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  background: var(--atlas-range-input-background);
+  border-radius: var(--atlas-loyalty-border-radius);
+}
+
+.Input-range-NWwbb::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--atlas-loyalty-border-radius);
+  background: var(--kl-local-track-gradient);
+}
+
+.Input-range-NWwbb::-moz-range-progress {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--atlas-loyalty-border-radius);
+  background: var(--kl-local-track-gradient);
+}
+
+.auth-otpInput-GTZeP {
+  width: 71px;
+  height: 96px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: var(--atlas-font-size-h2);
+  line-height: var(--atlas-line-height-h2);
+}
+
+.auth-otpInput-GTZeP:focus {
+  border: 2px solid;
+  border-color: var(--atlas-border-focus);
+  outline: none;
+  outline-offset: 0px;
+}
+
+.auth-otpInputWrapper-hJ9rS {
+  display: flex;
+  gap: 10px;
+  margin-bottom: var(--atlas-space-small);
+}
+
+.Layout-wrapper-NnQZ4 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Layout-body-UKi5o {
+  padding: var(--atlas-space-huge) var(--atlas-space-medium);
+  flex: 1;
+}
+
+.Layout-actions-Szk1i {
+  padding: var(--atlas-space-jumbo) var(--atlas-space-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--atlas-space-mini);
+  background-color: var(--atlas-background-content);
+}
+
+.profile-consentTextWrapper-juGOY {
+  margin-top: var(--atlas-space-jumbo);
+  border-radius: 12px;
+  border: 1px solid var(--atlas-border-light);
+  background-color: var(--atlas-background-content);
+  padding: var(--atlas-space-jumbo);
+}
+
+.summary-pausedHeading-XldbC {
+  color: var(--atlas-button-primary);
+}
+
+.summary-confirmModalBackground-PlGAX {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #00000026;
+  height: 100%;
+  width: 100%;
+}
+
+.summary-confirmModal-gqe_e {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: var(--atlas-space-24);
+  border: 1px solid var(--atlas-overlay-medium);
+  background-color: var(--atlas-background-main);
+  border-radius: var(--atlas-card-border-radius-normal)
+    var(--atlas-card-border-radius-normal) 0 0;
+}
+
+.Input-wrapper-JiNPp {
+  display: inline-flex;
+  align-items: stretch;
+  background: var(--atlas-background-content);
+  border: 1px solid var(--atlas-border-dark);
+  border-radius: var(--atlas-input-border-radius-normal);
+}
+
+.Input-wrapperSmall-J910Z {
+  border-radius: var(--atlas-input-border-radius-small);
+}
+
+.Input-wrapperFull-YXA8F {
+  width: 100%;
+}
+
+.Input-wrapperDisabled-kj9aI {
+  background-color: var(--atlas-input-background-disabled);
+  border-width: 0;
+}
+
+.Input-wrapper-JiNPp:focus-within {
+  border-color: var(--atlas-border-focus);
+  outline: none;
+  box-shadow: none;
+}
+
+.Input-inputContainer-dGsqh {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.Input-internalLabel-fbePE {
+  flex-shrink: 0;
+  padding-right: 8px;
+  font-size: var(--atlas-font-size-normal);
+  line-height: 1;
+  color: var(--atlas-text-secondary);
+  pointer-events: none;
+}
+
+.Input-input-UFu4Z {
+  background: transparent;
+  border: none;
+  color: var(--atlas-text-primary);
+  padding: var(--atlas-input-padding);
+  font-size: var(--atlas-font-size-normal);
+  line-height: var(--atlas-line-height-normal);
+  font-variant-numeric: tabular-nums;
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.Input-inputSmall-eJnuN {
+  font-size: var(--atlas-font-size-small);
+  line-height: var(--atlas-line-height-small);
+}
+
+.Input-input-UFu4Z:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.Input-input-UFu4Z::-moz-placeholder {
+  color: var(--atlas-text-placeholder);
+}
+
+.Input-input-UFu4Z::placeholder {
+  color: var(--atlas-text-placeholder);
+}
+
+.Input-input-UFu4Z:disabled {
+  background-color: transparent;
+}
+
+/* Hide native number input spinners */
+.Input-input-UFu4Z::-webkit-outer-spin-button,
+.Input-input-UFu4Z::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Input-input-UFu4Z {
+  -moz-appearance: textfield;
+}
+
+.Input-steppersContainer-PCVXK {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--atlas-border-dark);
+}
+
+.Input-steppersContainerDisabled-mbXjs {
+  border-left-color: transparent;
+}
+
+.Input-stepperButton-IgsqF {
+  background-color: var(--atlas-background-content);
+  color: var(--atlas-text-primary);
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  flex: 1 1 auto;
+  min-height: 16px;
+}
+
+.Input-stepperButton-IgsqF:first-child {
+  border-top-right-radius: var(--atlas-input-border-radius-normal);
+}
+
+.Input-stepperButton-IgsqF:last-child {
+  border-bottom-right-radius: var(--atlas-input-border-radius-normal);
+}
+
+.Input-stepperButton-IgsqF:hover:not(:disabled) {
+  background-color: var(--atlas-overlay-light);
+}
+
+.Input-stepperButton-IgsqF:active:not(:disabled) {
+  background-color: var(--atlas-overlay-medium);
+}
+
+.Input-stepperButton-IgsqF:disabled {
+  color: var(--atlas-text-disabled);
+  cursor: default;
+}
+
+.summary-editLink-LmZRa {
+  font-size: var(--atlas-font-size-small);
+  line-height: var(--atlas-line-height-normal);
+  font-weight: var(--atlas-button-font-weight);
+  padding: var(--atlas-button-padding-tiny);
+  border-radius: var(--atlas-button-border-radius-normal);
+  text-decoration: none;
+  color: var(--atlas-button-primary);
+  background: transparent;
+  border: 1px solid var(--atlas-button-primary);
+}
+
+.summary-editLink-vwCVJ {
+  font-size: var(--atlas-font-size-small);
+  line-height: var(--atlas-line-height-normal);
+  font-weight: var(--atlas-button-font-weight);
+  padding: var(--atlas-button-padding-tiny);
+  border-radius: var(--atlas-button-border-radius-normal);
+  text-decoration: none;
+  color: var(--atlas-button-primary);
+  background: transparent;
+  border: 1px solid var(--atlas-button-primary);
+}
+
+.summary-cardList-GiHAm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atlas-space-medium);
+}
+
+.subscriptions-buttonLink-W0rnD {
+  text-decoration: underline;
+}
+
+.summary-pricingRow-cb7nx {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-pricingRow-cb7nx:not(:last-child) {
+  margin-bottom: var(--atlas-space-mini);
+}
+
+.orderHelp-pageTop-WawkI {
+  margin-bottom: var(--atlas-space-jumbo);
+}
+
+.orderHelp-lineItemList-QI0rI {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atlas-space-mini);
+  padding: 0;
+  margin: 0;
+}
+
+.orderHelp-listItem-c9_uM {
+  list-style-type: none;
+}
+
+.orderHelp-lineItemSelection-GokYw {
+  display: flex;
+  align-items: center;
+  gap: var(--atlas-space-medium);
+  padding: var(--atlas-space-small) var(--atlas-space-medium);
+  border-bottom: 1px solid var(--atlas-border-light);
+}
+
+.orderHelp-lineItemCheckbox-PLo1p {
+  width: 20px;
+  height: 20px;
+}
+
+.orderHelp-continueButton-vKHfq {
+  margin-top: auto;
+}
+
+.orderHelp-lineItemList-aVjUv {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atlas-space-mini);
+  margin: 0;
+  padding: 0;
+}
+
+.orderHelp-lineItem-uB64I {
+  width: 100%;
+  border: 1px solid var(--atlas-border-light);
+  border-radius: var(--atlas-thumbnail-border-radius);
+  padding: var(--atlas-space-small) var(--atlas-space-medium);
+  list-style-type: none;
+}
+
+.orderHelp-textArea-mLUez {
+  box-sizing: border-box;
+  height: 120px;
+  width: 100%;
+  padding: 6px var(--atlas-space-small);
+  resize: both;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 500px;
+  background-color: transparent;
+  border: 1px solid var(--atlas-border-dark);
+  border-radius: var(--atlas-input-border-radius-normal);
+  outline: none;
+  box-shadow: none;
+}
+
+.orderHelp-textArea-mLUez::-moz-placeholder {
+  color: var(--atlas-text-placeholder);
+}
+
+.orderHelp-textArea-mLUez::placeholder {
+  color: var(--atlas-text-placeholder);
+}
+
+.actions-button-u13JQ {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--atlas-space-tiny);
+}
+
+.cart-priceOnSale-Cs1hH {
+  color: var(--atlas-primary-color);
+}
+
+.cart-originalPrice-e3Yx1 {
+  text-decoration: line-through;
+}
+
+.QuantityInput-wrapper-amdTo {
+  display: inline-flex;
+  align-items: stretch;
+  background: var(--atlas-background-content);
+  border: 1px solid var(--atlas-border-dark);
+  border-radius: var(--atlas-input-border-radius-normal);
+}
+
+.QuantityInput-wrapper-amdTo:focus-within {
+  border-color: var(--atlas-border-focus);
+  outline: none;
+  box-shadow: none;
+}
+
+.QuantityInput-wrapperDisabled-NKlNz {
+  background-color: var(--atlas-input-background-disabled);
+  border-color: transparent;
+}
+
+.QuantityInput-cellButton-kPYuI {
+  background-color: transparent;
+  color: var(--atlas-text-primary);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  min-height: 32px;
+}
+
+.QuantityInput-cellButton-kPYuI:first-child {
+  border-top-left-radius: var(--atlas-input-border-radius-normal);
+  border-bottom-left-radius: var(--atlas-input-border-radius-normal);
+}
+
+.QuantityInput-cellButton-kPYuI:last-child {
+  border-top-right-radius: var(--atlas-input-border-radius-normal);
+  border-bottom-right-radius: var(--atlas-input-border-radius-normal);
+}
+
+.QuantityInput-cellButton-kPYuI:hover:not(:disabled) {
+  background-color: var(--atlas-overlay-light);
+}
+
+.QuantityInput-cellButton-kPYuI:active:not(:disabled) {
+  background-color: var(--atlas-overlay-medium);
+}
+
+.QuantityInput-cellButton-kPYuI:disabled {
+  color: var(--atlas-text-disabled);
+  cursor: default;
+}
+
+input.QuantityInput-input-RNp3g {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--atlas-border-dark);
+  border-right: 1px solid var(--atlas-border-dark);
+  color: var(--atlas-text-primary);
+  padding: 0 8px;
+  font-size: var(--atlas-font-size-normal);
+  line-height: var(--atlas-line-height-normal);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  width: 40px;
+  min-width: 0;
+  box-sizing: border-box;
+  -moz-appearance: textfield;
+}
+
+.QuantityInput-input-RNp3g:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.QuantityInput-input-RNp3g:disabled {
+  background-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.QuantityInput-input-RNp3g::-webkit-outer-spin-button,
+.QuantityInput-input-RNp3g::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cart-spacer-K38Td {
+  padding-bottom: 64px; /* reserve space for floating bottom bar */
+}
+
+.cart-favoriteItem-ZYlrs {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.cart-bar-NQkEo {
+  position: sticky;
+  bottom: 0px;
+  width: 100%;
+}
+
+.cart-priceOnSale-kdK4q {
+  color: var(--atlas-primary-color);
+}
+
+.cart-originalPrice-MXypt {
+  text-decoration: line-through;
+}
+
+.cart-buttonContainer-iYziC {
+  flex-shrink: 2;
+}
+
+/* Visually hides the open announcement while keeping it available to assistive technology. */
+.Drawer-visuallyHidden-D4iP0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========== Drawer Header ========== */
+.Drawer-drawerHeaderContainer-pK1I1 {
+  height: 64px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.Drawer-drawerHeader-eDeMV {
+  position: absolute;
+  z-index: 2;
+  height: 64px;
+  width: 100%;
+  padding: var(--atlas-space-12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: var(--atlas-background-main);
+}
+
+.Drawer-backButtonContainer-JqWHb {
+  width: var(--atlas-button-icon-size-normal);
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+/* See forceShowEmptyMixin: some themes hide empty elements (div:empty { display: none }). */
+.Drawer-backButtonContainer-JqWHb:empty {
+  display: block !important;
+}
+
+.Drawer-drawerTitleContainer-gEGzl {
+  flex: 1;
+  display: flex;
+  flex-grow: 2;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.Drawer-drawerTitleContainer-gEGzl:empty {
+  display: block !important;
+}
+
+.Drawer-headerActionsContainer-Bg_pz {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  flex-basis: 0;
+  gap: var(--atlas-space-8);
+}
+
+.Drawer-drawerContent-veG2l {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.Drawer-floatingRoot-FRhuf {
+  height: calc(100% - 64px);
+}
+
+/* ========== Drawer Parent Base Styles ========== */
+.Drawer-drawerParent-qYp7u {
+  background-color: var(--atlas-background-main);
+  color: var(--atlas-text-primary);
+  position: absolute;
+  overflow: hidden;
+
+  /* Shared geometry */
+  --closed-size: 48px;
+  --closed-half: calc(var(--closed-size) / 2);
+
+  /* Open (panel) insets */
+  --open-top: var(--atlas-space-16);
+  --open-bottom: var(--atlas-space-16);
+
+  /* Closed (widget) insets; set per-variant */
+  --closed-top: auto;
+  --closed-bottom: auto;
+
+  /* Horizontal spacing */
+  --side-spacing: var(--atlas-widget-side-spacing);
+  --bottom-spacing: var(--atlas-widget-bottom-spacing);
+
+  /* Panel width */
+  --panel-width: 400px;
+
+  transition-property: transform; /* keep transforms smooth if you use them */
+}
+
+/* ========== Side positioning styles  ========== */
+.Drawer-drawerParent-qYp7u.Drawer-sideLeft-KZoQa,
+.Drawer-drawerParent-qYp7u.Drawer-sideRight-Xz8Qd {
+  max-width: 90%;
+  height: 100%;
+}
+
+.Drawer-drawerParent-qYp7u.Drawer-sideLeftInset-wPHZj,
+.Drawer-drawerParent-qYp7u.Drawer-sideRightInset-_NkT9 {
+  height: unset;
+  top: var(--atlas-space-16);
+  bottom: var(--atlas-space-16);
+  border-radius: var(--atlas-drawer-inset-border-radius);
+}
+
+.Drawer-drawerParent-qYp7u.Drawer-sideLeft-KZoQa {
+  left: 0px;
+}
+.Drawer-drawerParent-qYp7u.Drawer-sideLeftInset-wPHZj {
+  left: var(--atlas-space-16);
+}
+.Drawer-drawerParent-qYp7u.Drawer-sideRight-Xz8Qd {
+  right: 0px;
+}
+.Drawer-drawerParent-qYp7u.Drawer-sideRightInset-_NkT9 {
+  right: var(--atlas-space-16);
+}
+
+.Drawer-drawerParent-qYp7u.Drawer-fullscreen-wr2UX {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Non-animated top/bottom drawers (unchanged) */
+.Drawer-drawerParent-qYp7u.Drawer-sideTop-rutLg,
+.Drawer-drawerParent-qYp7u.Drawer-sideBottom-tqiGv {
+  width: 100%;
+  max-height: calc(100% - 2 * var(--atlas-space-small));
+}
+
+.Drawer-drawerParent-qYp7u.Drawer-sideTop-rutLg {
+  top: 0;
+  border-bottom-right-radius: var(--atlas-drawer-inset-border-radius);
+  border-bottom-left-radius: var(--atlas-drawer-inset-border-radius);
+}
+
+.Drawer-drawerParent-qYp7u.Drawer-sideBottom-tqiGv {
+  bottom: 0;
+  border-top-right-radius: var(--atlas-drawer-inset-border-radius);
+  border-top-left-radius: var(--atlas-drawer-inset-border-radius);
+}
+
+.Drawer-drawerParent-qYp7u.Drawer-fullscreenVertical-g3E4v {
+  height: calc(100% - var(--atlas-space-small));
+}
+
+/* ========== Mobile responsiveness (legacy) ========== */
+@media (max-width: 480px) {
+  .Drawer-drawerParent-qYp7u.Drawer-sideLeft-KZoQa,
+  .Drawer-drawerParent-qYp7u.Drawer-sideRight-Xz8Qd {
+    max-width: 100%;
+  }
+}
+
+/* ========== Transformation styles for floating panels ========== */
+.Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M {
+  position: absolute;
+  transform-origin: center;
+  width: var(--closed-size);
+  height: auto !important; /* IMPORTANT: let top/bottom define height */
+  border-radius: var(--atlas-widget-starting-radius);
+
+  /* Use per-variant closed insets; this defines the closed height */
+  top: var(--closed-top);
+  bottom: var(--closed-bottom);
+}
+
+/* Bottom-left: closed in bottom-left corner */
+.Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M.Drawer-bottomLeft-KzFIN {
+  left: var(--side-spacing);
+  --closed-bottom: var(--bottom-spacing);
+  --closed-top: calc(100vh - var(--closed-size) - var(--bottom-spacing));
+  transform-origin: bottom left;
+}
+
+/* Bottom-right: closed in bottom-right corner */
+.Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M.Drawer-bottomRight-lVs8O {
+  right: var(--side-spacing);
+  --closed-bottom: var(--bottom-spacing);
+  --closed-top: calc(100vh - var(--closed-size) - var(--bottom-spacing));
+  transform-origin: bottom right;
+}
+
+/* Left: vertically centered when closed */
+.Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M.Drawer-left-P41WL {
+  left: var(--side-spacing);
+  --closed-top: calc(50vh - var(--closed-size));
+  --closed-bottom: 50vh;
+  transform-origin: center left;
+}
+
+/* Right: vertically centered when closed */
+.Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M.Drawer-right-gfhhN {
+  right: var(--side-spacing);
+  --closed-top: calc(50vh - var(--closed-size));
+  --closed-bottom: 50vh;
+  transform-origin: center right;
+}
+
+/* ========== Transformation animations ========== */
+.Drawer-drawerParent-qYp7u.Drawer-opening-p7OKU {
+  /* Subtle bounce for smooth opening */
+  animation: Drawer-expandToPanel-YY1b8 var(--drawer-opening-duration)
+    cubic-bezier(0.34, 1.15, 0.64, 1) both;
+}
+
+.Drawer-drawerParent-qYp7u.Drawer-closing-qcmj9 {
+  /* Slight bounce on close with subtle overshoot */
+  animation: Drawer-collapseToWidget-iIHGa var(--drawer-closing-duration)
+    cubic-bezier(0.6, 0, 0.4, 1) both;
+}
+
+/* Keyframe animations â€” NOTE: no 'height' here */
+@keyframes Drawer-expandToPanel-YY1b8 {
+  0% {
+    top: var(--closed-top);
+    bottom: var(--closed-bottom);
+    width: var(--closed-size);
+    border-radius: var(--atlas-widget-starting-radius);
+  }
+  100% {
+    top: var(--open-top);
+    bottom: var(--open-bottom);
+    width: var(--panel-width);
+    border-radius: var(--atlas-drawer-inset-border-radius, 12px);
+  }
+}
+
+@keyframes Drawer-collapseToWidget-iIHGa {
+  0% {
+    top: var(--open-top);
+    bottom: var(--open-bottom);
+    width: var(--panel-width);
+    border-radius: var(--atlas-drawer-inset-border-radius, 12px);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    background-color: var(--atlas-widget-background-color);
+  }
+  100% {
+    top: var(--closed-top);
+    bottom: var(--closed-bottom);
+    width: var(--closed-size);
+    border-radius: var(--atlas-widget-starting-radius);
+    opacity: 0;
+  }
+}
+
+/* ========== Mobile responsiveness for transformations ========== */
+@media (max-width: 480px) {
+  .Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M.Drawer-transforming-SjCdQ {
+    width: 100vw;
+  }
+
+  @keyframes Drawer-expandToPanel-YY1b8 {
+    0% {
+      top: var(--closed-top);
+      bottom: var(--closed-bottom);
+      width: var(--closed-size);
+      border-radius: var(--atlas-widget-starting-radius);
+    }
+    100% {
+      top: var(--open-top);
+      bottom: var(--open-bottom);
+      width: min(var(--panel-width), calc(100vw - 2 * var(--atlas-space-16)));
+      border-radius: var(--atlas-drawer-inset-border-radius, 12px);
+    }
+  }
+}
+
+/* ========== Reduced motion support ========== */
+@media (prefers-reduced-motion: reduce) {
+  .Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M {
+    transition: none;
+    animation: none;
+  }
+
+  /* Immediately show drawer in open state without animation */
+  .Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M.Drawer-opening-p7OKU,
+  .Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M:not(.Drawer-closing-qcmj9) {
+    top: var(--open-top);
+    bottom: var(--open-bottom);
+    width: var(--panel-width);
+    border-radius: var(--atlas-drawer-inset-border-radius, 12px);
+  }
+
+  /* Immediately hide drawer in closed state */
+  .Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M.Drawer-closing-qcmj9 {
+    top: var(--closed-top);
+    bottom: var(--closed-bottom);
+    width: var(--closed-size);
+    border-radius: var(--atlas-widget-starting-radius);
+    opacity: 0;
+  }
+
+  /* Show children immediately without fade animations */
+  .Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M.Drawer-opening-p7OKU > *,
+  .Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M:not(.Drawer-closing-qcmj9) > * {
+    opacity: 1;
+    animation: none;
+  }
+
+  /* Hide children immediately when closing */
+  .Drawer-drawerParent-qYp7u.Drawer-transformationMode-cTE7M.Drawer-closing-qcmj9 > * {
+    opacity: 0;
+    animation: none;
+  }
+}
+
+.Modal-overlay-bQelP {
+  background-color: rgba(0, 0, 0, 0);
+  /* Maximum allowed z-index; this will hopefully prevent other content from appearing on top of us and blocking the drawer. */
+  z-index: var(--atlas-z-index-top);
+  /* FloatingOverlay sets this to auto for some reason */
+  overflow: visible !important;
+  transition: background-color 250ms;
+}
+
+.Modal-opened-DdDRn {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.CustomerHub-fixedWidth-QNduF {
+  width: 400px;
+}
+
+.Tabs-tab-JKeO8 {
+  border: 0;
+  flex: 1;
+  background-color: transparent;
+  position: relative;
+  /* Temporary until we figure out what we want to do about text wrapping on the nav buttons */
+  text-transform: none;
+}
+
+.Tabs-tab-JKeO8:hover:not(:disabled),
+.Tabs-tab-JKeO8:focus:not(:disabled),
+.Tabs-tab-JKeO8:active:not(:disabled) {
+  background-color: transparent;
+}
+
+/* Combined specificity so this wins over the Button variant's own color var. */
+.Tabs-tab-JKeO8.Tabs-active-ZEULt {
+  --kl-local-button-color: var(--atlas-text-primary-inverse);
+}
+
+.tabs-iconTab-QTYbU {
+  height: 52px;
+}
+
+.tabs-layout-RRfS2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.tabs-outletSection-UhDx4 {
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.tabs-floatingBoundary-_IdqL {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+.tabs-tabSection-HuGSJ {
+  padding: var(--atlas-space-16);
+  background-color: var(--atlas-background-content);
+  border-top: 1px solid var(--atlas-overlay-light);
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+.tabs-iconTabSection-sdxyP {
+  padding-top: var(--atlas-space-4);
+}
+
+.tabs-notificationBadge-t4dTA {
+  position: absolute;
+  top: 4px;
+  right: var(--atlas-space-tiny);
+  width: var(--atlas-space-12);
+  height: var(--atlas-space-12);
+
+  background: var(--atlas-button-primary);
+  border-radius: 50%;
+}
+
+.tabs-redesignNotificationBadge-G5pba {
+  top: calc(50% - 12px);
+  left: calc(50% + 12px);
+  transform: translate(-50%, -50%);
+}
+
+.Tabs-tabWrapper-XIMce {
+  position: relative;
+}
+
+.Tabs-tabContainer-s2hp6 {
+  display: flex;
+  gap: var(--atlas-space-4);
+}
+
+.Tabs-tabContainer-s2hp6.Tabs-outline-quPqM {
+  border: 1px solid var(--atlas-overlay-medium);
+  border-radius: var(--atlas-tabs-border-radius);
+  padding: var(--atlas-space-4);
+  background: var(--atlas-background-content);
+}
+
+.Tabs-tabContainer-s2hp6 * {
+  backface-visibility: visible; /* fixes a bizarre issue in Safari: https://klaviyo.atlassian.net/browse/BUGPORT-8552 */
+}
+
+.Tabs-activeIndicator-ZP_3x {
+  position: absolute;
+  border-radius: var(--atlas-button-border-radius-normal);
+  transition-property: left, top;
+  transition-duration: 150ms;
+  transition-timing-function: linear;
+  background: var(--atlas-button-primary);
+}
+
+/* Preview-only: offset hub veil/drawer below this bar (do not edit Modal.module.css). */
+html.klaviyo-hub-preview .kl-hub-modal-veil {
+  inset: 48px 0 0 0 !important;
+  z-index: var(--atlas-z-index-almost-top);
+}
+
+.PreviewModeBanner-banner-T9iUE {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--atlas-z-index-top);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d4d4d8;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  color: #18181b;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+.PreviewModeBanner-spacer-QgOfI {
+  height: 48px;
+  width: 100%;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.Toast-toast-Peg4b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--atlas-space-4);
+  z-index: var(--atlas-z-index-top);
+  position: fixed;
+  bottom: var(--atlas-space-16);
+  right: var(--atlas-space-16);
+  box-shadow: var(--atlas-popover-shadow);
+  padding: var(--atlas-space-12);
+  border-radius: var(--atlas-toast-border-radius);
+  transition-property: opacity, transform;
+  min-width: 350px;
+  color: var(--atlas-text-primary);
+}
+
+.Toast-iconContainer-yhiQ1 {
+  display: flex;
+  align-items: center;
+  --kl-local-icon-size: var(--atlas-icon-size-small);
+}
+
+.Toast-success-tosuC .Toast-iconContainer-yhiQ1 {
+  color: var(--atlas-background-success);
+}
+
+.HubWidgetContainer-container-b1mBp {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-end;
+}
+
+.HubWidgetContainer-alignStart-aTJh3 {
+  align-items: flex-start;
+}
+
+.ChatWidget-conversationStarterWidget-q66E2 {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0;
+  width: 330px;
+
+  transition:
+    display 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    flex-direction 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    gap 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ChatWidget-conversationStarterWidget-q66E2 .ChatWidget-promptButton-IQWWH {
+  z-index: 999;
+  white-space: normal;
+  width: 100%;
+  text-transform: unset;
+}
+
+.ChatWidget-conversationStarterWidget-q66E2 .ChatWidget-promptButton-IQWWH:nth-child(2) {
+  z-index: 998;
+  filter: brightness(1.1);
+  opacity: 0.9;
+  width: calc(330px * 0.9);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transform: translateY(75%);
+  color: transparent;
+}
+
+.ChatWidget-conversationStarterWidget-q66E2 .ChatWidget-promptButton-IQWWH:nth-child(3) {
+  z-index: 997;
+  filter: brightness(1.25);
+  opacity: 0.5;
+  width: calc(330px * 0.8);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transform: translateY(150%);
+  color: transparent;
+}
+
+.ChatWidget-conversationStarterWidget-q66E2:is(:hover, :focus-within) {
+  gap: 12px;
+}
+
+.ChatWidget-conversationStarterWidget-q66E2:is(:hover, :focus-within) .ChatWidget-promptButton-IQWWH {
+  width: 100%;
+  transform: none;
+  opacity: 1;
+  filter: brightness(1);
+  color: var(--kl-local-button-color);
+  white-space: normal;
+  text-overflow: unset;
+}
+
+:root{--atlas-background-main: #faf9f8;--atlas-background-content: #ffffff;--atlas-background-success: #518b22;--atlas-background-error: #be2119;--atlas-text-primary: #1d1e20;--atlas-text-secondary: #4b4d4e;--atlas-text-negative: #be2119;--atlas-text-positive: #366d12;--atlas-text-placeholder: #747576;--atlas-text-primary-inverse: #ffffff;--atlas-primary-color: #3f5260;--atlas-button-primary: #3f5260;--atlas-button-disabled-color: grey;--atlas-button-text-disabled-color: lightgrey;--atlas-border-light: rgba(0, 0, 0, 0.05);--atlas-border-focus: #41a1e6;--atlas-border-dark: rgba(0, 0, 0, 0.5);--atlas-input-error: #cc3c28;--atlas-overlay-light: rgba(0, 0, 0, 0.05);--atlas-overlay-medium: rgba(0, 0, 0, 0.15);--atlas-overlay-heavy: rgba(0, 0, 0, 0.5);--atlas-focus-outline-color: rgba(65, 161, 230, 0.2);--atlas-text-selection: rgba(150, 180, 255, 0.5);--atlas-caution-base: #fdd926;--atlas-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;--atlas-font-family-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Cantarell", "Source Code Pro", "Fira Mono", "Droid Sans Mono", Verdana, monospace;--atlas-font-size-tiny: 12px;--atlas-margin-tiny: 4px;--atlas-line-height-tiny: 16px;--atlas-font-size-small: 14px;--atlas-line-height-small: 20px;--atlas-margin-small: 8px;--atlas-font-size-normal: 16px;--atlas-line-height-normal: 24px;--atlas-margin-normal: 8px;--atlas-font-size-large: 18px;--atlas-line-height-large: 28px;--atlas-margin-large: 10px;--atlas-font-weight-normal: 400;--atlas-font-weight-bold: bolder;--atlas-heading-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;--atlas-heading-text-primary: #1d1e20;--atlas-heading-text-secondary: #4b4d4e;--atlas-heading-text-negative: #be2119;--atlas-font-size-display: 40px;--atlas-line-height-display: 52px;--atlas-margin-display: 24px;--atlas-font-size-h1: 40px;--atlas-line-height-h1: 48px;--atlas-margin-h1: 24px;--atlas-font-size-h2: 32px;--atlas-line-height-h2: 40px;--atlas-margin-h2: 24px;--atlas-font-size-h3: 24px;--atlas-line-height-h3: 32px;--atlas-margin-h3: 12px;--atlas-font-size-h4: 18px;--atlas-line-height-h4: 24px;--atlas-margin-h4: 12px;--atlas-font-size-h5: 16px;--atlas-line-height-h5: 24px;--atlas-margin-h5: 12px;--atlas-font-weight-heading: 700;--atlas-font-weight-heading-bold: bolder;--atlas-shadow-medium: 0px 8px 16px 0px rgba(55, 63, 71, 0.2);--atlas-popover-shadow: 0 20px 48px 0 rgba(55, 63, 71, 0.16), 0 12px 24px 0 rgba(55, 63, 71, 0.2), 0 0 12px 0 rgba(55, 63, 71, 0.08);--atlas-z-index-top: 2147483647;--atlas-z-index-almost-top: 2147483646;--atlas-button-border-radius: 8px;--atlas-button-border-radius-small: 8px;--atlas-button-border-radius-normal: 8px;--atlas-button-border-radius-tiny: 8px;--atlas-button-padding-normal: 7px 12px;--atlas-button-padding-small: 5px 12px;--atlas-button-padding-tiny: 3px 8px;--atlas-button-font-weight: 500;--atlas-button-icon-size-tiny: 24px;--atlas-button-icon-size-small: 32px;--atlas-button-icon-size-normal: 40px;--atlas-button-text-transform: none;--atlas-input-border-radius-normal: 8px;--atlas-input-border-radius-small: 8px;--atlas-input-padding: 7px 12px;--atlas-input-background-disabled: var(--atlas-overlay-light);--atlas-range-input-background: var(--atlas-overlay-light);--atlas-range-input-thumb-background: var(--atlas-background-content);--atlas-range-input-thumb-border: 2px solid var(--atlas-overlay-medium);--atlas-range-input-thumb-size: 24px;--atlas-chat-input-padding: 16px 48px 16px 12px;--atlas-chat-bubble-text-primary: #322e2f;--atlas-chat-bubble-background: #f2f2f2;--atlas-chat-bubble-display-name: #797979;--atlas-select-panel-shadow: 0px 8px 16px 0px rgba(55, 63, 71, 0.2);--atlas-drawer-border-radius: 24px;--atlas-drawer-inset-border-radius: 12px;--atlas-toast-border-radius: 12px;--atlas-toast-border-radius-redesign: 4px;--atlas-message-border-radius: 16px;--atlas-card-border-radius-small: 12px;--atlas-card-border-radius-normal: 24px;--atlas-card-shadow: 0px 2px 8px 0px rgba(55, 63, 71, 0.08), 0px 1px 2px 0px rgba(55, 63, 71, 0.12);--atlas-tabs-border-radius: 12px;--atlas-loading-spinner-size-small: 16px;--atlas-loading-spinner-size-medium: 20px;--atlas-loading-spinner-size-large: 24px;--atlas-loading-spinner-size-jumbo: 32px;--atlas-loading-skeleton-color: rgba(0, 0, 0, 0.05);--atlas-loading-skeleton-highlight-color: rgba(0, 0, 0, 0.02);--atlas-thumbnail-border-radius: 12px;--atlas-progress-bar-height: 8px;--atlas-progress-bar-border-radius: 4px;--atlas-space-4: 4px;--atlas-space-8: 8px;--atlas-space-12: 12px;--atlas-space-16: 16px;--atlas-space-20: 20px;--atlas-space-24: 24px;--atlas-space-32: 32px;--atlas-space-40: 40px;--atlas-space-tiny: var(--atlas-space-4);--atlas-space-mini: var(--atlas-space-8);--atlas-space-small: var(--atlas-space-12);--atlas-space-medium: var(--atlas-space-16);--atlas-space-large: var(--atlas-space-20);--atlas-space-jumbo: var(--atlas-space-24);--atlas-space-huge: var(--atlas-space-32);--atlas-space-enormous: var(--atlas-space-40);--atlas-icon-size-tiny: 12px;--atlas-icon-size-mini: 16px;--atlas-icon-size-small: 20px;--atlas-icon-size-medium: 24px;--atlas-icon-size-large: 32px;--atlas-icon-size-jumbo: 40px;--atlas-chip-border-radius: 4px;--atlas-chip-padding: 4px}.kl-hub-dialog,.kl-hub-drawer{color:var(--atlas-text-primary)}.kl-hub-dialog ::selection,.kl-hub-drawer ::selection{background-color:var(--atlas-text-selection)}.kl-hub-empty-block:empty{display:block}.kl-hub-drawer *{box-sizing:border-box}
+.HubLauncherButton-button-zMGOT.HubLauncherButton-button-zMGOT {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  box-sizing: border-box;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0px 0px 0px 1px rgba(55, 63, 71, 0.04),
+    0px 4px 4px 0px rgba(55, 63, 71, 0.08),
+    0px 8px 24px 0px rgba(55, 63, 71, 0.08);
+  outline: none;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--kl-local-widget-color);
+  border-radius: var(--kl-local-border-radius);
+  color: var(--kl-local-icon-color);
+  transform-origin: center center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}
+
+.HubLauncherButton-button-zMGOT:hover {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+/* Animation container */
+.AnimatedHubWidget-animatedWidgetContainer-qIgFt {
+  position: relative;
+  display: inline-block;
+}
+
+/* Base animation variables */
+.AnimatedHubWidget-animatedWidget-SkT3M {
+  --kl-local-starting-width: 48px;
+  --kl-local-starting-height: 48px;
+  --kl-local-ending-width: 48px;
+  --kl-local-ending-height: 48px;
+  --kl-local-bounce-width: 2px;
+  --kl-local-animation-timing: 0.9s;
+}
+
+/* Shared animation patterns */
+.AnimatedHubWidget-expanded-DlE2e {
+  --kl-local-starting-width: 48px;
+  --kl-local-starting-height: 48px;
+  --kl-local-ending-width: var(--target-width, 280px);
+  --kl-local-ending-height: var(--target-height, 52px);
+  --kl-local-bounce-width: 2px;
+  --kl-local-animation-timing: 0.9s;
+}
+
+.AnimatedHubWidget-retracting-NeP2S {
+  --kl-local-starting-width: var(--target-width, 280px);
+  --kl-local-starting-height: var(--target-height, 52px);
+  --kl-local-ending-width: 48px;
+  --kl-local-ending-height: 48px;
+  --kl-local-bounce-width: 2px;
+  --kl-local-animation-timing: 0.7s;
+}
+
+/* Chat specific dimensions */
+.AnimatedHubWidget-chat-F6sQs {
+  --target-width: 330px;
+  --target-height: 52px;
+}
+
+/* Favorites width variants - set target dimensions on parent container */
+.AnimatedHubWidget-animatedWidgetContainer-qIgFt:has([data-favorites-count='0']) {
+  --target-width: 150px;
+  --target-height: 76px;
+}
+
+.AnimatedHubWidget-animatedWidgetContainer-qIgFt:has([data-favorites-count='1']) {
+  --target-width: 220px;
+  --target-height: 76px;
+}
+
+.AnimatedHubWidget-animatedWidgetContainer-qIgFt:has([data-favorites-count='2']) {
+  --target-width: 290px;
+  --target-height: 76px;
+}
+
+.AnimatedHubWidget-animatedWidgetContainer-qIgFt:has(
+  [data-favorites-count]:not([data-favorites-count='0']):not(
+      [data-favorites-count='1']
+    ):not([data-favorites-count='2'])
+) {
+  --target-width: 330px;
+  --target-height: 76px;
+}
+
+/* Add to Cart popover specific dimensions */
+.AnimatedHubWidget-addToCart-iVigU:has([data-variants-count='1']) {
+  --target-width: 330px;
+  --target-height: calc(150px + var(--alert-height, 0px));
+}
+.AnimatedHubWidget-addToCart-iVigU:has([data-variants-count='1']):hover {
+    opacity: 1 !important;
+  }
+
+.AnimatedHubWidget-addToCart-iVigU:has([data-variants-count]:not([data-variants-count='1'])) {
+  --target-width: 330px;
+  --target-height: calc(200px + var(--alert-height, 0px));
+}
+
+.AnimatedHubWidget-addToCart-iVigU:has([data-variants-count]:not([data-variants-count='1'])):hover {
+    opacity: 1 !important;
+  }
+
+@media only screen and (max-width: 640px) {
+  .AnimatedHubWidget-addToCart-iVigU {
+    --target-height: calc(102px + var(--alert-height, 0px)) !important;
+  }
+}
+
+.AnimatedHubWidget-alertWrapper-ntO3T {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 640px) {
+  .AnimatedHubWidget-alertWrapper-ntO3T {
+    top: -30px;
+  }
+}
+
+.AnimatedHubWidget-fadeIn-IXbpE {
+  opacity: 0;
+  animation: AnimatedHubWidget-fadeIn-IXbpE var(--kl-local-animation-timing)
+    cubic-bezier(0.25, 0.46, 0.45, 1.1) forwards;
+}
+
+.AnimatedHubWidget-fadeOut-gKHqA {
+  opacity: 1;
+  animation: AnimatedHubWidget-fadeOut-gKHqA var(--kl-local-animation-timing)
+    cubic-bezier(0.25, 0.46, 0.45, 1.1) forwards;
+}
+
+/* Animation classes for the hub launcher button */
+.AnimatedHubWidget-hubLauncherButtonNoAnimation-s8mqW {
+  width: 48px;
+  height: 48px;
+  animation: none;
+}
+
+.AnimatedHubWidget-hubLauncherButtonExpanding-uPnqS {
+  width: var(--kl-local-ending-width);
+  height: var(--kl-local-ending-height);
+  transition: all var(--kl-local-animation-timing)
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(1.05);
+  animation: AnimatedHubWidget-widthBounce-VzzUO var(--kl-local-animation-timing)
+    cubic-bezier(0.25, 0.46, 0.45, 1.1) forwards;
+}
+
+.AnimatedHubWidget-hubLauncherButtonRetracting-bgpZI {
+  width: var(--kl-local-ending-width);
+  height: var(--kl-local-ending-height);
+  padding: 12px;
+  transition: all var(--kl-local-animation-timing) ease-out;
+  transform: scale(1);
+  animation: AnimatedHubWidget-widthRetractBounce-wfkgU var(--kl-local-animation-timing)
+    cubic-bezier(0.25, 0.46, 0.45, 1.1) forwards;
+}
+
+.AnimatedHubWidget-hubLauncherButtonRetracting-bgpZI > * {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.AnimatedHubWidget-hubLauncherButtonExpanded-mvDWF {
+  opacity: 1;
+  /* Force the expanded background color while the widget is expanding or retracting */
+  background-color: var(--atlas-background-main) !important;
+}
+
+/* Keyframe animations */
+@keyframes AnimatedHubWidget-widthBounce-VzzUO {
+  0% {
+    width: var(--kl-local-starting-width);
+    height: var(--kl-local-starting-height);
+  }
+  70% {
+    width: calc(var(--kl-local-ending-width) + var(--kl-local-bounce-width));
+    height: var(--kl-local-ending-height);
+  }
+  100% {
+    width: var(--kl-local-ending-width);
+    height: var(--kl-local-ending-height);
+  }
+}
+
+@keyframes AnimatedHubWidget-widthRetractBounce-wfkgU {
+  0% {
+    width: var(--kl-local-starting-width);
+    height: var(--kl-local-starting-height);
+  }
+  30% {
+    width: calc(var(--kl-local-starting-width) + var(--kl-local-bounce-width));
+    height: var(--kl-local-starting-height);
+  }
+  100% {
+    width: var(--kl-local-ending-width);
+    height: var(--kl-local-ending-height);
+  }
+}
+
+@keyframes AnimatedHubWidget-fadeIn-IXbpE {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes AnimatedHubWidget-fadeOut-gKHqA {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.HubLauncherButton-alertContainer-v4RPd {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: var(--atlas-space-12);
+  padding-right: var(--atlas-space-12);
+  background-color: var(--atlas-background-content);
+  border: 1px solid var(--atlas-border-light);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  transform-origin: bottom center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.HubLauncherButton-alertContainer-v4RPd.HubLauncherButton-bubbleIn-l3xv3 {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-width: 0;
+  transform: translateY(30px);
+  animation: HubLauncherButton-alertExpand-SQ0Z_ 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.HubLauncherButton-alertContainer-v4RPd.HubLauncherButton-bubbleOut-fFoRx {
+  animation: HubLauncherButton-alertCollapse-dpgb_ 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.HubLauncherButton-alertContainer-v4RPd.HubLauncherButton-bubbleIn-l3xv3 .HubLauncherButton-iconWrapper-EQJsY,
+.HubLauncherButton-alertContainer-v4RPd.HubLauncherButton-bubbleIn-l3xv3 .HubLauncherButton-textWrapper-lZLGT {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: HubLauncherButton-contentFadeIn-tr8p1 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.1s;
+}
+
+.HubLauncherButton-alertContainer-v4RPd.HubLauncherButton-bubbleOut-fFoRx .HubLauncherButton-iconWrapper-EQJsY,
+.HubLauncherButton-alertContainer-v4RPd.HubLauncherButton-bubbleOut-fFoRx .HubLauncherButton-textWrapper-lZLGT {
+  animation: HubLauncherButton-contentFadeOut-eOXot 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes HubLauncherButton-alertExpand-SQ0Z_ {
+  0% {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-width: 0;
+    transform: translateY(30px);
+  }
+  70% {
+    max-height: 60px;
+    padding-top: var(--atlas-space-8);
+    padding-bottom: var(--atlas-space-8);
+    border-width: 1px;
+    transform: translateY(-1px);
+  }
+  100% {
+    max-height: 60px;
+    padding-top: var(--atlas-space-8);
+    padding-bottom: var(--atlas-space-8);
+    border-width: 1px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes HubLauncherButton-alertCollapse-dpgb_ {
+  0% {
+    max-height: 60px;
+    padding-top: var(--atlas-space-8);
+    padding-bottom: var(--atlas-space-8);
+    border-width: 1px;
+    transform: translateY(0);
+  }
+  25% {
+    max-height: 60px;
+    padding-top: var(--atlas-space-8);
+    padding-bottom: var(--atlas-space-8);
+    border-width: 1px;
+    transform: translateY(1px);
+  }
+  100% {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-width: 0;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes HubLauncherButton-contentFadeIn-tr8p1 {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes HubLauncherButton-contentFadeOut-eOXot {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(0.99);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.HubLauncherButton-iconWrapper-EQJsY {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  width: var(--atlas-icon-size-mini, 16px);
+  height: var(--atlas-icon-size-mini, 16px);
+  min-width: var(--atlas-icon-size-mini, 16px);
+  min-height: var(--atlas-icon-size-mini, 16px);
+}
+
+.HubLauncherButton-iconWrapper-EQJsY > span {
+  display: inline-flex;
+  width: var(--kl-local-icon-size, var(--atlas-icon-size-mini));
+  height: var(--kl-local-icon-size, var(--atlas-icon-size-mini));
+}
+
+.HubLauncherButton-textWrapper-lZLGT {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.HubLauncherButton-alertText-MnbcM {
+  color: var(--atlas-text-primary);
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 640px) {
+  .HubLauncherButton-alertContainer-v4RPd {
+    padding-left: var(--atlas-space-8);
+    padding-right: var(--atlas-space-8);
+    margin-bottom: var(--atlas-space-16);
+    gap: var(--atlas-space-8);
+  }
+
+  .HubLauncherButton-alertText-MnbcM {
+    font-size: 12px;
+  }
+}
+
+.HubLauncherButton-container-jrxLU {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  background-color: var(--kl-local-background);
+  border-radius: var(--kl-local-border-radius);
+  pointer-events: auto;
+  transform-origin: left center;
+}
+
+.HubLauncherButton-messageContent-AfWf6 {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.HubLauncherButton-iconWrapper-f_PK1 {
+  margin-right: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HubLauncherButton-textColumn-exePF {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  gap: 2px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.HubLauncherButton-senderName-z4TYY {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--kl-local-text-color);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.HubLauncherButton-messageText-mmL29 {
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--kl-local-text-color);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  text-align: left;
+}
+
+.HubLauncherButton-favoriteAddedBannerContainer-XIpGa {
+  position: relative;
+  display: flex;
+  flex-basis: auto;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  margin-left: 8px;
+  margin-right: var(--kl-local-margin-right);
+  background-color: transparent;
+  border-radius: var(--kl-local-border-radius);
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+.HubLauncherButton-overflowGradient-C1OZ_ {
+  position: absolute;
+  background-image: linear-gradient(
+    to left,
+    var(--kl-local-widget-color),
+    rgba(0, 0, 0, 0)
+  );
+  width: 15px;
+  height: 100%;
+  z-index: 3;
+  left: calc(
+    var(--kl-local-gradient-position, 315px) - var(--kl-local-gradient-offset)
+  );
+  top: 0;
+  display: flex !important;
+  border-radius: var(--kl-local-border-radius);
+}
+
+.HubLauncherButton-bannerContent-Na6ch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.HubLauncherButton-iconWrapper-G4y2A {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kl-local-text-color, #000000);
+}
+
+.HubLauncherButton-favoritesContainer-JK54X {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+}
+
+.HubLauncherButton-favoriteCount-DC_bY {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--kl-local-text-color, #000000);
+  width: 100%;
+  padding-right: 4px;
+}
+
+.HubLauncherButton-thumbnailContainer-Qs41U {
+  max-width: 240px;
+  height: 60px;
+  padding-left: 6px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  z-index: 2;
+  animation: HubLauncherButton-oldFavoritesSlide-S7SEs 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    forwards;
+  animation-delay: 0.6s;
+}
+
+.HubLauncherButton-thumbnail-fyexr {
+  margin-left: 8px;
+  border-radius: var(--kl-local-border-radius);
+}
+
+.HubLauncherButton-newFavoriteContainer-lVhGt {
+  position: absolute;
+  z-index: 1;
+  padding-left: 6px;
+  transform: scale(0.7);
+  opacity: 0;
+  animation: HubLauncherButton-newFavoriteGrow-j8Klz 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.6s;
+}
+
+.HubLauncherButton-newFavoriteContainerNoFavorites-lWLAf {
+  z-index: 1;
+  padding-left: 6px;
+  transform: scale(0.7);
+  opacity: 0;
+  animation: HubLauncherButton-newFavoriteGrow-j8Klz 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.6s;
+}
+
+/* Keyframe animations */
+@keyframes HubLauncherButton-oldFavoritesSlide-S7SEs {
+  0% {
+    margin-left: 0px;
+  }
+  70% {
+    margin-left: 72px;
+  }
+  100% {
+    margin-left: 70px;
+  }
+}
+
+@keyframes HubLauncherButton-newFavoriteGrow-j8Klz {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.HubLauncherButton-content-GS7bJ {
+  padding: var(--atlas-space-12);
+  width: 330px;
+  cursor: default;
+  position: relative;
+}
+
+.HubLauncherButton-closeButton-KmJMf {
+  position: absolute;
+  top: var(--atlas-space-4);
+  right: var(--atlas-space-4);
+}
+
+/* Override HubLauncherButton border radius when AddToCartPopover is active */
+.AnimatedHubWidget-addToCart-Uhmni {
+  border-radius: 8px !important;
+}
+
+.HubLauncherButton-container-Tyd4Z {
+  display: flex;
+  flex-direction: column;
+}
+
+.HubLauncherButton-section-eNdgJ {
+  margin-bottom: var(--atlas-space-12);
+  width: 314px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.HubLauncherButton-imageContainer-T0xgG {
+  position: relative;
+}
+
+.HubLauncherButton-favoriteButton-eXAls {
+  position: absolute;
+  top: var(--atlas-space-4);
+  right: var(--atlas-space-4);
+}
+
+.HubLauncherButton-dropdown-sKmH8 {
+  width: 280px;
+  cursor: pointer;
+}
+
+.HubLauncherButton-mobileFavoriteContainer-_iHOP {
+  display: none;
+  margin-left: var(--atlas-space-8);
+}
+
+@media only screen and (max-width: 640px) {
+  .HubLauncherButton-imageContainer-T0xgG {
+    display: none !important;
+  }
+  .HubLauncherButton-section-eNdgJ {
+    flex: 1;
+    font-size: 16px;
+  }
+  .HubLauncherButton-price-eldwa {
+    display: none !important;
+  }
+  .HubLauncherButton-container-Tyd4Z {
+    flex-direction: row;
+  }
+  .HubLauncherButton-mobileFavoriteContainer-_iHOP {
+    display: flex;
+  }
+  .HubLauncherButton-dropdown-sKmH8 {
+    width: 162px;
+  }
+}
+
+.HubLauncherIcon-customIcon-YuP_u {
+  /* Match default hub launcher SVG size */
+  width: var(--atlas-icon-size-medium, 24px);
+  height: var(--atlas-icon-size-medium, 24px);
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.RedDotNotification-redDot-HQ6hx {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  background-color: #cc3c28;
+  border-radius: 50%;
+  z-index: 999;
+  animation: RedDotNotification-pulse-clapT 2s infinite;
+  display: block;
+}
+
+/* Non-rounded widget shapes nudge the dot outward. */
+.RedDotNotification-offset-S6CLv {
+  top: -3px;
+  right: -3px;
+}
+
+/* Ensure the element is not treated as empty */
+.RedDotNotification-redDot-HQ6hx::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes RedDotNotification-pulse-clapT {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.HubLauncher-floatingWidget-EhR3z {
+  display: flex;
+  position: fixed;
+  z-index: var(--atlas-z-index-almost-top);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pin to different places depending on advanced settings. */
+.HubLauncher-placementLeft-llOx7 {
+  bottom: 50%;
+  left: var(--kl-local-side-spacing);
+}
+
+.HubLauncher-placementRight-PvYi1 {
+  bottom: 50%;
+  right: var(--kl-local-side-spacing);
+}
+
+.HubLauncher-placementBottomStart-YjoEx {
+  left: var(--kl-local-side-spacing);
+  bottom: var(--kl-local-bottom-spacing);
+}
+
+.HubLauncher-placementBottomEnd-w_T4W {
+  right: var(--kl-local-side-spacing);
+  bottom: var(--kl-local-bottom-spacing);
+}
+
+/* ========== Bounce animations for receiving drawer momentum ========== */
+
+/* Left placement: bounce left */
+@keyframes HubLauncher-bounceLeft-Bould {
+  to {
+    transform: translateX(-0.02px);
+  }
+}
+
+/* Right placement: bounce right */
+@keyframes HubLauncher-bounceRight-lmsZy {
+  to {
+    transform: translateX(0.02px);
+  }
+}
+
+/* Bottom-left placement: bounce down and left */
+@keyframes HubLauncher-bounceBottomLeft-Tv5Lz {
+  to {
+    transform: translate(-0.02px, 0.02px);
+  }
+}
+
+/* Bottom-right placement: bounce down and right */
+@keyframes HubLauncher-bounceBottomRight-iYwXE {
+  to {
+    transform: translate(0.02px, 0.02px);
+  }
+}
+
+/* Apply bounce animation classes */
+.HubLauncher-bounceLeft-Bould {
+  animation: HubLauncher-bounceLeft-Bould 250ms cubic-bezier(0, 150, 1, 150) both;
+}
+
+.HubLauncher-bounceRight-lmsZy {
+  animation: HubLauncher-bounceRight-lmsZy 250ms cubic-bezier(0, 150, 1, 150) both;
+}
+
+.HubLauncher-bounceBottomLeft-Tv5Lz {
+  animation: HubLauncher-bounceBottomLeft-Tv5Lz 250ms cubic-bezier(0, 150, 1, 150) both;
+}
+
+.HubLauncher-bounceBottomRight-iYwXE {
+  animation: HubLauncher-bounceBottomRight-iYwXE 250ms cubic-bezier(0, 150, 1, 150) both;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .HubLauncher-bounceLeft-Bould,
+  .HubLauncher-bounceRight-lmsZy,
+  .HubLauncher-bounceBottomLeft-Tv5Lz,
+  .HubLauncher-bounceBottomRight-iYwXE {
+    animation: none;
+  }
+}
+
+.embeddedIntegrationBlocks-wrapper-joBM9 {
+  width: 100%;
+}
+
+.embeddedIntegrationBlocks-loadingState-Ce3zr {
+  /* Match the Customer Hub drawer content width so skeletons do not stretch
+     across the full embedded section max width. */
+  max-width: 400px;
+  width: 100%;
+}
+
+.embeddedFavorites-favoritesPDPButtonContainer-U2bHo {
+  display: flex;
+  width: 100%;
+  justify-content: var(--kl-local-justify-content);
+}
+
+.embeddedFavorites-favoritesButton-io11K {
+  display: flex;
+  align-items: center;
+  gap: var(--atlas-space-small);
+  justify-content: center;
+  padding: 0;
+  font-family: var(--atlas-favorites-font-family);
+  font-weight: var(--atlas-favorites-font-weight);
+}
+
+.embeddedFavorites-favoritesPDPButton-vafha {
+  color: var(--atlas-favorites-font-color);
+  border: 1px solid var(--atlas-favorites-fill-color);
+  background-color: var(--atlas-favorites-fill-color);
+  height: 40px;
+  padding: 0 var(--atlas-space-small);
+}
+
+.embeddedFavorites-favoritesPDPButton-vafha:hover:not(:disabled),
+  .embeddedFavorites-favoritesPDPButton-vafha:focus:not(:disabled),
+  .embeddedFavorites-favoritesPDPButton-vafha:focus-visible:not(:disabled),
+  .embeddedFavorites-favoritesPDPButton-vafha:active:not(:disabled) {
+    border: 1px solid var(--atlas-favorites-fill-color);
+    color: var(--atlas-favorites-font-color);
+    background-color: var(--atlas-favorites-fill-color);
+    height: 40px;
+  }
+
+.embeddedFavorites-favoritesPDPButtonCentered-AUWGn {
+  width: 100%;
+  justify-content: center;
+}
+
+.embeddedFavorites-favoritesIcon-mMzpi {
+  position: absolute;
+  top: var(--atlas-space-mini);
+  right: var(--atlas-space-small);
+  z-index: 100;
+  width: auto;
+  display: block;
+  color: var(--atlas-favorites-icon-color);
+}
+
+.embeddedFavorites-favoritesIcon-mMzpi:hover:not(:disabled),
+  .embeddedFavorites-favoritesIcon-mMzpi:focus:not(:disabled),
+  .embeddedFavorites-favoritesIcon-mMzpi:focus-visible:not(:disabled),
+  .embeddedFavorites-favoritesIcon-mMzpi:active:not(:disabled) {
+    color: var(--atlas-favorites-icon-color);
+  }
+

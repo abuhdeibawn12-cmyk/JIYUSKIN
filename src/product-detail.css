@@ -1,0 +1,81 @@
+/* Product-page layout follows the official JIYU tiled gallery and buying panel. */
+.j-pdp{grid-template-columns:45% minmax(0,1fr);gap:60px;padding-top:24px;padding-bottom:68px;align-items:start}
+.j-pdp .j-gallery{position:static;min-width:0}
+.j-image-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.j-grid-photo{display:block;width:100%;padding:0;border:1px solid #e8e5da;border-radius:0;aspect-ratio:1;background:var(--j-cream);overflow:hidden}
+.j-grid-photo img{display:block;width:100%;height:100%;object-fit:contain}
+.j-grid-photo-wide{grid-column:1/-1}
+.j-mobile-gallery{display:none}
+.j-pdp .j-buy{min-width:0;font-size:16px;line-height:1.8}
+.j-pdp .j-rating{display:flex;align-items:center;gap:5px;border:0;padding:0;background:none;margin:0;color:var(--j-green);line-height:28px;cursor:pointer}
+.j-pdp .j-rating>span:first-child{font-size:22px;letter-spacing:-2px;padding-right:0;color:#d9ba43}
+.j-pdp .j-rating .j-review-count{font-size:16px;letter-spacing:0;color:var(--j-green);padding:0}
+.j-pdp .j-buy h2{font:30px/1.8 'Reckless Neue';margin:10px 0 17px}
+.j-pdp .j-description{font-size:16px;line-height:1.8;color:var(--j-green);margin:0 0 13px;letter-spacing:0}
+.j-pdp .j-description p{margin:0 0 20px}
+.j-features{list-style:none;padding:0;margin:0}
+.j-features li{display:flex;align-items:center;gap:10px;margin:5px 0;padding:2px 0;font-size:16px;line-height:1.8;font-weight:500}
+.j-features img{width:50px;height:50px;object-fit:contain;flex-shrink:0}
+.j-pdp .j-product-tabs{margin:20px 0 20px;padding:5px;gap:0}
+.j-pdp .j-product-tabs button{height:42px;font-size:14px;padding:5px 12px;gap:10px}
+.j-pdp .j-product-tabs img{width:34px;height:34px}
+.j-pdp .j-packs{gap:12px;margin:0 0 24px;padding-top:16px}
+.j-pdp .j-packs label{min-height:63px;padding:10px 12px;border-radius:0;font-size:14px;line-height:1.3}
+.j-pdp .j-packs small{font-size:12px;margin-top:4px}
+.j-pdp .j-badge{font-size:11px;line-height:1.1;top:-11px;padding:4px 12px}
+.j-pdp .j-packs label.selected,.j-pdp .j-modes label.selected{background:#ddefc9;box-shadow:inset 0 0 0 1px var(--j-green)}
+.j-pdp .j-modes{margin:0 0 24px;border-radius:0}
+.j-pdp .j-modes>label{padding:18px 20px}
+.j-pdp .j-modes>label:first-of-type{padding-top:63px}
+.j-pdp .j-mode-banner{padding:7px 12px;font-size:13px;line-height:1.3}
+.j-pdp .j-mode-title{align-items:flex-start;font-size:18px;line-height:1.25;gap:10px;margin-bottom:12px}
+.j-pdp .j-mode-title input{width:18px;height:18px;margin:2px 0 0;flex-shrink:0}
+.j-pdp .j-mode-title>strong{white-space:nowrap}
+.j-pdp .j-mode-title>span{font-size:16px;line-height:1.25}
+.j-pdp .j-mode-title s{font-size:12px}
+.j-pdp .j-mode-title small{display:block;font-size:12px;font-weight:400;margin-top:5px}
+.j-pdp .j-modes ul{list-style:none;margin:0 0 0 28px;padding:0;display:flex;flex-direction:column;gap:8px;font-size:16px;line-height:24px}
+.j-pdp .j-modes li{position:relative;padding-left:24px;min-height:24px}
+.j-pdp .j-modes li::before{content:'';position:absolute;left:0;top:4px;width:16px;height:16px;background:url('/assets/pdp-check.svg') center/contain no-repeat}
+.j-pdp .j-sub-delivery{display:none}
+.j-pdp .j-add{height:58px;margin:0 0 18px;padding:5px;gap:0}
+.j-pdp .j-add .j-button{height:46px;padding:10px;font-size:18px;line-height:26px}
+.j-pdp .j-add .j-quantity{width:140px;flex-shrink:0;gap:10px;padding:0 10px}
+.j-pdp .j-quantity button img{display:block;width:10px;height:10px;margin:auto}
+.j-pdp .j-guarantee{display:flex;align-items:center;gap:12px;font-size:15px;line-height:20px;margin:0}
+.j-pdp .j-guarantee>img{width:40px;height:40px;flex-shrink:0}
+.j-pdp .j-guarantee p{margin:0;font-size:15px;line-height:20px}
+.j-pdp .j-clean{overflow:hidden;font-size:10px;line-height:16px;letter-spacing:0;margin:22px 0 18px;white-space:nowrap}
+.j-clean>div{display:flex;gap:30px;animation:j-clean-scroll 32s linear infinite;width:max-content}
+.j-clean span{display:inline-block}
+@keyframes j-clean-scroll{to{transform:translateX(-50%)}}
+.j-product-videos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin:0 0 30px}
+.j-product-videos button{aspect-ratio:9/16;position:relative;padding:0;border:0;border-radius:0;background:#111;overflow:hidden}
+.j-review-poster{width:100%;height:100%;object-fit:cover;display:block}
+.j-review-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:32px;height:32px}
+.j-pdp .j-detail{padding:15px 0;border-bottom:1px solid var(--j-green);margin-top:10px}
+.j-pdp .j-detail summary{list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:18px;line-height:38px;text-transform:uppercase}
+.j-pdp .j-detail summary::-webkit-details-marker{display:none}
+.j-detail summary img{width:12px;height:12px}
+.j-detail-minus,.j-detail[open] .j-detail-plus{display:none}
+.j-detail[open] .j-detail-minus{display:block}
+.j-detail-content{font-size:16px;line-height:1.8;margin-bottom:15px}
+.j-detail-content ul{padding-left:38px;margin:10px 0 0}
+.j-pdp .j-detail-content p{font-size:16px;line-height:1.8;margin:10px 0}
+.j-ingredients-link{border:0;background:none;color:var(--j-green);font-size:16px;font-weight:600;text-decoration:underline;padding:0;margin:0 0 16px}
+.j-image-modal-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+.j-image-modal-nav button,.j-gallery-controls button{background:none;border:1px solid var(--j-green);color:var(--j-green);border-radius:30px;padding:8px 16px;font-size:13px}
+.j-clinician-reviews{max-width:1350px;margin:0 auto 60px;padding:0}
+.j-clinician-reviews>iframe{border:0;width:100%;height:560px;display:block;background:transparent}
+.j-clinician-reviews>a{display:block;text-align:center;font-size:12px;color:var(--j-green)}
+@media(max-width:999px) and (min-width:750px){.j-pdp{grid-template-columns:45% minmax(0,1fr);padding:24px 30px 50px;gap:30px}.j-pdp .j-mode-title{font-size:14px}.j-pdp .j-mode-title>span{font-size:13px}.j-pdp .j-modes>label{padding-left:12px;padding-right:12px}.j-pdp .j-modes ul{font-size:13px;margin-left:12px}.j-pdp .j-product-tabs button{font-size:12px;padding:4px}.j-pdp .j-add .j-quantity{width:90px;padding:0 5px;gap:4px}.j-pdp .j-add .j-button{font-size:14px}.j-pdp .j-packs{gap:8px}.j-pdp .j-packs label{padding:10px 3px}.j-pdp .j-packs small{font-size:10px}.j-product-videos{gap:8px}}
+@media(max-width:749px){.j-pdp{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;padding:20px 20px 40px}.j-image-grid{display:none}.j-mobile-gallery{display:block}.j-pdp .j-main-photo{border-radius:0;background:var(--j-cream)}.j-pdp .j-thumbnails{margin-top:10px;padding:0 0 8px;gap:8px}.j-pdp .j-thumbnails button{border-radius:0;width:62px;min-width:62px}.j-gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0;color:var(--j-green);font-size:13px}.j-gallery-controls button{display:flex;align-items:center;gap:8px;padding:6px 10px}.j-gallery-controls img{width:8px;height:8px}.j-pdp .j-buy h2{font-size:28px;line-height:1.25;margin:12px 0 20px}.j-pdp .j-description{font-size:15px;line-height:1.7}.j-features li{font-size:14px;line-height:1.45;gap:10px;padding:0}.j-features img{width:40px;height:40px}.j-pdp .j-product-tabs{margin:20px 0 12px}.j-pdp .j-product-tabs button{font-size:12px;padding:4px 6px;gap:5px;height:36px}.j-pdp .j-product-tabs img{width:28px;height:28px}.j-pdp .j-packs{gap:8px;margin-bottom:20px}.j-pdp .j-packs label{padding:10px 4px;min-height:63px}.j-pdp .j-packs small{font-size:10px}.j-pdp .j-badge{font-size:10px;padding:4px 8px}.j-pdp .j-modes>label{padding:18px 12px}.j-pdp .j-modes>label:first-of-type{padding-top:57px}.j-pdp .j-mode-title{font-size:15px;gap:7px}.j-pdp .j-mode-title input{width:16px;height:16px}.j-pdp .j-mode-title>span{font-size:14px}.j-pdp .j-mode-title s{font-size:10px}.j-pdp .j-mode-title small{font-size:10px}.j-pdp .j-modes ul{font-size:14px;line-height:20px;gap:6px;margin-left:22px}.j-pdp .j-modes li{min-height:20px;padding-left:20px}.j-pdp .j-modes li::before{top:2px;width:14px;height:14px}.j-pdp .j-add{height:52px}.j-pdp .j-add .j-button{height:40px;font-size:16px;line-height:20px}.j-pdp .j-add .j-quantity{width:100px;gap:6px;padding:0 5px}.j-pdp .j-guarantee{gap:10px}.j-pdp .j-guarantee>img{width:36px;height:36px}.j-pdp .j-guarantee p{font-size:13px;line-height:18px}.j-pdp .j-clean{font-size:9px;margin:20px 0 15px}.j-product-videos{gap:8px;margin-bottom:20px}.j-review-play{width:24px;height:24px}.j-pdp .j-detail{padding:12px 0}.j-pdp .j-detail summary{font-size:15px;line-height:30px}.j-detail-content,.j-pdp .j-detail-content p{font-size:14px;line-height:1.7}.j-detail-content ul{padding-left:22px}.j-clinician-reviews{padding:0;margin-bottom:30px}.j-clinician-reviews>iframe{height:720px}}
+@media(prefers-reduced-motion:reduce){.j-clean>div{animation:none}}
+.j-pdp .j-rating .j-pdp-stars{display:inline-flex;gap:0;line-height:1}.j-pdp .j-pdp-stars .jdgm-star{font-size:20px!important;padding:0 1px 0 0!important;color:#d9ba43}
+@media(min-width:1000px){.j-pdp .j-product-tabs button{height:50px}.j-pdp .j-modes>label:first-of-type{padding-top:45px}.j-pdp .j-mode-title{margin-bottom:6px}.j-pdp .j-mode-title small{margin-top:2px;line-height:1.2}}
+.j-pdp .j-detail+.j-detail{margin-top:0}.j-detail-content{margin-bottom:21px}
+.j-pdp .j-pdp-stars .jdgm-star{font-size:16px!important;line-height:22.4px;font-weight:700;letter-spacing:normal;padding:0 4px 0 0!important}
+
+.j-clinician-modal{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.4)}
+.j-clinician-modal iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.j-clinician-modal-close{position:absolute;right:12px;top:12px;z-index:1;width:40px;height:40px;border:1px solid #ddd;border-radius:50%;background:#fff;color:#222;font:28px/1 Arial;cursor:pointer}
