@@ -1,8 +1,1 @@
-{
-  "current": {
-    "toner_product": "renewal-rejuvenation-toner-pads",
-    "cream_product": "nad-anti-aging-moisturizing-cream",
-    "bundle_product": "test-complete-care-bundle"
-  },
-  "presets": {}
-}
+{  "current": {    "toner_product": "renewal-rejuvenation-toner-pads",    "cream_product": "anti-aging-moisturizing-cream",    "bundle_product": "anti-aging-glow-up-bundle"  },  "presets": {}}
