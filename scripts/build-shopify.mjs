@@ -39,7 +39,7 @@ for(const file of walk(path.join(root,'public/assets'))){const relative=path.rel
 for(const file of fs.readdirSync(path.join(root,'public')).filter(x=>x.endsWith('.css')))fs.writeFileSync(path.join(output,'assets',file),cssFix(fs.readFileSync(path.join(root,'public',file),'utf8')));
 let code=fs.readFileSync(path.join(stage,'compiled/jiyu.js'),'utf8');
 const ast=parseAst(code),edits=[];
-function visit(n){if(!n||typeof n!=='object')return;if(n.type==='Literal'&&typeof n.value==='string'&&n.value.includes('/assets/'))edits.push([n.start,n.end,'window.JIYU_THEME.resolveAssetText('+JSON.stringify(n.value)+')']);for(const [k,v]of Object.entries(n)){if(k==='parent')continue;if(Array.isArray(v))v.forEach(visit);else if(v&&typeof v==='object')visit(v)}}
+function visit(n){if(!n||typeof n!=='object')return;if(n.type==='TemplateLiteral'&&n.quasis.some(q=>q.value.raw.includes('/assets/'))){edits.push([n.start,n.end,'window.JIYU_THEME.resolveAssetText('+code.slice(n.start,n.end)+')']);return}if(n.type==='Literal'&&typeof n.value==='string'&&n.value.includes('/assets/'))edits.push([n.start,n.end,'window.JIYU_THEME.resolveAssetText('+JSON.stringify(n.value)+')']);for(const [k,v]of Object.entries(n)){if(k==='parent')continue;if(Array.isArray(v))v.forEach(visit);else if(v&&typeof v==='object')visit(v)}}
 visit(ast);for(const [s,e,v]of edits.sort((a,b)=>b[0]-a[0]))code=code.slice(0,s)+v+code.slice(e);
 parseAst(code);fs.writeFileSync(path.join(output,'assets/jiyu.js'),code);
 let styles=fs.readdirSync(path.join(stage,'compiled')).filter(x=>x.endsWith('.css')).map(x=>fs.readFileSync(path.join(stage,'compiled',x),'utf8')).join('\n');
