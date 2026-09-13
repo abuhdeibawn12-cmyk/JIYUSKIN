@@ -1547,7 +1547,7 @@ Thank you!</p><div class="jr-card__photos"><img class="jr-card__photo" src="/ass
             <img src="/assets/100ba7df97e9617d.png" alt="Stay in the Glow" width="40" height="40" class="sparkle-icon" loading="lazy">
           
         </h2>
-        <p class="">Get skincare tips, product updates, and exclusive offers straight to your inbox.</p><form method="post" id="ContactFooter" accept-charset="UTF-8" class="jiyu-footer__form"><input type="hidden" name="form_type" class=""><input type="hidden" name="utf8" class=""><input type="hidden" name="contact[tags]" class=""><label class="visually-hidden" for="NewsletterForm--sections--19982206369871__footer_new_e6y6FL">
+        <p class="">Get skincare tips, product updates, and exclusive offers straight to your inbox.</p><form method="post" action="/contact#ContactFooter" id="ContactFooter" accept-charset="UTF-8" class="jiyu-footer__form"><input type="hidden" name="form_type" value="customer" class=""><input type="hidden" name="utf8" value="✓" class=""><input type="hidden" name="contact[tags]" value="newsletter" class=""><label class="visually-hidden" for="NewsletterForm--sections--19982206369871__footer_new_e6y6FL">
               Email
             </label>
             <input id="NewsletterForm--sections--19982206369871__footer_new_e6y6FL" type="email" name="contact[email]" placeholder="Email" autocomplete="email" required="" class="">
@@ -6067,7 +6067,7 @@ Thank you!</p><div class="jr-card__photos"><img class="jr-card__photo" src="/ass
             <img src="/assets/100ba7df97e9617d.png" alt="Stay in the Glow" width="40" height="40" class="sparkle-icon" loading="lazy">
           
         </h2>
-        <p class="">Get skincare tips, product updates, and exclusive offers straight to your inbox.</p><form method="post" id="ContactFooter" accept-charset="UTF-8" class="jiyu-footer__form"><input type="hidden" name="form_type" class=""><input type="hidden" name="utf8" class=""><input type="hidden" name="contact[tags]" class=""><label class="visually-hidden" for="NewsletterForm--sections--19982206369871__footer_new_e6y6FL">
+        <p class="">Get skincare tips, product updates, and exclusive offers straight to your inbox.</p><form method="post" action="/contact#ContactFooter" id="ContactFooter" accept-charset="UTF-8" class="jiyu-footer__form"><input type="hidden" name="form_type" value="customer" class=""><input type="hidden" name="utf8" value="✓" class=""><input type="hidden" name="contact[tags]" value="newsletter" class=""><label class="visually-hidden" for="NewsletterForm--sections--19982206369871__footer_new_e6y6FL">
               Email
             </label>
             <input id="NewsletterForm--sections--19982206369871__footer_new_e6y6FL" type="email" name="contact[email]" placeholder="Email" autocomplete="email" required="" class="">
