@@ -236,6 +236,13 @@
   transition: background-color 0.2s ease, transform 0.2s ease !important;
 }
 
+#pp-tracking-page-app .pp-button-enter::before,
+#pp-tracking-page-app .pp-button-enter::after {
+  content: none !important;
+  display: none !important;
+  box-shadow: none !important;
+}
+
 #pp-tracking-page-app .pp-button-enter:hover,
 #pp-tracking-page-app .pp-button-enter:focus-visible {
   background: #006e37 !important;
