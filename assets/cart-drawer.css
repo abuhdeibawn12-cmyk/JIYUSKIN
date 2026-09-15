@@ -490,7 +490,7 @@ body.jcd-open #root .j-backdrop {
 
 @media (max-width: 580px) {
   .jcd-drawer {
-    width: 100vw;
+    width: 100%;
     border-left: 0;
   }
 
