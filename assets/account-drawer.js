@@ -122,12 +122,15 @@
 
   function closeDrawer() {
     if (!overlay) return;
+    var focusTarget = previousFocus;
     var trigger = document.querySelector('button[aria-label="Account"]');
     if (trigger) trigger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = previousOverflow || '';
     overlay.remove();
     overlay = null;
-    if (previousFocus && previousFocus.isConnected) previousFocus.focus();
+    requestAnimationFrame(function () {
+      if (focusTarget && focusTarget.isConnected) focusTarget.focus();
+    });
   }
 
   function keepFocusInside(event) {
