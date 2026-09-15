@@ -2,31 +2,49 @@
   'use strict';
 
   var currentScript = document.currentScript;
-  var jarImage = currentScript && currentScript.getAttribute('data-jar-image');
+  var tonerImage = currentScript && (
+    currentScript.getAttribute('data-toner-image')
+    || currentScript.getAttribute('data-jar-image')
+  );
+  var moisturizerImage = currentScript && currentScript.getAttribute('data-moisturizer-image');
   var queued = false;
   var singleJarRetailPrice = 86;
   var fiveJarOfferPrice = 153.42;
   var fiveJarSavings = (singleJarRetailPrice * 5 - fiveJarOfferPrice).toFixed(2);
 
-  function isTonerPage() {
+  function productHandle(productKey, fallbackHandle) {
     var configuredProduct = window.JIYU_THEME && window.JIYU_THEME.products
-      ? window.JIYU_THEME.products.toner
+      ? window.JIYU_THEME.products[productKey]
       : null;
-    var handle = configuredProduct && configuredProduct.handle
-      ? configuredProduct.handle
-      : 'renewal-rejuvenation-toner-pads';
-    var selectedProduct = new URLSearchParams(window.location.search).get('product');
 
-    return window.location.pathname === '/products/' + handle
-      || (window.location.pathname === '/' && selectedProduct === handle);
+    return configuredProduct && configuredProduct.handle
+      ? configuredProduct.handle
+      : fallbackHandle;
   }
 
-  function createJar(isFree) {
+  function isProductPage(handle) {
+    var selectedProduct = new URLSearchParams(window.location.search).get('product');
+    return window.location.pathname === '/products/' + handle || selectedProduct === handle;
+  }
+
+  function currentOfferType() {
+    if (isProductPage(productHandle('toner', 'renewal-rejuvenation-toner-pads'))) {
+      return 'toner';
+    }
+
+    if (isProductPage(productHandle('cream', 'nad-anti-aging-moisturizing-cream'))) {
+      return 'moisturizer';
+    }
+
+    return null;
+  }
+
+  function createJar(imageSource, isFree) {
     var jar = document.createElement('span');
     jar.className = 'j-five-jar' + (isFree ? ' is-free' : '');
 
     var image = document.createElement('img');
-    image.src = jarImage;
+    image.src = imageSource;
     image.alt = '';
     image.width = 28;
     image.height = 28;
@@ -42,33 +60,95 @@
     return jar;
   }
 
-  function createOffer() {
+  function createOffer(options) {
     var offer = document.createElement('span');
     offer.className = 'j-five-jar-offer';
     offer.setAttribute('role', 'img');
-    offer.setAttribute('aria-label', 'Buy 3 jars and get 2 jars free');
+    offer.setAttribute('aria-label', options.label);
 
     var jars = document.createElement('span');
     jars.className = 'j-five-jar-row';
     jars.setAttribute('aria-hidden', 'true');
 
-    for (var index = 0; index < 5; index += 1) {
-      jars.appendChild(createJar(index >= 3));
+    for (var index = 0; index < options.jarCount; index += 1) {
+      jars.appendChild(createJar(options.image, index >= options.freeFrom));
     }
 
-    var caption = document.createElement('span');
-    caption.className = 'j-five-jar-caption';
-    caption.textContent = 'BUY 3 · GET 2 FREE';
-    caption.setAttribute('aria-hidden', 'true');
-
     offer.appendChild(jars);
-    offer.appendChild(caption);
+
+    if (options.caption) {
+      var caption = document.createElement('span');
+      caption.className = 'j-five-jar-caption';
+      caption.textContent = options.caption;
+      caption.setAttribute('aria-hidden', 'true');
+      offer.appendChild(caption);
+    }
+
     return offer;
+  }
+
+  function clearOffer(packOptions) {
+    Array.prototype.forEach.call(packOptions, function (option) {
+      option.classList.remove('j-toner-five-pack', 'j-moisturizer-three-pack');
+      delete option.dataset.jiyuOfferType;
+
+      var superscript = option.querySelector('.j-five-jar-sup');
+      var visual = option.querySelector('.j-five-jar-offer');
+      if (superscript) superscript.remove();
+      if (visual) visual.remove();
+    });
+  }
+
+  function setSavings(option, amount, label) {
+    var savings = option && option.querySelector('small');
+    var text = 'Save up to $' + amount;
+    if (!savings) return;
+
+    if (savings.textContent !== text) savings.textContent = text;
+    if (savings.getAttribute('aria-label') !== label) savings.setAttribute('aria-label', label);
+  }
+
+  function insertOffer(option, packTitle, offer) {
+    if (packTitle && packTitle.nextSibling) {
+      option.insertBefore(offer, packTitle.nextSibling);
+    } else {
+      option.appendChild(offer);
+    }
+  }
+
+  function buildTonerOffer(option, packTitle) {
+    option.classList.add('j-toner-five-pack');
+    option.dataset.jiyuOfferType = 'toner';
+
+    var superscript = document.createElement('sup');
+    superscript.className = 'j-five-jar-sup';
+    superscript.textContent = '+2 FREE';
+    if (packTitle) packTitle.appendChild(superscript);
+
+    insertOffer(option, packTitle, createOffer({
+      image: tonerImage,
+      jarCount: 5,
+      freeFrom: 3,
+      caption: 'BUY 3 · GET 2 FREE',
+      label: 'Buy 3 toner jars and get 2 toner jars free'
+    }));
+  }
+
+  function buildMoisturizerOffer(option, packTitle) {
+    option.classList.add('j-moisturizer-three-pack');
+    option.dataset.jiyuOfferType = 'moisturizer';
+
+    insertOffer(option, packTitle, createOffer({
+      image: moisturizerImage,
+      jarCount: 3,
+      freeFrom: Infinity,
+      caption: '3 MOISTURIZER JARS',
+      label: 'Three moisturizer jars'
+    }));
   }
 
   function enhanceOffer() {
     queued = false;
-    if (!isTonerPage() || !jarImage) return;
 
     var packSelector = document.querySelector('.j-packs');
     if (!packSelector) return;
@@ -76,31 +156,48 @@
     var packOptions = packSelector.querySelectorAll(':scope > label');
     if (packOptions.length < 3) return;
 
+    var offerType = currentOfferType();
     var offerOption = packOptions[2];
-    offerOption.classList.add('j-toner-five-pack');
     var packTitle = offerOption.querySelector('strong');
-    var savings = offerOption.querySelector('small');
 
-    if (packTitle && !packTitle.querySelector('.j-five-jar-sup')) {
-      var superscript = document.createElement('sup');
-      superscript.className = 'j-five-jar-sup';
-      superscript.textContent = '+2 FREE';
-      packTitle.appendChild(superscript);
+    if (!offerType) {
+      if (offerOption.dataset.jiyuOfferType) clearOffer(packOptions);
+      return;
     }
 
-    if (savings) {
-      savings.textContent = 'Save up to $' + fiveJarSavings;
-      savings.setAttribute('aria-label', 'Save up to ' + fiveJarSavings + ' dollars compared with five individual jars');
+    if (offerType === 'moisturizer') {
+      setSavings(
+        packOptions[1],
+        '47.97',
+        'Save up to 47.97 dollars compared with two individual moisturizer jars'
+      );
+      setSavings(
+        offerOption,
+        '95.94',
+        'Save up to 95.94 dollars compared with three individual moisturizer jars'
+      );
+
+      if (offerOption.dataset.jiyuOfferType !== 'moisturizer' && moisturizerImage) {
+        clearOffer(packOptions);
+        buildMoisturizerOffer(offerOption, packTitle);
+      }
+      return;
     }
 
-    if (offerOption.querySelector('.j-five-jar-offer')) return;
+    setSavings(
+      packOptions[1],
+      '17.12',
+      'Save up to 17.12 dollars compared with two individual toner jars'
+    );
+    setSavings(
+      offerOption,
+      fiveJarSavings,
+      'Save up to ' + fiveJarSavings + ' dollars compared with five individual toner jars'
+    );
 
-    var offer = createOffer();
-
-    if (packTitle && packTitle.nextSibling) {
-      offerOption.insertBefore(offer, packTitle.nextSibling);
-    } else {
-      offerOption.appendChild(offer);
+    if (offerOption.dataset.jiyuOfferType !== 'toner' && tonerImage) {
+      clearOffer(packOptions);
+      buildTonerOffer(offerOption, packTitle);
     }
   }
 

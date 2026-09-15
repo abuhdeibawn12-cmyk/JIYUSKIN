@@ -1,0 +1,30 @@
+.j-promo[data-jiyu-code='true'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 43px;
+  padding: 8px 16px;
+  text-align: center;
+}
+
+.j-promo[data-jiyu-code='true'] img {
+  flex: 0 0 auto;
+}
+
+.j-promo-code-message {
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+@media (max-width: 600px) {
+  .j-promo[data-jiyu-code='true'] {
+    min-height: 38px;
+    padding: 7px 10px;
+  }
+
+  .j-promo-code-message {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}

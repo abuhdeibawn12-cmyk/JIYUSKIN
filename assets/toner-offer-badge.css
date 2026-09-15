@@ -1,4 +1,5 @@
-.j-packs label.j-toner-five-pack {
+.j-packs label.j-toner-five-pack,
+.j-packs label.j-moisturizer-three-pack {
   min-height: 132px;
   padding-top: 20px;
 }
@@ -98,7 +99,8 @@
 }
 
 @media (max-width: 600px) {
-  .j-packs label.j-toner-five-pack {
+  .j-packs label.j-toner-five-pack,
+  .j-packs label.j-moisturizer-three-pack {
     min-height: 122px;
     padding-right: 2px;
     padding-left: 2px;
