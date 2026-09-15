@@ -15,8 +15,10 @@
     var handle = configuredProduct && configuredProduct.handle
       ? configuredProduct.handle
       : 'renewal-rejuvenation-toner-pads';
+    var selectedProduct = new URLSearchParams(window.location.search).get('product');
 
-    return window.location.pathname === '/products/' + handle;
+    return window.location.pathname === '/products/' + handle
+      || (window.location.pathname === '/' && selectedProduct === handle);
   }
 
   function createJar(isFree) {
@@ -107,8 +109,6 @@
     queued = true;
     window.requestAnimationFrame(enhanceOffer);
   }
-
-  if (!isTonerPage()) return;
 
   new MutationObserver(queueEnhancement).observe(document.documentElement, {
     childList: true,
