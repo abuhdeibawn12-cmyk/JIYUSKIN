@@ -221,6 +221,11 @@
       tab.tabIndex = index === 0 ? 0 : -1;
       tab.textContent = tabName.toUpperCase();
       tab.addEventListener('click', function () {
+        if (tabName === 'Orders') {
+          closeDrawer();
+          window.location.assign('/apps/parcelpanel');
+          return;
+        }
         tabList.querySelectorAll('[role="tab"]').forEach(function (item) {
           var selected = item === tab;
           item.setAttribute('aria-selected', selected ? 'true' : 'false');
