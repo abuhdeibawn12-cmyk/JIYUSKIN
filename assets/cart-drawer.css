@@ -19,6 +19,11 @@
   pointer-events: auto;
 }
 
+body.jcd-open #root .j-backdrop {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 .jcd-drawer {
   --jcd-green: #1d7337;
   --jcd-dark: #0b5c2d;

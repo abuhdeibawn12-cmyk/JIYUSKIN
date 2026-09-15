@@ -452,6 +452,7 @@
     if (!drawer || !drawer.classList.contains('is-open')) return;
     drawer.classList.remove('is-open');
     overlay.classList.remove('is-open');
+    document.body.classList.remove('jcd-open');
     drawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = originalOverflow;
     if (openTrigger && document.contains(openTrigger)) openTrigger.focus();
@@ -462,6 +463,7 @@
     openTrigger = trigger || document.activeElement;
     originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('jcd-open');
     drawer.classList.add('is-open');
     overlay.classList.add('is-open');
     drawer.setAttribute('aria-hidden', 'false');
