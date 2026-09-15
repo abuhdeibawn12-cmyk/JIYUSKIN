@@ -2,6 +2,10 @@
   overscroll-behavior: contain;
 }
 
+body:has(.j-account-backdrop) {
+  overflow: hidden !important;
+}
+
 .j-account-products a {
   min-width: 0;
 }
