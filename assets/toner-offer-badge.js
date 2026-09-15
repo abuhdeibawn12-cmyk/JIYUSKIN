@@ -4,6 +4,9 @@
   var currentScript = document.currentScript;
   var jarImage = currentScript && currentScript.getAttribute('data-jar-image');
   var queued = false;
+  var singleJarRetailPrice = 86;
+  var fiveJarOfferPrice = 153.42;
+  var fiveJarSavings = (singleJarRetailPrice * 5 - fiveJarOfferPrice).toFixed(2);
 
   function isTonerPage() {
     var configuredProduct = window.JIYU_THEME && window.JIYU_THEME.products
@@ -72,10 +75,24 @@
     if (packOptions.length < 3) return;
 
     var offerOption = packOptions[2];
-    if (offerOption.querySelector('.j-five-jar-offer')) return;
-
     offerOption.classList.add('j-toner-five-pack');
     var packTitle = offerOption.querySelector('strong');
+    var savings = offerOption.querySelector('small');
+
+    if (packTitle && !packTitle.querySelector('.j-five-jar-sup')) {
+      var superscript = document.createElement('sup');
+      superscript.className = 'j-five-jar-sup';
+      superscript.textContent = '+2 FREE';
+      packTitle.appendChild(superscript);
+    }
+
+    if (savings) {
+      savings.textContent = 'Save up to $' + fiveJarSavings;
+      savings.setAttribute('aria-label', 'Save up to ' + fiveJarSavings + ' dollars compared with five individual jars');
+    }
+
+    if (offerOption.querySelector('.j-five-jar-offer')) return;
+
     var offer = createOffer();
 
     if (packTitle && packTitle.nextSibling) {

@@ -3,6 +3,24 @@
   padding-top: 20px;
 }
 
+.j-toner-five-pack > strong {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+
+.j-five-jar-sup {
+  position: relative;
+  top: -0.25em;
+  color: #e57641;
+  font-size: 0.58em;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+}
+
 .j-five-jar-offer,
 .j-five-jar-row {
   display: flex;
@@ -84,6 +102,15 @@
     min-height: 122px;
     padding-right: 2px;
     padding-left: 2px;
+  }
+
+  .j-toner-five-pack > strong {
+    gap: 2px;
+  }
+
+  .j-five-jar-sup {
+    top: -0.2em;
+    font-size: 0.52em;
   }
 
   .j-five-jar-row {
