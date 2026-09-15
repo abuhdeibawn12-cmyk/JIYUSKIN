@@ -523,12 +523,14 @@
     var control = target.closest('a,button,[role="button"]');
     if (!control || control.closest('#jiyu-cart-drawer')) return null;
     var href = control.getAttribute('href') || '';
-    var label = [
-      control.getAttribute('aria-label') || '',
-      control.getAttribute('title') || '',
-      control.textContent || '',
-      control.querySelector('img') ? control.querySelector('img').getAttribute('alt') || '' : ''
-    ].join(' ').replace(/\s+/g, ' ').trim().toLowerCase();
+    var image = control.querySelector('img');
+    var label = (
+      control.getAttribute('aria-label')
+      || control.getAttribute('title')
+      || (image && image.getAttribute('alt'))
+      || control.textContent
+      || ''
+    ).replace(/\s+/g, ' ').trim().toLowerCase();
     if (/\/cart(?:[?#]|$)/.test(href) || /^(cart|bag)(?:\s*\(?\d+\)?)?$/.test(label)) return control;
     return null;
   }
