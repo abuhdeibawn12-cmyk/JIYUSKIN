@@ -1,10 +1,13 @@
 .j-packs label.j-toner-five-pack,
-.j-packs label.j-moisturizer-three-pack {
+.j-packs label.j-moisturizer-three-pack,
+.j-packs label.j-bundle-five-pack {
   min-height: 132px;
   padding-top: 20px;
 }
 
-.j-toner-five-pack > strong {
+.j-toner-five-pack > strong,
+.j-moisturizer-three-pack > strong,
+.j-bundle-five-pack > strong {
   display: inline-flex;
   align-items: flex-start;
   justify-content: center;
@@ -55,6 +58,22 @@
   object-fit: contain;
 }
 
+.j-bundle-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+}
+
+.j-bundle-pair img {
+  width: 17px;
+  height: 28px;
+}
+
+.j-bundle-pair img + img {
+  margin-left: -4px;
+}
+
 .j-five-jar.is-free {
   width: 31px;
   height: 31px;
@@ -68,6 +87,10 @@
 
 .j-five-jar.is-free:last-child {
   transform: translateY(-2px) rotate(-2deg);
+}
+
+.j-five-jar.j-bundle-pair.is-free {
+  width: 32px;
 }
 
 .j-five-jar-free {
@@ -100,13 +123,16 @@
 
 @media (max-width: 600px) {
   .j-packs label.j-toner-five-pack,
-  .j-packs label.j-moisturizer-three-pack {
+  .j-packs label.j-moisturizer-three-pack,
+  .j-packs label.j-bundle-five-pack {
     min-height: 122px;
     padding-right: 2px;
     padding-left: 2px;
   }
 
-  .j-toner-five-pack > strong {
+  .j-toner-five-pack > strong,
+  .j-moisturizer-three-pack > strong,
+  .j-bundle-five-pack > strong {
     gap: 2px;
   }
 
@@ -125,12 +151,29 @@
     height: 19px;
   }
 
+  .j-bundle-pair {
+    width: 20px;
+  }
+
+  .j-bundle-pair img {
+    width: 12px;
+    height: 19px;
+  }
+
+  .j-bundle-pair img + img {
+    margin-left: -4px;
+  }
+
   .j-five-jar.is-free {
     width: 22px;
     height: 22px;
     margin-left: 0;
     padding: 1px;
     border-radius: 6px;
+  }
+
+  .j-five-jar.j-bundle-pair.is-free {
+    width: 22px;
   }
 
   .j-five-jar-free {

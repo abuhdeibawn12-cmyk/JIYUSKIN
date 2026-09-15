@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var promoMessage = 'USE CODE JIYU FOR AN EXTRA 10% OFF';
+  var promoMessage = 'EXTRA 10% OFF AT CHECKOUT — USE CODE: JIYU. SUBSCRIPTIONS NOT INCLUDED!';
   var queued = false;
 
   function upgradePromo() {
