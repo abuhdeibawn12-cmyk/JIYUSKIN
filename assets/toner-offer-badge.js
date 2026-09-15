@@ -177,9 +177,16 @@
         'Save up to 95.94 dollars compared with three individual moisturizer jars'
       );
 
-      if (offerOption.dataset.jiyuOfferType !== 'moisturizer' && moisturizerImage) {
+      if (
+        (offerOption.dataset.jiyuOfferType !== 'moisturizer'
+          || !offerOption.querySelector('.j-five-jar-offer'))
+        && moisturizerImage
+      ) {
         clearOffer(packOptions);
         buildMoisturizerOffer(offerOption, packTitle);
+      } else {
+        offerOption.classList.remove('j-toner-five-pack');
+        offerOption.classList.add('j-moisturizer-three-pack');
       }
       return;
     }
@@ -195,9 +202,16 @@
       'Save up to ' + fiveJarSavings + ' dollars compared with five individual toner jars'
     );
 
-    if (offerOption.dataset.jiyuOfferType !== 'toner' && tonerImage) {
+    if (
+      (offerOption.dataset.jiyuOfferType !== 'toner'
+        || !offerOption.querySelector('.j-five-jar-offer'))
+      && tonerImage
+    ) {
       clearOffer(packOptions);
       buildTonerOffer(offerOption, packTitle);
+    } else {
+      offerOption.classList.remove('j-moisturizer-three-pack');
+      offerOption.classList.add('j-toner-five-pack');
     }
   }
 
