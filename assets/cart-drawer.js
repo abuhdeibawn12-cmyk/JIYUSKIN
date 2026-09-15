@@ -529,7 +529,7 @@
       control.textContent || '',
       control.querySelector('img') ? control.querySelector('img').getAttribute('alt') || '' : ''
     ].join(' ').replace(/\s+/g, ' ').trim().toLowerCase();
-    if (/\/cart(?:[?#]|$)/.test(href) || /^(cart|bag)( \d+)?$/.test(label)) return control;
+    if (/\/cart(?:[?#]|$)/.test(href) || /^(cart|bag)(?:\s*\(?\d+\)?)?$/.test(label)) return control;
     return null;
   }
 
