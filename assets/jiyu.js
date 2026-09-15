@@ -1669,18 +1669,6 @@ Thank you!</p><div class="jr-card__photos"><img class="jr-card__photo" src="/ass
                       <a href="/pages/faq-page" class="">FAQ</a>
                     </li>
                   
-                    <li class="">
-                      <a href="/blogs/news" class="">Resources</a>
-                    </li>
-                  
-                    <li class="">
-                      <a href="https://www.jiyuskin.com/pages/govx-discounts" class="">First Responder, Military &amp; Teacher Discounts</a>
-                    </li>
-                  
-                    <li class="">
-                      <a href="https://www.jiyuskin.com/pages/student-discounts" class="">Student Discounts</a>
-                    </li>
-                  
                 </ul>
               
             </div>
@@ -1693,43 +1681,19 @@ Thank you!</p><div class="jr-card__photos"><img class="jr-card__photo" src="/ass
                 <ul class="">
                   
                     <li class="">
-                      <a href="/pages/shipping-policy-1" class="">Shipping Policy</a>
+                      <a href="/policies/shipping-policy" class="">Shipping Policy</a>
                     </li>
                   
                     <li class="">
-                      <a href="/pages/refund-return-policy-1" class="">Refund/Return Policy</a>
+                      <a href="/policies/refund-policy" class="">Refund/Return Policy</a>
                     </li>
                   
                     <li class="">
-                      <a href="/pages/privacy-policy" class="">Privacy Policy</a>
+                      <a href="/policies/privacy-policy" class="">Privacy Policy</a>
                     </li>
                   
                     <li class="">
-                      <a href="/pages/terms-of-service" class="">Terms of Service</a>
-                    </li>
-                  
-                    <li class="">
-                      <a href="/pages/us-privacy-requests" class="">US Privacy Requests</a>
-                    </li>
-                  
-                    <li class="">
-                      <a href="/pages/do-not-sell-or-share-my-personal-information" class="">Do Not Share My Information</a>
-                    </li>
-                  
-                    <li class="">
-                      <a href="/pages/canadian-privacy-rights-pipeda-quebec-law-25" class="">Canada Privacy Requests</a>
-                    </li>
-                  
-                    <li class="">
-                      <a href="/apps/shipguard/claim/login" class="">Shipping Claim Request</a>
-                    </li>
-                  
-                    <li class="">
-                      <a href="/pages/loyalty-program" class="">Loyalty Program</a>
-                    </li>
-                  
-                    <li class="">
-                      <a href="/pages/accessibility-statement" class="">Accessibility Statement</a>
+                      <a href="/policies/terms-of-service" class="">Terms of Service</a>
                     </li>
                   
                 </ul>
