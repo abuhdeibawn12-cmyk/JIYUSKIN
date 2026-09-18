@@ -15,6 +15,13 @@
       : '/account';
   }
 
+  function money(cents) {
+    if (window.JIYU_THEME && typeof window.JIYU_THEME.formatMoney === 'function') {
+      return window.JIYU_THEME.formatMoney(cents);
+    }
+    return '$' + ((Number(cents) || 0) / 100).toFixed(2);
+  }
+
   function addAccountActions(container) {
     var signIn = document.createElement('button');
     signIn.className = 'j-button';
@@ -42,12 +49,12 @@
     terms.className = 'j-account-terms';
     terms.append('By signing in, you agree to our ');
     var privacy = document.createElement('a');
-    privacy.href = '/pages/privacy-policy';
+    privacy.href = '/policies/privacy-policy';
     privacy.textContent = 'privacy policy';
     terms.appendChild(privacy);
     terms.append(' and ');
     var termsLink = document.createElement('a');
-    termsLink.href = '/pages/terms-of-service';
+    termsLink.href = '/policies/terms-of-service';
     termsLink.textContent = 'terms of service';
     terms.appendChild(termsLink);
     container.appendChild(terms);
@@ -82,7 +89,7 @@
 
       if (product.price != null) {
         var price = document.createElement('small');
-        price.textContent = '$' + (Number(product.price) / 100).toFixed(2);
+        price.textContent = money(product.price);
         link.appendChild(price);
       }
 

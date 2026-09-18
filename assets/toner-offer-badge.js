@@ -8,9 +8,40 @@
   );
   var moisturizerImage = currentScript && currentScript.getAttribute('data-moisturizer-image');
   var queued = false;
-  var tonerFiveJarSavings = (86 * 5 - 153.42).toFixed(2);
-  var moisturizerFiveJarSavings = (79.95 * 5 - 143.91).toFixed(2);
-  var bundleFiveSetSavings = (118.92 * 5 - 230.80).toFixed(2);
+
+  function money(cents) {
+    if (window.JIYU_THEME && typeof window.JIYU_THEME.formatMoney === 'function') {
+      return window.JIYU_THEME.formatMoney(cents);
+    }
+    return '$' + ((Number(cents) || 0) / 100).toFixed(2);
+  }
+
+  function bestPackPrice(productKey, packIndex) {
+    var product = window.JIYU_THEME && window.JIYU_THEME.products
+      ? window.JIYU_THEME.products[productKey]
+      : null;
+    var variant = product && product.variants ? product.variants[packIndex] : null;
+    var allocation = variant && variant.selling_plan_allocations
+      ? variant.selling_plan_allocations[0]
+      : null;
+
+    if (!variant) return 0;
+    return Number(allocation && allocation.price != null ? allocation.price : variant.price) || 0;
+  }
+
+  function singleRetailPrice(productKey) {
+    var product = window.JIYU_THEME && window.JIYU_THEME.products
+      ? window.JIYU_THEME.products[productKey]
+      : null;
+    var variant = product && product.variants ? product.variants[0] : null;
+    return Number(variant && variant.price) || 0;
+  }
+
+  function maximumSavings(productKey, packIndex, itemCount) {
+    var singlePrice = singleRetailPrice(productKey);
+    var packPrice = bestPackPrice(productKey, packIndex);
+    return Math.max(0, (singlePrice * itemCount) - packPrice);
+  }
 
   function productHandle(productKey, fallbackHandle) {
     var configuredProduct = window.JIYU_THEME && window.JIYU_THEME.products
@@ -132,9 +163,11 @@
     });
   }
 
-  function setSavings(option, amount, label) {
+  function setSavings(option, amount, comparison) {
     var savings = option && option.querySelector('small');
-    var text = 'Save up to $' + amount;
+    var formattedAmount = money(amount);
+    var text = 'Save up to ' + formattedAmount;
+    var label = text + ' ' + comparison;
     if (!savings) return;
 
     if (savings.textContent !== text) savings.textContent = text;
@@ -224,14 +257,13 @@
     if (offerType === 'moisturizer') {
       setSavings(
         packOptions[1],
-        '47.97',
-        'Save up to 47.97 dollars compared with two individual moisturizer jars'
+        maximumSavings('cream', 1, 2),
+        'compared with two individual moisturizer jars'
       );
       setSavings(
         offerOption,
-        moisturizerFiveJarSavings,
-        'Save up to ' + moisturizerFiveJarSavings
-          + ' dollars compared with five individual moisturizer jars'
+        maximumSavings('cream', 2, 5),
+        'compared with five individual moisturizer jars'
       );
 
       if (
@@ -251,14 +283,13 @@
     if (offerType === 'bundle') {
       setSavings(
         packOptions[1],
-        '27.91',
-        'Save up to 27.91 dollars compared with two individual bundle sets'
+        maximumSavings('bundle', 1, 2),
+        'compared with two individual bundle sets'
       );
       setSavings(
         offerOption,
-        bundleFiveSetSavings,
-        'Save up to ' + bundleFiveSetSavings
-          + ' dollars compared with five individual bundle sets'
+        maximumSavings('bundle', 2, 5),
+        'compared with five individual bundle sets'
       );
 
       if (
@@ -278,13 +309,13 @@
 
     setSavings(
       packOptions[1],
-      '17.12',
-      'Save up to 17.12 dollars compared with two individual toner jars'
+      maximumSavings('toner', 1, 2),
+      'compared with two individual toner jars'
     );
     setSavings(
       offerOption,
-      tonerFiveJarSavings,
-      'Save up to ' + tonerFiveJarSavings + ' dollars compared with five individual toner jars'
+      maximumSavings('toner', 2, 5),
+      'compared with five individual toner jars'
     );
 
     if (
