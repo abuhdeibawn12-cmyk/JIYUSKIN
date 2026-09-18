@@ -15,6 +15,7 @@
   var openTrigger = null;
   var originalOverflow = '';
   var preloadStarted = false;
+  var statusTimer = null;
 
   function route(path) {
     return root.replace(/\/$/, '') + '/' + path.replace(/^\//, '');
@@ -105,7 +106,19 @@
   }
 
   function announce(message) {
+    if (statusTimer) {
+      clearTimeout(statusTimer);
+      statusTimer = null;
+    }
     if (status) status.textContent = message || '';
+  }
+
+  function announceTemporary(message) {
+    announce(message);
+    statusTimer = setTimeout(function () {
+      if (status && status.textContent === message) status.textContent = '';
+      statusTimer = null;
+    }, 2200);
   }
 
   function refresh() {
@@ -134,7 +147,7 @@
       .then(function (result) {
         return applyCart(result) ? result : refresh();
       })
-      .then(function () { announce(successMessage || 'Bag updated.'); })
+      .then(function () { announceTemporary(successMessage || 'Bag updated.'); })
       .catch(function (error) { announce(error.message || 'Unable to update your bag.'); })
       .finally(function () { setBusy(false); });
   }
@@ -219,6 +232,8 @@
     image.alt = item.product_title || 'JIYU product';
     image.width = 92;
     image.height = 92;
+    image.loading = 'lazy';
+    image.decoding = 'async';
 
     var details = element('div', 'jcd-item__details');
     details.appendChild(element('h2', 'jcd-item__title', item.product_title));
@@ -378,6 +393,8 @@
     image.alt = suggestion.title;
     image.width = 74;
     image.height = 74;
+    image.loading = 'lazy';
+    image.decoding = 'async';
     var details = element('div');
     details.appendChild(element('p', 'jcd-upsell__title', suggestion.title));
     if (suggestion.compare > suggestion.price) details.appendChild(element('p', 'jcd-upsell__compare', money(suggestion.compare, cart.currency)));
