@@ -14,6 +14,7 @@
   var busy = false;
   var openTrigger = null;
   var originalOverflow = '';
+  var preloadStarted = false;
 
   function route(path) {
     return root.replace(/\/$/, '') + '/' + path.replace(/^\//, '');
@@ -116,13 +117,23 @@
     });
   }
 
+  function applyCart(nextCart) {
+    if (!nextCart || typeof nextCart.item_count !== 'number' || !Array.isArray(nextCart.items)) return false;
+    cart = nextCart;
+    render();
+    document.dispatchEvent(new CustomEvent('jiyu:cart-updated', { detail: nextCart }));
+    return true;
+  }
+
   function update(action, successMessage) {
     if (busy) return Promise.resolve();
     setBusy(true);
     announce('');
     return Promise.resolve()
       .then(action)
-      .then(refresh)
+      .then(function (result) {
+        return applyCart(result) ? result : refresh();
+      })
       .then(function () { announce(successMessage || 'Bag updated.'); })
       .catch(function (error) { announce(error.message || 'Unable to update your bag.'); })
       .finally(function () { setBusy(false); });
@@ -212,7 +223,14 @@
     var details = element('div', 'jcd-item__details');
     details.appendChild(element('h2', 'jcd-item__title', item.product_title));
     if (item.variant_title && item.variant_title !== 'Default Title') {
-      details.appendChild(element('p', 'jcd-item__meta', 'Pack size: ' + item.variant_title));
+      var found = findVariant(item.variant_id);
+      var packDescription = 'Pack size: ' + item.variant_title;
+      if (found && found.pack === 2) {
+        packDescription = found.key === 'bundle'
+          ? 'You receive: 5 jars of each product (10 jars total) · Buy 3 + Get 2 FREE on each'
+          : 'You receive: 5 jars total · Buy 3 + Get 2 FREE';
+      }
+      details.appendChild(element('p', 'jcd-item__meta', packDescription));
     }
     details.appendChild(createQuantity(item));
 
@@ -467,8 +485,10 @@
     drawer.classList.add('is-open');
     overlay.classList.add('is-open');
     drawer.setAttribute('aria-hidden', 'false');
-    announce('Loading your bag…');
-    setBusy(true);
+    announce('');
+    if (cart) render();
+    else announce('Loading your bag…');
+    setBusy(!cart);
     refresh()
       .then(function () { announce(''); })
       .catch(function (error) { announce(error.message || 'Unable to load your bag.'); })
@@ -551,6 +571,12 @@
     setTimeout(check, 250);
   }
 
+  function preloadCart() {
+    if (preloadStarted) return;
+    preloadStarted = true;
+    refresh().catch(function () { preloadStarted = false; });
+  }
+
   document.addEventListener('click', function (event) {
     var trigger = cartTrigger(event.target);
     if (trigger) {
@@ -591,8 +617,14 @@
   });
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', createDrawer, { once: true });
+    document.addEventListener('DOMContentLoaded', function () {
+      createDrawer();
+      if ('requestIdleCallback' in window) window.requestIdleCallback(preloadCart, { timeout: 1500 });
+      else setTimeout(preloadCart, 400);
+    }, { once: true });
   } else {
     createDrawer();
+    if ('requestIdleCallback' in window) window.requestIdleCallback(preloadCart, { timeout: 1500 });
+    else setTimeout(preloadCart, 400);
   }
 })();
