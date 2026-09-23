@@ -16,6 +16,8 @@
   var originalOverflow = '';
   var preloadStarted = false;
   var statusTimer = null;
+  var lastCartUpdate = 0;
+  var refreshPromise = null;
 
   function route(path) {
     return root.replace(/\/$/, '') + '/' + path.replace(/^\//, '');
@@ -40,7 +42,7 @@
   }
 
   function request(path, payload) {
-    var options = { credentials: 'same-origin', headers: { Accept: 'application/json' } };
+    var options = { credentials: 'same-origin', cache: 'no-store', headers: { Accept: 'application/json' } };
     if (payload !== undefined) {
       options.method = 'POST';
       options.headers['Content-Type'] = 'application/json';
@@ -98,6 +100,7 @@
   function setBusy(next) {
     busy = next;
     if (drawer) drawer.classList.toggle('jcd-loading', next);
+    if (drawer) drawer.setAttribute('aria-busy', next ? 'true' : 'false');
     if (drawer) {
       Array.prototype.forEach.call(drawer.querySelectorAll('button,input'), function (control) {
         control.disabled = next;
@@ -122,17 +125,18 @@
   }
 
   function refresh() {
-    return request('cart.js').then(function (nextCart) {
-      cart = nextCart;
-      render();
-      document.dispatchEvent(new CustomEvent('jiyu:cart-updated', { detail: nextCart }));
+    if (refreshPromise) return refreshPromise;
+    refreshPromise = request('cart.js').then(function (nextCart) {
+      applyCart(nextCart);
       return nextCart;
-    });
+    }).finally(function () { refreshPromise = null; });
+    return refreshPromise;
   }
 
   function applyCart(nextCart) {
     if (!nextCart || typeof nextCart.item_count !== 'number' || !Array.isArray(nextCart.items)) return false;
     cart = nextCart;
+    lastCartUpdate = Date.now();
     render();
     document.dispatchEvent(new CustomEvent('jiyu:cart-updated', { detail: nextCart }));
     return true;
@@ -153,9 +157,37 @@
   }
 
   function changeLine(item, quantity) {
-    return update(function () {
-      return request('cart/change.js', { id: item.key, quantity: Math.max(0, quantity) });
-    }, quantity > 0 ? 'Quantity updated.' : 'Item removed.');
+    if (busy || !cart) return Promise.resolve();
+    var targetQuantity = Math.max(0, quantity);
+    var snapshot = JSON.parse(JSON.stringify(cart));
+    var current = cart.items.find(function (line) { return line.key === item.key; });
+    if (!current) return refresh();
+    var currentQuantity = Math.max(1, Number(current.quantity) || 1);
+    var unitPrice = Math.round((Number(current.final_line_price) || 0) / currentQuantity);
+    var delta = targetQuantity - currentQuantity;
+    cart.item_count = Math.max(0, cart.item_count + delta);
+    cart.total_price = Math.max(0, cart.total_price + (delta * unitPrice));
+    if (targetQuantity === 0) {
+      cart.items = cart.items.filter(function (line) { return line.key !== item.key; });
+    } else {
+      current.quantity = targetQuantity;
+      current.final_line_price = unitPrice * targetQuantity;
+      if (current.original_price) current.original_line_price = current.original_price * targetQuantity;
+    }
+    render();
+    setBusy(true);
+    announce(targetQuantity > 0 ? 'Updating quantity…' : 'Removing item…');
+    return request('cart/change.js', { id: item.key, quantity: targetQuantity })
+      .then(function (nextCart) {
+        applyCart(nextCart);
+        announceTemporary(targetQuantity > 0 ? 'Quantity updated.' : 'Item removed.');
+      })
+      .catch(function (error) {
+        cart = snapshot;
+        render();
+        announce(error.message || 'Unable to update your bag.');
+      })
+      .finally(function () { setBusy(false); });
   }
 
   function toggleSubscription(item, checked) {
@@ -503,10 +535,12 @@
     overlay.classList.add('is-open');
     drawer.setAttribute('aria-hidden', 'false');
     announce('');
-    if (cart) render();
+    var hasCart = Boolean(cart);
+    if (hasCart) render();
     else announce('Loading your bag…');
-    setBusy(!cart);
-    refresh()
+    setBusy(!hasCart);
+    var shouldRefresh = !hasCart || Date.now() - lastCartUpdate > 4000;
+    (shouldRefresh ? refresh() : Promise.resolve(cart))
       .then(function () { announce(''); })
       .catch(function (error) { announce(error.message || 'Unable to load your bag.'); })
       .finally(function () {
@@ -577,15 +611,16 @@
     function check() {
       attempts += 1;
       request('cart.js').then(function (latest) {
-        if (latest.item_count !== initialCount || attempts >= 5) {
-          cart = latest;
+        if (initialCount === null) initialCount = latest.item_count;
+        if (latest.item_count !== initialCount || attempts >= 18) {
+          applyCart(latest);
           openDrawer(trigger);
         } else {
-          setTimeout(check, 300);
+          setTimeout(check, attempts < 6 ? 100 : 180);
         }
       }).catch(function () {});
     }
-    setTimeout(check, 250);
+    setTimeout(check, 80);
   }
 
   function preloadCart() {
@@ -606,7 +641,7 @@
     var control = event.target && event.target.closest && event.target.closest('button');
     var text = control && (control.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
     if (text === 'add to cart') {
-      request('cart.js').then(function (before) { watchForAdd(before.item_count, control); }).catch(function () {});
+      watchForAdd(cart ? cart.item_count : null, control);
     }
   }, true);
 
@@ -636,12 +671,10 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       createDrawer();
-      if ('requestIdleCallback' in window) window.requestIdleCallback(preloadCart, { timeout: 1500 });
-      else setTimeout(preloadCart, 400);
+      preloadCart();
     }, { once: true });
   } else {
     createDrawer();
-    if ('requestIdleCallback' in window) window.requestIdleCallback(preloadCart, { timeout: 1500 });
-    else setTimeout(preloadCart, 400);
+    preloadCart();
   }
 })();
