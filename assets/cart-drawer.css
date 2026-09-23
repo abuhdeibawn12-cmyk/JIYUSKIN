@@ -14,6 +14,13 @@
   transition: opacity 220ms ease;
 }
 
+/* The original React storefront can still mount its own cart after a product
+   add. Hide that transient layer while the custom drawer dismisses it. */
+body.jcd-legacy-cart-suppressed .j-backdrop:has(.j-cart-drawer) {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 .jcd-overlay.is-open {
   opacity: 1;
   pointer-events: auto;
@@ -323,6 +330,13 @@ body.jcd-open #root .j-backdrop {
   font-size: 15px;
   font-weight: 800;
   line-height: 1.25;
+}
+
+.jcd-upsell__detail {
+  margin: 3px 0 5px;
+  color: #006e37;
+  font-size: 12px;
+  line-height: 1.35;
 }
 
 .jcd-upsell__compare {

@@ -18,6 +18,7 @@
   var statusTimer = null;
   var lastCartUpdate = 0;
   var refreshPromise = null;
+  var legacyDrawerObserver = null;
 
   function route(path) {
     return root.replace(/\/$/, '') + '/' + path.replace(/^\//, '');
@@ -354,6 +355,7 @@
           eyebrow: 'Smart bundle upgrade',
           heading: 'Switch to the Glow-Up Bundle' + (savings ? ' & Save ' + money(savings, cart.currency) : ''),
           title: 'Anti-Aging Glow-Up Bundle',
+          detail: 'Includes 1 toner jar + 1 moisturizer jar',
           compare: singlesTotal,
           price: targetPrice,
           savings: savings,
@@ -364,16 +366,17 @@
           }
         });
       } else if (source) {
-        var compare = bundleVariant.compare_at_price || (products.toner && products.toner.variants[0].price) + (products.cream && products.cream.variants[0].price);
+        var compare = (products.toner && products.toner.variants[0].price)
+          + (products.cream && products.cream.variants[0].price);
+        var addBundleSavings = Math.max(0, compare - targetPrice);
         suggestions.push({
           eyebrow: 'Complete your ritual',
-          heading: source.found.key === 'toner'
-            ? 'Bundle the Moisturizer & Save'
-            : 'Bundle the Toner Pads & Save',
+          heading: 'Add the Glow-Up Bundle' + (addBundleSavings ? ' & Save ' + money(addBundleSavings, cart.currency) : ''),
           title: 'Anti-Aging Glow-Up Bundle',
+          detail: 'Includes 1 toner jar + 1 moisturizer jar',
           compare: compare,
           price: targetPrice,
-          savings: Math.max(0, compare - targetPrice),
+          savings: addBundleSavings,
           image: imageForVariant(products.bundle, bundleVariant),
           cta: 'ADD',
           action: function () { return addVariant(bundleVariant, subscription); }
@@ -397,9 +400,14 @@
         suggestions.push({
           eyebrow: 'Best-value upgrade',
           heading: upgradeLine.found.pack + 1 === 2
-            ? 'Upgrade to Buy 3 + Get 2 Free'
+            ? 'Upgrade to Buy 3 + Get 2 FREE' + (upgradeSaving ? ' — Save ' + money(upgradeSaving, cart.currency) : '')
             : 'Upgrade to ' + (upgradeLine.found.pack + 2) + (upgradeLine.found.key === 'bundle' ? ' Bundle Sets' : ' Jars'),
           title: upgradeLine.found.product.title,
+          detail: upgradeLine.found.pack + 1 === 2
+            ? (upgradeLine.found.key === 'bundle'
+              ? 'You receive 5 toner jars + 5 moisturizer jars (10 jars total)'
+              : 'You receive 5 jars total')
+            : '',
           compare: normalTotal,
           price: upgradePrice,
           savings: upgradeSaving,
@@ -429,6 +437,7 @@
     image.decoding = 'async';
     var details = element('div');
     details.appendChild(element('p', 'jcd-upsell__title', suggestion.title));
+    if (suggestion.detail) details.appendChild(element('p', 'jcd-upsell__detail', suggestion.detail));
     if (suggestion.compare > suggestion.price) details.appendChild(element('p', 'jcd-upsell__compare', money(suggestion.compare, cart.currency)));
     details.appendChild(element('p', 'jcd-upsell__price', money(suggestion.price, cart.currency)));
     if (suggestion.savings) details.appendChild(element('span', 'jcd-upsell__save', 'Save ' + money(suggestion.savings, cart.currency)));
@@ -525,8 +534,37 @@
     if (openTrigger && document.contains(openTrigger)) openTrigger.focus();
   }
 
+  function legacyCartDrawer() {
+    return document.querySelector('.j-backdrop .j-cart-drawer');
+  }
+
+  function dismissLegacyCartDrawer() {
+    var legacy = legacyCartDrawer();
+    if (!legacy) {
+      document.body.classList.remove('jcd-legacy-cart-suppressed');
+      return false;
+    }
+    document.body.classList.add('jcd-legacy-cart-suppressed');
+    if (legacy.dataset.jiyuDismissed !== 'true') {
+      legacy.dataset.jiyuDismissed = 'true';
+      var close = legacy.querySelector('.j-close[aria-label="Close dialog"], .j-close');
+      if (close) close.click();
+    }
+    return true;
+  }
+
+  function watchLegacyCartDrawer() {
+    if (legacyDrawerObserver) return;
+    legacyDrawerObserver = new MutationObserver(function () {
+      dismissLegacyCartDrawer();
+    });
+    legacyDrawerObserver.observe(document.body, { childList: true, subtree: true });
+    dismissLegacyCartDrawer();
+  }
+
   function openDrawer(trigger) {
     if (!drawer || busy) return;
+    dismissLegacyCartDrawer();
     openTrigger = trigger || document.activeElement;
     originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -671,10 +709,12 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       createDrawer();
+      watchLegacyCartDrawer();
       preloadCart();
     }, { once: true });
   } else {
     createDrawer();
+    watchLegacyCartDrawer();
     preloadCart();
   }
 })();
