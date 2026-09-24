@@ -257,11 +257,24 @@
     return svg;
   }
 
+  function cartItemImage(item, found) {
+    var imageAssets = {
+      toner: ['d2976e15e91c8320.png', '9401ba6726f88812.jpg'],
+      cream: ['4f0c08d424cfdb25.png', '67882544306447dc.jpg']
+    };
+    var asset = found && imageAssets[found.key] && imageAssets[found.key][found.pack];
+    if (asset && typeof theme.resolveAssetText === 'function') {
+      return theme.resolveAssetText('/assets/' + asset);
+    }
+    return item.image || '';
+  }
+
   function createItem(item) {
     var card = element('article', 'jcd-item');
     var grid = element('div', 'jcd-item__grid');
+    var found = findVariant(item.variant_id);
     var image = element('img', 'jcd-item__image');
-    image.src = item.image || '';
+    image.src = cartItemImage(item, found);
     image.alt = item.product_title || 'JIYU product';
     image.width = 92;
     image.height = 92;
@@ -271,7 +284,6 @@
     var details = element('div', 'jcd-item__details');
     details.appendChild(element('h2', 'jcd-item__title', item.product_title));
     if (item.variant_title && item.variant_title !== 'Default Title') {
-      var found = findVariant(item.variant_id);
       var packDescription = 'Pack size: ' + item.variant_title;
       if (found && found.pack === 2) {
         packDescription = found.key === 'bundle'
@@ -293,7 +305,6 @@
     grid.append(image, details, side);
     card.appendChild(grid);
 
-    var found = findVariant(item.variant_id);
     var allocation = found && firstPlan(found.variant);
     if (allocation || isSubscription(item)) {
       var subscribe = element('label', 'jcd-subscribe');
