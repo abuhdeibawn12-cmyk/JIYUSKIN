@@ -2,13 +2,7 @@
   'use strict';
 
   var attached = new WeakSet();
-
-  function resourceFinished(url) {
-    if (!url || !window.performance || !performance.getEntriesByName) return false;
-    return performance.getEntriesByName(url).some(function (entry) {
-      return entry.responseEnd > 0 || entry.duration > 0;
-    });
-  }
+  var providerOrigin = 'https://app.thefrontrowhealth.com';
 
   function attach(section) {
     if (!section || attached.has(section)) return;
@@ -19,30 +13,43 @@
     section.classList.add('jcr-loading');
     section.setAttribute('aria-busy', 'true');
 
-    var complete = false;
-    var readyTimer = 0;
-    var fallbackTimer = 0;
+    var ready = false;
+    var unavailableTimer = 0;
 
     function markReady() {
-      if (complete) return;
-      complete = true;
-      window.clearTimeout(readyTimer);
-      window.clearTimeout(fallbackTimer);
+      if (ready) return;
+      ready = true;
+      window.clearTimeout(unavailableTimer);
       window.requestAnimationFrame(function () {
         window.requestAnimationFrame(function () {
+          if (!section.isConnected) return;
           section.classList.remove('jcr-loading');
+          section.classList.remove('jcr-unavailable');
           section.classList.add('jcr-ready');
           section.removeAttribute('aria-busy');
+          section.removeAttribute('aria-hidden');
         });
       });
     }
 
-    frame.addEventListener('load', function () {
-      readyTimer = window.setTimeout(markReady, 350);
-    }, { once: true });
+    function onMessage(event) {
+      if (event.origin !== providerOrigin || !section.isConnected) return;
+      var currentFrame = section.querySelector('iframe[src*="thefrontrowhealth.com"]');
+      if (!currentFrame || event.source !== currentFrame.contentWindow) return;
+      var message = event.data;
+      if (!message || message.name !== 'RESIZE_TESTIMONIALS_HEIGHT') return;
+      if (!Number.isFinite(message.value) || message.value <= 600) return;
+      markReady();
+    }
 
-    if (resourceFinished(frame.src)) readyTimer = window.setTimeout(markReady, 180);
-    fallbackTimer = window.setTimeout(markReady, 12000);
+    window.addEventListener('message', onMessage);
+
+    unavailableTimer = window.setTimeout(function () {
+      if (ready || !section.isConnected) return;
+      section.classList.add('jcr-unavailable');
+      section.removeAttribute('aria-busy');
+      section.setAttribute('aria-hidden', 'true');
+    }, 12000);
   }
 
   function scan(root) {

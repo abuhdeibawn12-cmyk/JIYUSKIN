@@ -1,6 +1,12 @@
 .j-clinician-reviews {
   position: relative;
   background: #fdfaf0;
+  max-height: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* Keep both the default and hover product-card images inside the square card. */
@@ -22,9 +28,8 @@
 }
 
 .j-clinician-reviews.jcr-loading {
-  min-height: clamp(260px, 34vw, 420px);
-  overflow: hidden;
-  border-block: 1px solid rgba(0, 110, 55, 0.12);
+  max-height: 0;
+  min-height: 0;
 }
 
 .j-clinician-reviews.jcr-loading iframe {
@@ -36,61 +41,14 @@
   pointer-events: none;
 }
 
-.j-clinician-reviews.jcr-loading::before {
-  content: '';
-  position: absolute;
-  inset: clamp(28px, 6vw, 72px) max(18px, calc((100% - 980px) / 2));
-  border-radius: 18px;
-  background:
-    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.72) 48%, transparent 100%) -100% 0 / 45% 100% no-repeat,
-    linear-gradient(#ddefc9 0 0) center 28% / min(360px, 72%) 22px no-repeat,
-    linear-gradient(rgba(0, 110, 55, 0.12) 0 0) center 46% / min(620px, 86%) 13px no-repeat,
-    linear-gradient(rgba(0, 110, 55, 0.08) 0 0) center 57% / min(500px, 74%) 13px no-repeat,
-    linear-gradient(rgba(0, 110, 55, 0.07) 0 0) center 76% / min(760px, 90%) 72px no-repeat,
-    rgba(221, 239, 201, 0.2);
-  animation: jcr-shimmer 1.25s ease-in-out infinite;
-}
-
-.j-clinician-reviews.jcr-loading::after {
-  content: 'Loading independent clinician reviews…';
-  position: absolute;
-  left: 50%;
-  bottom: clamp(28px, 5vw, 58px);
-  width: calc(100% - 36px);
-  transform: translateX(-50%);
-  color: #006e37;
-  font: 600 14px/1.4 Avantt, Arial, sans-serif;
-  letter-spacing: 0.01em;
-  text-align: center;
+.j-clinician-reviews.jcr-ready {
+  max-height: none;
+  overflow: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .j-clinician-reviews.jcr-ready iframe {
   opacity: 1;
   transition: opacity 180ms ease;
-}
-
-@keyframes jcr-shimmer {
-  to { background-position: 200% 0, center 28%, center 46%, center 57%, center 76%, 0 0; }
-}
-
-@media (max-width: 749px) {
-  .j-clinician-reviews.jcr-loading {
-    min-height: 300px;
-  }
-
-  .j-clinician-reviews.jcr-loading::before {
-    inset: 22px 14px 60px;
-    border-radius: 14px;
-  }
-
-  .j-clinician-reviews.jcr-loading::after {
-    bottom: 24px;
-    font-size: 13px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .j-clinician-reviews.jcr-loading::before {
-    animation: none;
-  }
 }
