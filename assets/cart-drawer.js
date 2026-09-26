@@ -356,7 +356,7 @@
         ? Math.max(0, Math.round((1 - allocation.price / found.variant.price) * 100))
         : 0;
       subscriptionText.appendChild(element('strong', '', percent
-        ? 'Save ' + percent + '% with automatic refills'
+        ? 'Save an extra ' + percent + '% with automatic refills'
         : 'Automatic refills'));
       var planName = (item.selling_plan_allocation && item.selling_plan_allocation.selling_plan && item.selling_plan_allocation.selling_plan.name)
         || (allocation && allocation.selling_plan && allocation.selling_plan.name)
@@ -384,6 +384,11 @@
     }).filter(Boolean);
   }
 
+  function percentageOff(referencePrice, offerPrice) {
+    if (!referencePrice || !offerPrice || offerPrice >= referencePrice) return 0;
+    return Math.round((1 - (offerPrice / referencePrice)) * 100);
+  }
+
   function buildSuggestions() {
     var lines = mappedLines();
     var products = allProducts();
@@ -392,44 +397,63 @@
     var tonerLine = lines.find(function (line) { return line.found.key === 'toner'; });
     var creamLine = lines.find(function (line) { return line.found.key === 'cream'; });
 
-    if (!bundleLine && products.bundle && products.bundle.variants && products.bundle.variants[0]) {
-      var bundleVariant = products.bundle.variants[0];
-      var source = tonerLine || creamLine;
-      var subscription = Boolean(source && isSubscription(source.item) && planId(bundleVariant));
-      var targetPrice = variantPrice(bundleVariant, subscription);
-      var bothSingles = tonerLine && creamLine && tonerLine.item.quantity === 1 && creamLine.item.quantity === 1;
-      if (bothSingles) {
-        var singlesTotal = tonerLine.item.final_line_price + creamLine.item.final_line_price;
-        var savings = Math.max(0, singlesTotal - targetPrice);
-        suggestions.push({
-          eyebrow: 'Smart bundle upgrade',
-          heading: 'Switch to the Glow-Up Bundle' + (savings ? ' & Save ' + money(savings, cart.currency) : ''),
-          title: 'Anti-Aging Glow-Up Bundle',
-          detail: 'Includes 1 toner jar + 1 moisturizer jar',
-          compare: singlesTotal,
-          price: targetPrice,
-          savings: savings,
-          image: imageForVariant(products.bundle, bundleVariant),
-          cta: 'SWITCH',
-          action: function () {
-            return replaceWithVariant([tonerLine.item.key, creamLine.item.key], bundleVariant, subscription);
-          }
-        });
-      } else if (source) {
-        var compare = (products.toner && products.toner.variants[0].price)
+    if (!bundleLine && products.bundle && products.bundle.variants) {
+      var matchingPair = tonerLine
+        && creamLine
+        && tonerLine.item.quantity === 1
+        && creamLine.item.quantity === 1
+        && tonerLine.found.pack === creamLine.found.pack;
+      var loneSource = tonerLine && !creamLine && tonerLine.item.quantity === 1
+        ? tonerLine
+        : (creamLine && !tonerLine && creamLine.item.quantity === 1 ? creamLine : null);
+      var bundleSource = matchingPair ? tonerLine : loneSource;
+      var bundlePack = bundleSource && bundleSource.found.pack;
+      var bundleVariant = bundlePack != null ? products.bundle.variants[bundlePack] : null;
+
+      if (bundleSource && bundleVariant && bundleVariant.available !== false) {
+        var pairSubscription = matchingPair
+          && isSubscription(tonerLine.item)
+          && isSubscription(creamLine.item);
+        var bundleSubscription = Boolean(
+          (pairSubscription || (!matchingPair && isSubscription(bundleSource.item)))
+          && planId(bundleVariant)
+        );
+        var bundlePrice = variantPrice(bundleVariant, bundleSubscription);
+        var bundleUnits = bundlePack + 1;
+        var separateUnitPrice = (products.toner && products.toner.variants[0].price)
           + (products.cream && products.cream.variants[0].price);
-        var addBundleSavings = Math.max(0, compare - targetPrice);
+        var bundleReference = separateUnitPrice * bundleUnits;
+        var bundleSavings = Math.max(0, bundleReference - bundlePrice);
+        var currentSelectionPrice = matchingPair
+          ? tonerLine.item.final_line_price + creamLine.item.final_line_price
+          : bundleSource.item.final_line_price;
+        var replacementKeys = matchingPair
+          ? [tonerLine.item.key, creamLine.item.key]
+          : [bundleSource.item.key];
+        var bundleLabel = bundleUnits + ' Complete ' + (bundleUnits === 1 ? 'Set' : 'Sets');
+
         suggestions.push({
-          eyebrow: 'Complete your ritual',
-          heading: 'Add the Glow-Up Bundle' + (addBundleSavings ? ' & Save ' + money(addBundleSavings, cart.currency) : ''),
+          eyebrow: matchingPair ? 'Smart bundle switch' : 'Complete your ritual',
+          heading: (matchingPair ? 'Switch to ' : 'Upgrade to ') + bundleLabel,
           title: 'Anti-Aging Glow-Up Bundle',
-          detail: 'Includes 1 toner jar + 1 moisturizer jar',
-          compare: compare,
-          price: targetPrice,
-          savings: addBundleSavings,
+          detail: 'Includes ' + bundleUnits + ' toner ' + (bundleUnits === 1 ? 'jar' : 'jars')
+            + ' + ' + bundleUnits + ' moisturizer ' + (bundleUnits === 1 ? 'jar' : 'jars')
+            + ' (' + (bundleUnits * 2) + ' jars total)',
+          compare: bundleReference,
+          price: bundlePrice,
+          savings: bundleSavings,
+          savingsPercent: percentageOff(bundleReference, bundlePrice),
+          savingsContext: 'vs buying the products separately',
+          cartSaving: Math.max(0, currentSelectionPrice - bundlePrice),
+          difference: Math.max(0, bundlePrice - currentSelectionPrice),
           image: imageForVariant(products.bundle, bundleVariant),
-          cta: 'ADD',
-          action: function () { return addVariant(bundleVariant, subscription); }
+          productKey: 'bundle',
+          pack: bundlePack,
+          cta: matchingPair ? 'SWITCH' : 'UPGRADE',
+          successMessage: 'Bundle upgrade added.',
+          action: function () {
+            return replaceWithVariant(replacementKeys, bundleVariant, bundleSubscription);
+          }
         });
       }
     }
@@ -453,8 +477,7 @@
         var upgradeSaving = Math.max(0, normalTotal - upgradePrice);
         suggestions.push({
           eyebrow: 'Best-value upgrade',
-          heading: 'Upgrade to ' + unitCount + (upgradeLine.found.key === 'bundle' ? ' Complete Sets' : ' Jars')
-            + (upgradeSaving ? ' — Save ' + money(upgradeSaving, cart.currency) : ''),
+          heading: 'Upgrade to ' + unitCount + (upgradeLine.found.key === 'bundle' ? ' Complete Sets' : ' Jars'),
           title: upgradeLine.found.product.title,
           detail: upgradeLine.found.key === 'bundle'
             ? 'Includes ' + unitCount + ' toner jars + ' + unitCount + ' moisturizer jars (' + (unitCount * 2) + ' jars total)'
@@ -462,11 +485,16 @@
           compare: normalTotal,
           price: upgradePrice,
           savings: upgradeSaving,
+          savingsPercent: percentageOff(normalTotal, upgradePrice),
+          savingsContext: upgradeLine.found.key === 'bundle'
+            ? 'vs buying the products separately'
+            : 'vs individual jar prices',
           difference: Math.max(0, upgradePrice - currentPrice),
           image: imageForVariant(upgradeLine.found.product, targetVariant),
           productKey: upgradeLine.found.key,
           pack: targetPack,
           cta: 'UPGRADE',
+          successMessage: 'Pack upgraded.',
           action: function () {
             return replaceWithVariant([upgradeLine.item.key], targetVariant, upgradeSubscription);
           }
@@ -495,12 +523,21 @@
     if (suggestion.detail) details.appendChild(element('p', 'jcd-upsell__detail', suggestion.detail));
     if (suggestion.compare > suggestion.price) details.appendChild(element('p', 'jcd-upsell__compare', money(suggestion.compare, cart.currency)));
     details.appendChild(element('p', 'jcd-upsell__price', money(suggestion.price, cart.currency)));
-    if (suggestion.savings) details.appendChild(element('span', 'jcd-upsell__save', 'Save ' + money(suggestion.savings, cart.currency)));
-    if (suggestion.difference) details.appendChild(element('span', 'jcd-upsell__save', 'Only ' + money(suggestion.difference, cart.currency) + ' more'));
+    if (suggestion.savings) {
+      var savingsLabel = 'Save ';
+      if (suggestion.savingsPercent) savingsLabel += suggestion.savingsPercent + '% · ';
+      savingsLabel += money(suggestion.savings, cart.currency);
+      if (suggestion.savingsContext) savingsLabel += ' ' + suggestion.savingsContext;
+      details.appendChild(element('span', 'jcd-upsell__save', savingsLabel));
+    }
+    if (suggestion.cartSaving) {
+      details.appendChild(element('span', 'jcd-upsell__save', 'Save an extra ' + money(suggestion.cartSaving, cart.currency) + ' on this switch'));
+    }
+    if (suggestion.difference) details.appendChild(element('span', 'jcd-upsell__save', 'Only ' + money(suggestion.difference, cart.currency) + ' more than your current selection'));
     var button = element('button', 'jcd-upsell__button', suggestion.cta);
     button.type = 'button';
     button.addEventListener('click', function () {
-      update(suggestion.action, suggestion.cta === 'ADD' ? 'Bundle added.' : 'Bundle upgraded.');
+      update(suggestion.action, suggestion.successMessage || 'Bag updated.');
     });
     box.append(image, details, button);
     card.appendChild(box);
