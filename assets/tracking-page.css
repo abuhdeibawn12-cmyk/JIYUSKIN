@@ -1,6 +1,7 @@
 .j-tracking-route {
   min-height: 100dvh;
   margin: 0;
+  overflow-x: hidden;
   background: #fdfaf0;
   color: #006e37;
 }
