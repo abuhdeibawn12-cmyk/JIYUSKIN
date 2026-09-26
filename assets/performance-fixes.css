@@ -52,3 +52,65 @@
   opacity: 1;
   transition: opacity 180ms ease;
 }
+
+/* Keep compact controls visually light while giving fingers a reliable target. */
+@media (max-width: 749px) {
+  .j-quantity {
+    min-height: 44px;
+  }
+
+  .j-quantity button {
+    display: inline-grid !important;
+    place-items: center;
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+  }
+
+  .j-quantity button img {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+  }
+
+  .jiyu-skin-concerns__dot {
+    position: relative;
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  .jiyu-skin-concerns__dot::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%, -50%);
+    border: 1.6px solid #006e37;
+    border-radius: 999px;
+    box-sizing: border-box;
+  }
+
+  .jiyu-skin-concerns__dot.active {
+    width: 52px !important;
+  }
+
+  .jiyu-skin-concerns__dot.active::before {
+    width: 48px;
+    background: #006e37;
+  }
+
+  .j-tracking-footer a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 0 8px;
+  }
+}
