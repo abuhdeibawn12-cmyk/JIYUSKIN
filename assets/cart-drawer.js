@@ -269,17 +269,56 @@
     return item.image || '';
   }
 
+  function productAsset(key, pack) {
+    var imageAssets = {
+      toner: ['d2976e15e91c8320.png', '9401ba6726f88812.jpg'],
+      cream: ['4f0c08d424cfdb25.png', '67882544306447dc.jpg']
+    };
+    var asset = imageAssets[key] && imageAssets[key][pack];
+    return asset && typeof theme.resolveAssetText === 'function'
+      ? theme.resolveAssetText('/assets/' + asset)
+      : '';
+  }
+
+  function createPackVisual(item, found, className, size) {
+    if (!found || found.pack !== 2 || !['toner', 'cream', 'bundle'].includes(found.key)) {
+      var regularImage = element('img', className);
+      regularImage.src = cartItemImage(item, found);
+      regularImage.alt = item.product_title || 'JIYU product';
+      regularImage.width = size;
+      regularImage.height = size;
+      regularImage.loading = 'lazy';
+      regularImage.decoding = 'async';
+      return regularImage;
+    }
+
+    var cluster = element('span', className + ' jcd-item__image--cluster');
+    cluster.setAttribute('role', 'img');
+    cluster.setAttribute('aria-label', found.key === 'bundle'
+      ? 'Three toner jars and three moisturizer jars'
+      : 'Three ' + (found.key === 'toner' ? 'toner' : 'moisturizer') + ' jars');
+
+    for (var index = 0; index < 3; index += 1) {
+      var unit = element('span', 'jcd-pack-unit' + (found.key === 'bundle' ? ' jcd-pack-unit--bundle' : ''));
+      var keys = found.key === 'bundle' ? ['toner', 'cream'] : [found.key];
+      keys.forEach(function (key) {
+        var image = element('img');
+        image.src = productAsset(key, 0);
+        image.alt = '';
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        unit.appendChild(image);
+      });
+      cluster.appendChild(unit);
+    }
+    return cluster;
+  }
+
   function createItem(item) {
     var card = element('article', 'jcd-item');
     var grid = element('div', 'jcd-item__grid');
     var found = findVariant(item.variant_id);
-    var image = element('img', 'jcd-item__image');
-    image.src = cartItemImage(item, found);
-    image.alt = item.product_title || 'JIYU product';
-    image.width = 92;
-    image.height = 92;
-    image.loading = 'lazy';
-    image.decoding = 'async';
+    var image = createPackVisual(item, found, 'jcd-item__image', 92);
 
     var details = element('div', 'jcd-item__details');
     details.appendChild(element('h2', 'jcd-item__title', item.product_title));
@@ -287,8 +326,8 @@
       var packDescription = 'Pack size: ' + item.variant_title;
       if (found && found.pack === 2) {
         packDescription = found.key === 'bundle'
-          ? 'You receive: 5 jars of each product (10 jars total) · Buy 3 + Get 2 FREE on each'
-          : 'You receive: 5 jars total · Buy 3 + Get 2 FREE';
+          ? 'Pack size: 3 toner jars + 3 moisturizer jars (6 jars total)'
+          : 'Pack size: 3 Jars';
       }
       details.appendChild(element('p', 'jcd-item__meta', packDescription));
     }
@@ -404,26 +443,29 @@
         var upgradeSubscription = isSubscription(upgradeLine.item) && Boolean(planId(targetVariant));
         var upgradePrice = variantPrice(targetVariant, upgradeSubscription);
         var currentPrice = upgradeLine.item.final_line_price;
-        var basePrice = upgradeLine.found.product.variants[0].price;
-        var unitCount = upgradeLine.found.pack + 1 === 2 ? 5 : upgradeLine.found.pack + 2;
+        var basePrice = upgradeLine.found.key === 'bundle'
+          ? (products.toner && products.toner.variants[0].price)
+            + (products.cream && products.cream.variants[0].price)
+          : upgradeLine.found.product.variants[0].price;
+        var targetPack = upgradeLine.found.pack + 1;
+        var unitCount = targetPack + 1;
         var normalTotal = basePrice * unitCount;
         var upgradeSaving = Math.max(0, normalTotal - upgradePrice);
         suggestions.push({
           eyebrow: 'Best-value upgrade',
-          heading: upgradeLine.found.pack + 1 === 2
-            ? 'Upgrade to Buy 3 + Get 2 FREE' + (upgradeSaving ? ' — Save ' + money(upgradeSaving, cart.currency) : '')
-            : 'Upgrade to ' + (upgradeLine.found.pack + 2) + (upgradeLine.found.key === 'bundle' ? ' Bundle Sets' : ' Jars'),
+          heading: 'Upgrade to ' + unitCount + (upgradeLine.found.key === 'bundle' ? ' Complete Sets' : ' Jars')
+            + (upgradeSaving ? ' — Save ' + money(upgradeSaving, cart.currency) : ''),
           title: upgradeLine.found.product.title,
-          detail: upgradeLine.found.pack + 1 === 2
-            ? (upgradeLine.found.key === 'bundle'
-              ? 'You receive 5 toner jars + 5 moisturizer jars (10 jars total)'
-              : 'You receive 5 jars total')
-            : '',
+          detail: upgradeLine.found.key === 'bundle'
+            ? 'Includes ' + unitCount + ' toner jars + ' + unitCount + ' moisturizer jars (' + (unitCount * 2) + ' jars total)'
+            : 'Includes ' + unitCount + ' jars',
           compare: normalTotal,
           price: upgradePrice,
           savings: upgradeSaving,
           difference: Math.max(0, upgradePrice - currentPrice),
           image: imageForVariant(upgradeLine.found.product, targetVariant),
+          productKey: upgradeLine.found.key,
+          pack: targetPack,
           cta: 'UPGRADE',
           action: function () {
             return replaceWithVariant([upgradeLine.item.key], targetVariant, upgradeSubscription);
@@ -439,13 +481,15 @@
     card.appendChild(element('p', 'jcd-upsell__eyebrow', suggestion.eyebrow));
     card.appendChild(element('h2', 'jcd-upsell__heading', suggestion.heading));
     var box = element('div', 'jcd-upsell__box');
-    var image = element('img', 'jcd-upsell__image');
-    image.src = suggestion.image;
-    image.alt = suggestion.title;
-    image.width = 74;
-    image.height = 74;
-    image.loading = 'lazy';
-    image.decoding = 'async';
+    var suggestionFound = suggestion.productKey != null && suggestion.pack != null
+      ? { key: suggestion.productKey, pack: suggestion.pack }
+      : null;
+    var image = createPackVisual(
+      { image: suggestion.image, product_title: suggestion.title },
+      suggestionFound,
+      'jcd-upsell__image',
+      74
+    );
     var details = element('div');
     details.appendChild(element('p', 'jcd-upsell__title', suggestion.title));
     if (suggestion.detail) details.appendChild(element('p', 'jcd-upsell__detail', suggestion.detail));
