@@ -443,7 +443,7 @@
           price: bundlePrice,
           savings: bundleSavings,
           savingsPercent: percentageOff(bundleReference, bundlePrice),
-          savingsContext: 'vs buying the products separately',
+          savingsContext: 'vs buying separately',
           cartSaving: Math.max(0, currentSelectionPrice - bundlePrice),
           difference: Math.max(0, bundlePrice - currentSelectionPrice),
           image: imageForVariant(products.bundle, bundleVariant),
@@ -487,8 +487,8 @@
           savings: upgradeSaving,
           savingsPercent: percentageOff(normalTotal, upgradePrice),
           savingsContext: upgradeLine.found.key === 'bundle'
-            ? 'vs buying the products separately'
-            : 'vs individual jar prices',
+            ? 'vs buying separately'
+            : 'vs single jars',
           difference: Math.max(0, upgradePrice - currentPrice),
           image: imageForVariant(upgradeLine.found.product, targetVariant),
           productKey: upgradeLine.found.key,
@@ -525,15 +525,16 @@
     details.appendChild(element('p', 'jcd-upsell__price', money(suggestion.price, cart.currency)));
     if (suggestion.savings) {
       var savingsLabel = 'Save ';
-      if (suggestion.savingsPercent) savingsLabel += suggestion.savingsPercent + '% · ';
+      if (suggestion.savingsPercent) savingsLabel += suggestion.savingsPercent + '% (';
       savingsLabel += money(suggestion.savings, cart.currency);
+      if (suggestion.savingsPercent) savingsLabel += ')';
       if (suggestion.savingsContext) savingsLabel += ' ' + suggestion.savingsContext;
       details.appendChild(element('span', 'jcd-upsell__save', savingsLabel));
     }
     if (suggestion.cartSaving) {
-      details.appendChild(element('span', 'jcd-upsell__save', 'Save an extra ' + money(suggestion.cartSaving, cart.currency) + ' on this switch'));
+      details.appendChild(element('span', 'jcd-upsell__save', 'Save an extra ' + money(suggestion.cartSaving, cart.currency) + ' vs current items'));
     }
-    if (suggestion.difference) details.appendChild(element('span', 'jcd-upsell__save', 'Only ' + money(suggestion.difference, cart.currency) + ' more than your current selection'));
+    if (suggestion.difference) details.appendChild(element('span', 'jcd-upsell__save', 'Only ' + money(suggestion.difference, cart.currency) + ' more to upgrade'));
     var button = element('button', 'jcd-upsell__button', suggestion.cta);
     button.type = 'button';
     button.addEventListener('click', function () {
