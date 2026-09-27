@@ -1,12 +1,26 @@
-.j-clinician-reviews {
-  position: relative;
-  background: #fdfaf0;
-  max-height: 0;
-  min-height: 0;
-  overflow: hidden;
-  border: 0;
-  opacity: 0;
-  visibility: hidden;
+.j-clinician-reviews,
+.j-clinician-reviews.jcr-loading,
+.j-clinician-reviews.jcr-ready,
+.j-clinician-reviews.jcr-unavailable {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.j-clinician-reviews iframe {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
 }
 
 /* Keep both the default and hover product-card images inside the square card. */
@@ -25,32 +39,6 @@
   height: 100% !important;
   padding: var(--jc-card-media-padding, 0px);
   box-sizing: border-box;
-}
-
-.j-clinician-reviews.jcr-loading {
-  max-height: 0;
-  min-height: 0;
-}
-
-.j-clinician-reviews.jcr-loading iframe {
-  display: block !important;
-  width: 100% !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.j-clinician-reviews.jcr-ready {
-  max-height: none;
-  overflow: visible;
-  opacity: 1;
-  visibility: visible;
-}
-
-.j-clinician-reviews.jcr-ready iframe {
-  opacity: 1;
-  transition: opacity 180ms ease;
 }
 
 /* Keep compact controls visually light while giving fingers a reliable target. */
