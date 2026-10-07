@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <base href="/preview/">
+  <title>JIYU WooCommerce Port Preview</title>
+  <link rel="stylesheet" href="../assets/jiyu.css">
+  <link rel="stylesheet" href="../assets/account-drawer.css">
+  <link rel="stylesheet" href="../assets/toner-offer-badge.css">
+  <link rel="stylesheet" href="../assets/promo-code-banner.css">
+  <link rel="stylesheet" href="../assets/cart-drawer.css">
+  <link rel="stylesheet" href="../assets/performance-fixes.css">
+  <link rel="stylesheet" href="../woocommerce-theme/style.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    (function () {
+      var requestedPath = new URLSearchParams(window.location.search).get('path') || '/';
+      window.history.replaceState({}, '', requestedPath);
+      var base = new URL('../assets/', document.baseURI).href;
+      var products = {
+        toner: {
+          id: 10,
+          handle: 'renewal-rejuvenation-toner-pads',
+          title: 'Renewal & Rejuvenation Toner Pads',
+          url: '/products/renewal-rejuvenation-toner-pads',
+          featured_image: base + 'd2976e15e91c8320.png',
+          images: [base + 'd2976e15e91c8320.png'],
+          price: 5999,
+          variants: [
+            {id: 101, title: '1 Jar', option1: '1 Jar', available: true, price: 5999, compare_at_price: null, featured_image: {src: base + 'd2976e15e91c8320.png'}, selling_plan_allocations: []},
+            {id: 102, title: '2 Jars', option1: '2 Jars', available: true, price: 9598, compare_at_price: 11998, featured_image: {src: base + '9401ba6726f88812.jpg'}, selling_plan_allocations: []},
+            {id: 103, title: '3 Jars', option1: '3 Jars', available: true, price: 12598, compare_at_price: 17997, featured_image: {src: base + '9401ba6726f88812.jpg'}, selling_plan_allocations: []}
+          ]
+        },
+        cream: {
+          id: 20,
+          handle: 'nad-anti-aging-moisturizing-cream',
+          title: 'Anti-Aging Moisturizing Cream',
+          url: '/products/nad-anti-aging-moisturizing-cream',
+          featured_image: base + '4f0c08d424cfdb25.png',
+          images: [base + '4f0c08d424cfdb25.png'],
+          price: 7995,
+          variants: [
+            {id: 201, title: '1 Jar', option1: '1 Jar', available: true, price: 7995, compare_at_price: null, featured_image: {src: base + '4f0c08d424cfdb25.png'}, selling_plan_allocations: []},
+            {id: 202, title: '2 Jars', option1: '2 Jars', available: true, price: 12792, compare_at_price: 15990, featured_image: {src: base + '67882544306447dc.jpg'}, selling_plan_allocations: []},
+            {id: 203, title: '3 Jars', option1: '3 Jars', available: true, price: 16790, compare_at_price: 23985, featured_image: {src: base + '67882544306447dc.jpg'}, selling_plan_allocations: []}
+          ]
+        },
+        bundle: {
+          id: 30,
+          handle: 'test-complete-care-bundle',
+          title: 'Anti-Aging Glow-Up Bundle',
+          url: '/products/test-complete-care-bundle',
+          featured_image: base + '529ca9c7a5a0a158.png',
+          images: [base + '529ca9c7a5a0a158.png'],
+          price: 11892,
+          variants: [
+            {id: 301, title: '1 Jar Each', option1: '1 Jar Each', available: true, price: 11892, compare_at_price: 13990, featured_image: {src: base + '529ca9c7a5a0a158.png'}, selling_plan_allocations: []},
+            {id: 302, title: '2 Jars Each', option1: '2 Jars Each', available: true, price: 20985, compare_at_price: 27980, featured_image: {src: base + '529ca9c7a5a0a158.png'}, selling_plan_allocations: []},
+            {id: 303, title: '3 Jars Each', option1: '3 Jars Each', available: true, price: 27281, compare_at_price: 41970, featured_image: {src: base + '529ca9c7a5a0a158.png'}, selling_plan_allocations: []}
+          ]
+        }
+      };
+      window.JIYU_THEME = {assetBase: base, root: '/', accountUrl: '/my-account/', checkoutUrl: '/checkout/', trackingUrl: '/track-order/', currency: 'USD', locale: 'en-US', products: products};
+      window.JIYU_THEME.formatMoney = function (cents) { return new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format((Number(cents) || 0) / 100); };
+      window.JIYU_THEME.resolveAssetText = function (text) {
+        text = String(text || '').replaceAll('/assets/nav-04024a0db1243bee','/assets/nav-04024a0db1243bee.jpg').replaceAll('/assets/nav-59a4fe69a2e2129c','/assets/nav-59a4fe69a2e2129c.jpg').replaceAll('/assets/nav-687610b252848e05','/assets/nav-687610b252848e05.jpg').replaceAll('/assets/nav-7cd1d9324f72c423','/assets/nav-7cd1d9324f72c423.jpg').replaceAll('/assets/nav-ca9a831e9bf989ea','/assets/nav-ca9a831e9bf989ea.jpg').replaceAll('/assets/nav-de64769438065a0e','/assets/nav-de64769438065a0e.jpg');
+        return text.replace(/\/assets\/(video\/|source\/|videos\/)?/g, function (_, folder) { return folder === 'video/' ? 'https://cdn.jsdelivr.net/gh/mohannadabuhdeib-art/shopify1@399b5e6fe6db8122131f712ada962a0cde3c8f6f/public/assets/video/' : base + (folder ? folder.replace('/', '-') : ''); });
+      };
+      window.Shopify = {currency: {active: 'USD'}};
+      window.JIYU_CART_DRAWER = {root: '/', logo: base + '5f469f939df6e349.png', guaranteeIcon: base + 'cart-guarantee-0.svg', shippingIcon: base + 'cart-guarantee-1.svg', payments: Array.from({length: 12}, function (_, index) { return base + 'cart-payment-' + index + '.svg'; })};
+
+      var cart = {token: 'preview', item_count: 0, items: [], total_price: 0, original_total_price: 0, total_discount: 0, currency: 'USD'};
+      var realFetch = window.fetch.bind(window);
+      function variant(id) {
+        for (var key in products) {
+          for (var index = 0; index < products[key].variants.length; index += 1) {
+            if (products[key].variants[index].id === Number(id)) return {product: products[key], value: products[key].variants[index]};
+          }
+        }
+        return null;
+      }
+      function recalculate() {
+        cart.item_count = cart.items.reduce(function (sum, item) { return sum + item.quantity; }, 0);
+        cart.total_price = cart.items.reduce(function (sum, item) { return sum + item.final_line_price; }, 0);
+        cart.original_total_price = cart.total_price;
+      }
+      window.fetch = function (input, init) {
+        var url = new URL(typeof input === 'string' ? input : input.url, window.location.href);
+        if (!/\/cart(?:\/add|\/change|\/update)?\.js$/.test(url.pathname)) return realFetch(input, init);
+        var body = init && init.body ? JSON.parse(init.body) : {};
+        if (url.pathname.endsWith('/cart/add.js')) {
+          (body.items || []).forEach(function (request) {
+            var found = variant(request.id);
+            if (!found) return;
+            var existing = cart.items.find(function (item) { return item.variant_id === Number(request.id); });
+            if (existing) {
+              existing.quantity += Number(request.quantity) || 1;
+              existing.final_line_price = existing.final_price * existing.quantity;
+            } else {
+              cart.items.push({id: found.value.id, key: 'preview-' + found.value.id, variant_id: found.value.id, product_title: found.product.title, variant_title: found.value.title, quantity: Number(request.quantity) || 1, final_price: found.value.price, original_price: found.value.price, final_line_price: found.value.price * (Number(request.quantity) || 1), original_line_price: found.value.price * (Number(request.quantity) || 1), image: found.value.featured_image.src, selling_plan_allocation: null});
+            }
+          });
+        }
+        if (url.pathname.endsWith('/cart/change.js')) {
+          var line = cart.items.find(function (item) { return item.key === body.id; });
+          if (line) {
+            line.quantity = Number(body.quantity) || 0;
+            line.final_line_price = line.final_price * line.quantity;
+            if (!line.quantity) cart.items = cart.items.filter(function (item) { return item !== line; });
+          }
+        }
+        if (url.pathname.endsWith('/cart/update.js')) {
+          Object.keys(body.updates || {}).forEach(function (key) {
+            var line = cart.items.find(function (item) { return item.key === key; });
+            if (line) {
+              line.quantity = Number(body.updates[key]) || 0;
+              line.final_line_price = line.final_price * line.quantity;
+            }
+          });
+          cart.items = cart.items.filter(function (item) { return item.quantity > 0; });
+        }
+        recalculate();
+        return Promise.resolve(new Response(JSON.stringify(cart), {status: 200, headers: {'Content-Type': 'application/json'}}));
+      };
+    })();
+  </script>
+  <script src="../woocommerce-theme/assets/jiyu-woo-bridge.js"></script>
+  <script src="../assets/videos-hls.min.js" defer></script>
+  <script src="../assets/jiyu.js" defer></script>
+  <script src="../assets/account-drawer.js" defer></script>
+  <script src="../assets/cart-drawer.js" defer></script>
+  <script src="../assets/toner-offer-badge.js" data-toner-image="../assets/d2976e15e91c8320.png" data-moisturizer-image="../assets/4f0c08d424cfdb25.png" defer></script>
+  <script src="../assets/promo-code-banner.js" defer></script>
+</body>
+</html>
+

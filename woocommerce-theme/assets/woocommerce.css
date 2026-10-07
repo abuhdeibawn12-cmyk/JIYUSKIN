@@ -1,0 +1,218 @@
+:root {
+  --jiyu-green: #006e37;
+  --jiyu-ink: #103f2b;
+  --jiyu-cream: #f7f5ed;
+  --jiyu-line: rgba(0, 110, 55, 0.18);
+  --jiyu-orange: #e57641;
+}
+
+.jiyu-woocommerce-page {
+  margin: 0;
+  color: var(--jiyu-ink);
+  background: var(--jiyu-cream);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.jwc-header {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  border-bottom: 1px solid var(--jiyu-line);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+}
+
+.jwc-header__inner {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 82px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.jwc-logo img {
+  display: block;
+  width: 92px;
+  height: auto;
+}
+
+.jwc-header__shop {
+  color: var(--jiyu-green);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.jwc-shell {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 62vh;
+  margin: 0 auto;
+  padding: 56px 0 88px;
+}
+
+.jwc-shell--checkout {
+  width: min(1120px, calc(100% - 40px));
+}
+
+.jwc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px max(24px, calc((100vw - 1180px) / 2));
+  color: #fff;
+  background: var(--jiyu-green);
+  font-size: 13px;
+}
+
+.jwc-footer p {
+  margin: 0;
+}
+
+.jwc-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.jwc-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select,
+.select2-container--default .select2-selection--single {
+  min-height: 52px;
+  border: 1px solid var(--jiyu-line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: none;
+  color: var(--jiyu-ink);
+  font: inherit;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+  padding: 13px 15px;
+}
+
+.woocommerce form .form-row label {
+  margin-bottom: 8px;
+  color: var(--jiyu-ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.woocommerce button.button,
+.woocommerce a.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+  min-height: 48px;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--jiyu-green);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.woocommerce button.button:hover,
+.woocommerce a.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover {
+  color: #fff;
+  background: var(--jiyu-ink);
+  transform: translateY(-1px);
+}
+
+.woocommerce-checkout #customer_details,
+.woocommerce-checkout-review-order,
+.woocommerce-account .woocommerce-MyAccount-navigation,
+.woocommerce-account .woocommerce-MyAccount-content {
+  border: 1px solid var(--jiyu-line);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 22px 60px rgba(16, 63, 43, 0.08);
+}
+
+.woocommerce-checkout #customer_details,
+.woocommerce-checkout-review-order,
+.woocommerce-account .woocommerce-MyAccount-content {
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.woocommerce-checkout h3,
+.woocommerce-account h2 {
+  color: var(--jiyu-green);
+  font-size: clamp(24px, 3vw, 38px);
+  letter-spacing: -0.03em;
+}
+
+.woocommerce-checkout-review-order-table,
+.woocommerce-checkout-payment {
+  border-radius: 18px !important;
+  overflow: hidden;
+}
+
+.woocommerce-checkout #payment {
+  background: #f2f8f1;
+}
+
+.woocommerce-checkout #payment div.payment_box {
+  color: var(--jiyu-ink);
+  background: #fff;
+}
+
+.woocommerce-checkout #payment #place_order {
+  width: 100%;
+  min-height: 56px;
+  margin-top: 18px;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  border: 1px solid var(--jiyu-line);
+  border-top: 0;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: none;
+}
+
+@media (max-width: 780px) {
+  .jwc-header__inner {
+    width: min(100% - 28px, 1180px);
+    min-height: 70px;
+  }
+
+  .jwc-shell,
+  .jwc-shell--checkout {
+    width: min(100% - 28px, 1180px);
+    padding: 28px 0 56px;
+  }
+
+  .jwc-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .woocommerce-checkout #customer_details,
+  .woocommerce-checkout-review-order,
+  .woocommerce-account .woocommerce-MyAccount-content {
+    padding: 20px;
+    border-radius: 18px;
+  }
+}
+

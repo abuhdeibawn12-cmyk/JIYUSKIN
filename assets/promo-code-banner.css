@@ -13,18 +13,26 @@
 }
 
 .j-promo-code-message {
+  min-width: 0;
   font-weight: 700;
   letter-spacing: 0.015em;
+  white-space: normal;
 }
 
 @media (max-width: 600px) {
   .j-promo[data-jiyu-code='true'] {
     min-height: 38px;
-    padding: 7px 10px;
+    gap: 5px;
+    padding: 6px 8px;
+  }
+
+  .j-promo[data-jiyu-code='true'] img {
+    max-width: 70px;
+    height: auto;
   }
 
   .j-promo-code-message {
-    font-size: 12px;
-    line-height: 1.25;
+    font-size: 10.5px;
+    line-height: 1.2;
   }
 }
