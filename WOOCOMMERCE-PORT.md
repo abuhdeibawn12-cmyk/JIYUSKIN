@@ -16,6 +16,7 @@ This branch contains the original JIYU storefront adapted to WooCommerce. It doe
 - WooCommerce-backed cart add, change, remove, quantity, totals, and checkout links
 - Three products with nine pack variations and the original one-time prices
 - USD currency and United States-only selling/shipping country baseline
+- Free US shipping on every order with a 3–7 business-day delivery estimate
 - Guest checkout and customer account creation
 - `JIYU` 10% coupon matching the storefront announcement
 - Order lookup by order number and billing email
@@ -29,7 +30,6 @@ The following require store credentials, a licensed plugin, or a business decisi
 - Live payment gateway credentials and checkout transaction testing
 - Subscription renewals and subscription product configuration
 - Loyalty points, tiers, and reward redemption
-- Production shipping method/rate below any free-shipping threshold
 - Tax registration and tax rules
 - Customer/order history migration from Shopify
 
