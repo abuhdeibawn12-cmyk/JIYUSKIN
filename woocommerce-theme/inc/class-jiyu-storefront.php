@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 final class JIYU_Storefront {
-	const VERSION = '0.1.1';
+	const VERSION = '0.1.2';
 
 	const PRODUCT_SLUGS = array(
 		'toner'  => 'renewal-rejuvenation-toner-pads',

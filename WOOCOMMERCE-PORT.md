@@ -17,6 +17,7 @@ This branch contains the original JIYU storefront adapted to WooCommerce. It doe
 - Three products with nine pack variations and the original one-time prices
 - USD currency and United States-only selling/shipping country baseline
 - Free US shipping on every order with a 3–7 business-day delivery estimate
+- Taxes disabled, matching the approved JIYU store configuration
 - Guest checkout and customer account creation
 - `JIYU` 10% coupon matching the storefront announcement
 - Order lookup by order number and billing email
@@ -30,7 +31,6 @@ The following require store credentials, a licensed plugin, or a business decisi
 - Live payment gateway credentials and checkout transaction testing
 - Subscription renewals and subscription product configuration
 - Loyalty points, tiers, and reward redemption
-- Tax registration and tax rules
 - Customer/order history migration from Shopify
 
 The storefront hides subscription controls until a real subscription integration enables the `jiyu_subscriptions_enabled` filter. This prevents customers from selecting a purchase option that cannot renew correctly.

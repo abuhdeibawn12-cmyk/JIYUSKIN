@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 final class JIYU_Store_Setup {
-	const SETUP_VERSION = '0.1.1';
+	const SETUP_VERSION = '0.1.2';
 
 	/** Register hooks. */
 	public static function boot() {
@@ -36,6 +36,7 @@ final class JIYU_Store_Setup {
 		update_option( 'woocommerce_specific_allowed_countries', array( 'US' ) );
 		update_option( 'woocommerce_ship_to_countries', 'specific' );
 		update_option( 'woocommerce_specific_ship_to_countries', array( 'US' ) );
+		update_option( 'woocommerce_calc_taxes', 'no' );
 		update_option( 'woocommerce_enable_guest_checkout', 'yes' );
 		update_option( 'woocommerce_enable_signup_and_login_from_checkout', 'yes' );
 		update_option( 'woocommerce_enable_myaccount_registration', 'yes' );
